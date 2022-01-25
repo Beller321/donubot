@@ -1,7 +1,7 @@
 # Copyright (C) 2021 Catuserbot <https://github.com/sandy1709/catuserbot>
 # Ported by @mrismanaziz
 # FROM Man-Userbot 
-# Recode by @Pocongonlen
+# Recode by @greyyvbss
 
 import asyncio
 
@@ -15,11 +15,11 @@ from userbot.utils import (
     edit_delete,
     edit_or_reply,
     get_user_from_event,
-    poci_cmd,
+    cilik_cmd,
 )
 
 
-@poci_cmd(pattern="sg(u)?(?:\s|$)([\s\S]*)")
+@cilik_cmd(pattern="sg(u)?(?:\s|$)([\s\S]*)")
 async def _(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
