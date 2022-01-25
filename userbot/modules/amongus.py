@@ -14,10 +14,10 @@ from requests import get
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd
+from userbot.events import cilik_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"imp (.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"imp (.*)"))
 async def f_load(message):
     clrs = {
         "red": 1,
