@@ -21,10 +21,10 @@ import requests
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd
+from userbot.events import cilik_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern="shibe$"))
+@bot.on(cilik_cmd(outgoing=True, pattern="shibe$"))
 async def shibe(event):
     await event.edit("`Processing...`")
     response = requests.get("https://shibe.online/api/shibes").json()
@@ -35,7 +35,7 @@ async def shibe(event):
     await event.delete()
 
 
-@bot.on(poci_cmd(outgoing=True, pattern="cat$"))
+@bot.on(cilik_cmd(outgoing=True, pattern="cat$"))
 async def cats(event):
     await event.edit("`Processing...`")
     response = requests.get("https://shibe.online/api/cats").json()
