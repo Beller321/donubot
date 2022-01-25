@@ -7,10 +7,10 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, owner
-from userbot.utils import edit_delete, edit_or_reply, poci_cmd
+from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
-@poci_cmd(pattern=r"logo(?: |$)(.*)")
+@cilik_cmd(pattern=r"logo(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
