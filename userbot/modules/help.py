@@ -8,12 +8,12 @@
 from userbot import CHANNEL
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, ICON_HELP, bot
-from userbot.utils import edit_delete, edit_or_reply, poci_cmd
+from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 modules = CMD_HELP
 
 
-@poci_cmd(pattern="help(?: |$)(.*)")
+@cilik_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
     """For help command"""
     args = event.pattern_match.group(1).lower()
@@ -21,7 +21,7 @@ async def help(event):
         if args in CMD_HELP:
             await edit_or_reply(event, str(CMD_HELP[args]))
         else:
-            await edit_delete(event, f"`{args}` **Module yang lu cari gada tod.**")
+            await edit_delete(event, f"`{args}` **Module yang lu cari gada.**")
     else:
         user = await bot.get_me()
         string = ""
@@ -30,7 +30,7 @@ async def help(event):
             string += f"`\t\t\t{ICON_HELP}\t\t\t"
         await edit_or_reply(
             event,
-            f"**✦ Daftar Perintah [PocongUserbot](https://github.com/poocong/PocongUserbot):**\n"
+            f"**✦ Daftar Perintah [Cilik-Userbot](https://github.com/grey423/CilikUserbot):**\n"
             f"**✦ Jumlah** `{len(modules)}` **Modules**\n"
             f"**✦ Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
             f"{ICON_HELP}   {string}"
