@@ -3,10 +3,10 @@
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd
+from userbot.events import cilik_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"frog(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"frog(?: |$)(.*)"))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -28,7 +28,7 @@ async def typewriter(typew):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"dfrog(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"dfrog(?: |$)(.*)"))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -50,7 +50,7 @@ async def typewriter(typew):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"strump(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"strump(?: |$)(.*)"))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -72,7 +72,7 @@ async def typewriter(typew):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"scina(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"scina(?: |$)(.*)"))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -95,7 +95,7 @@ async def typewriter(typew):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"wlcm(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"wlcm(?: |$)(.*)"))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -112,7 +112,7 @@ async def typewriter(typew):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"gta(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"gta(?: |$)(.*)"))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -130,7 +130,7 @@ async def typewriter(typew):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"sthink(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"sthink(?: |$)(.*)"))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
