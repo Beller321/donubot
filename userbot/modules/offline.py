@@ -12,7 +12,7 @@ from telethon.events import StopPropagation
 from telethon.tl.functions.account import UpdateProfileRequest
 
 from userbot import AFKREASON, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN, bot, owner
-from userbot.events import poci_cmd, register
+from userbot.events import cilik_cmd, register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
@@ -28,7 +28,7 @@ afk_start = {}
 # =================================================================
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"off(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"off(?: |$)(.*)"))
 async def set_afk(afk_e):
     """For .afk command, allows you to inform people that you are afk when they message you"""
     string = afk_e.pattern_match.group(1)
@@ -47,11 +47,11 @@ async def set_afk(afk_e):
     if string:
         AFKREASON = string
         await afk_e.edit(
-            f"**✘ {owner} Telah OFF ✘**\
+            f"**★ {owner} Telah OFF ★**\
         \n✦҈͜͡➳ **Karena :** `{string}`"
         )
     else:
-        await afk_e.edit(f"**✘ {owner} Telah OFF ✘**")
+        await afk_e.edit(f"**★ {owner} Telah OFF ★**")
     if user.last_name:
         await afk_e.client(
             UpdateProfileRequest(
@@ -250,7 +250,7 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"✘ **{owner} Sedang OFF ✘** {afk_since} **Yang Lalu** ✘.\
+                        f"★ **{owner} Sedang OFF ★** {afk_since} **Yang Lalu** ★.\
                         \n✦҈͜͡➳ **Karena :** `{AFKREASON}`"
                     )
                 else:
@@ -261,7 +261,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"✘ **{owner} Sedang OFF ✘** {afk_since} **Yang Lalu. ✘**\
+                            f"★ **{owner} Sedang OFF ★** {afk_since} **Yang Lalu. ★**\
                             \n✦҈͜͡➳ **Karena :** `{AFKREASON}`"
                         )
                     else:
