@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # Ported by @mrismanaziz
 # FROM Man-Userbot
-# ReCode by @Pocongonlen
+# ReCode by @greyyvbss
 
 import random
 import time
@@ -13,13 +13,13 @@ from speedtest import Speedtest
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, StartTime, bot, DEVS
 from userbot.events import register
-from userbot.utils import edit_or_reply, humanbytes, poci_cmd
+from userbot.utils import edit_or_reply, humanbytes, cilik_cmd
 
 absen = [
-    "**Hadir bang** 😁",
+    "**Hadir bang grey** 😁",
     "**Hadir kak** 😉",
     "**Hadir dong** 😁",
-    "**Hadir ganteng** 🥵",
+    "**Hadir grey ganteng** 🥵",
     "**Hadir bro** 😎",
     "**Hadir kak maap telat** 🥺",
 ]
@@ -50,7 +50,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@poci_cmd(pattern="ping$")
+@cilik_cmd(pattern="ping$")
 async def _(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -72,7 +72,7 @@ async def _(ping):
     )
 
 
-@poci_cmd(pattern="speedtest$")
+@cilik_cmd(pattern="speedtest$")
 async def _(speed):
     """For .speedtest command, use SpeedTest to check server speeds."""
     xxnx = await edit_or_reply(speed, "`Running speed test...`")
@@ -104,7 +104,7 @@ async def _(speed):
     )
 
 
-@poci_cmd(pattern="pong$")
+@cilik_cmd(pattern="pong$")
 async def _(pong):
     """For .ping command, ping the userbot from any chat."""
     start = datetime.now()
@@ -116,7 +116,7 @@ async def _(pong):
 
 # KALO NGEFORK absen ini GA USAH DI HAPUS YA GOBLOK 😡
 @register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
-async def pocong(ganteng):
+async def grey(ganteng):
     await ganteng.reply(random.choice(absen))
 
 
