@@ -5,7 +5,7 @@
 #
 # Ported by @mrismanaziz
 # FROM Man-Userbot
-# Recode by @pocongonlen
+# Recode by @greyyvbss
 #
 
 from asyncio import sleep
@@ -17,10 +17,10 @@ from telethon.tl.functions.messages import SendMediaRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd
+from userbot.events import cilik_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"pic(?: |$)(.*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"pic(?: |$)(.*)"))
 async def on_file_to_photo(pics):
     await pics.edit("`Processing...`")
     await sleep(1.5)
