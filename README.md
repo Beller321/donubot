@@ -1,11 +1,11 @@
-#PocongUserbot
+#Cilik Userbot
 <p align="center">
-    <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
+    <img alt="CILIK VERSION" src="https://img.shields.io/badge/CILIK%20VERSION-4.+-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
-           <a href="https://travis-ci.com/poocong/PocongUserbot.svg?branch=main" /></a>
-    <a href="https://github.com/poocong/PocongUserbot/network/members"> <img src="https://img.shields.io/github/forks/poocong/PocongUserbot?logo=github&style=for-the-badge" /></a>
-           <a href="https://app.codacy.com/gh/poocong/PocongUserbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/poocong/PocongUserbot"> <img src="https://img.shields.io/github/repo-size/poocong/PocongUserbot?logo=github&style=for-the-badge" /></a>
+           <a href="https://travis-ci.com/grey423/CilikUserbot.svg?branch=main" /></a>
+    <a href="https://github.com/grey423/CilikUserbot/network/members"> <img src="https://img.shields.io/github/forks/grey423/CilikUserbot?logo=github&style=for-the-badge" /></a>
+           <a href="https://app.codacy.com/gh/grey423/CilikUserbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/grey423/CilikUserbot"> <img src="https://img.shields.io/github/repo-size/grey423/CilikUserbot?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.9.0-blue?style=for-the-badge&logo=appveyor"/>
    </p>
