@@ -52,8 +52,8 @@ async def mention(event):
 CMD_HELP.update(
     {
         "mentions": "**Plugin : **`Mentions users dengan nama kustom.`\
-        \n\n  •  **Syntax :** `Hi @Pocongonlen[Pocong Onlen]`\
-        \n  •  **Result : **Hi [Pocong Onlen](tg://resolve?domain=Pocongonlen)\
+        \n\n  •  **Syntax :** `Hi @greyyvbss[Grey]`\
+        \n  •  **Result : **Hi [Gi Grey(tg://resolve?domain=greyyvbss)\
     "
     }
 )
