@@ -1,7 +1,7 @@
 # Copyright (C) 2021 Man-Userbot
 # Created by mrismanaziz
 # FROM Man-Userbot
-# Recode by @Pocongonlen
+# Recode by @greyyvbss
 
 from asyncio.exceptions import TimeoutError
 
@@ -10,10 +10,10 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.utils import edit_or_reply, poci_cmd
+from userbot.utils import edit_or_reply, cilik_cmd
 
 
-@poci_cmd(pattern="pdf(?: |$)(.*)")
+@cilik_cmd(pattern="pdf(?: |$)(.*)")
 async def _(event):
     if not event.reply_to_msg_id:
         return await edit_or_reply(event, "**Mohon Reply ke teks apa pun**")
