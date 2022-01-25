@@ -2,7 +2,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 # Ported by @mrismanaziz
-# Recode by @Pocongonlen
+# Recode by @greyyvbss
 """ Userbot module for keeping control who PM you. """
 
 from sqlalchemy.exc import IntegrityError
@@ -13,7 +13,7 @@ from telethon.tl.types import User
 from userbot import BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
-from userbot.events import poci_cmd, register
+from userbot.events import cilik_cmd, register
 from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
@@ -23,10 +23,10 @@ DEF_UNAPPROVED_MSG = (
     "├ Cht kmu, jangan spam cht\n"
     "├ atau kmu akan otomatis\n"
     "├ terblokir.\n"
-    "└ Bot by **PocongUserbot**\n"
+    "└ Bot by **★ Cilik-Userbot ★**\n"
     "┌━━━━━━━━━━━━\n"
-    "├❏ **𝗦𝘂𝗽𝗽𝗼𝗿𝘁: @PocongUserbot**\n"
-    "├❏ **𝗖𝗵𝗮𝗻𝗻𝗲𝗹: @PocongProject**\n"
+    "├❏ **𝗦𝘂𝗽𝗽𝗼𝗿𝘁: @CilikSupport**\n"
+    "├❏ **𝗖𝗵𝗮𝗻𝗻𝗲𝗹: @CilikProject**\n"
     "└━━━━━━━━━━━━\n"
 )
 
@@ -162,7 +162,7 @@ async def auto_accept(event):
                     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"notifoff$"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"notifoff$"))
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -175,7 +175,7 @@ async def notifoff(noff_event):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"notifon$"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"notifon$"))
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -188,7 +188,7 @@ async def notifon(non_event):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"(?:y|ok)\s?(.)?"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"(?:y|ok)\s?(.)?"))
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -257,7 +257,7 @@ async def approvepm(apprvpm):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"(?:bye|nopm)\s?(.)?"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"(?:bye|nopm)\s?(.)?"))
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -317,7 +317,7 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"block$"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"block$"))
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -351,7 +351,7 @@ async def blockpm(block):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"unblock$"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"unblock$"))
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -368,7 +368,7 @@ async def unblockpm(unblock):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)"))
+@bot.on(cilik_cmd(outgoing=True, pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)"))
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
@@ -435,9 +435,9 @@ async def add_pmsg(cust_msg):
 CMD_HELP.update(
     {
         "pmpermit": f"**Plugin : **`pmpermit`\
-        \n\n  •  **Syntax :** `{cmd}y` atau `{cmd}ok`\
+        \n\n  •  **Syntax :** `{cmd}g` atau `{cmd}ok`\
         \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
-        \n\n  •  **Syntax :** `{cmd}g` atau `{cmd}nopm`\
+        \n\n  •  **Syntax :** `{cmd}y` atau `{cmd}nopm`\
         \n  •  **Function : **Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
         \n\n  •  **Syntax :** `{cmd}block`\
         \n  •  **Function : **Memblokir Orang Di PM.\
