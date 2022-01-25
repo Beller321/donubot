@@ -1,16 +1,16 @@
 # Copyright (C) 2021 @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# Recode by @Pocongonlen
+# Recode by @greyyvbss
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, poci_cmd
+from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
-@poci_cmd(pattern="shazam(?: |$)(.*)")
+@cilik_cmd(pattern="shazam(?: |$)(.*)")
 async def _(event):
     if not event.reply_to_msg_id:
         return await edit_delete(event, "**Mohon balas ke pesan audio**")
