@@ -1,6 +1,6 @@
 # ported by @mrismanaziz
 # FROM Man-Userbot
-# Recode by @Pocongonlen
+# Recode by @greyvbss
 
 import asyncio
 
@@ -10,10 +10,10 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, poci_cmd
+from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
-@poci_cmd(pattern="q ?(.*)")
+@cilik_cmd(pattern="q ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
