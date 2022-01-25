@@ -2,29 +2,29 @@ from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_or_reply, poci_cmd
+from userbot.utils import edit_or_reply, cilik_cmd
 
 
-@poci_cmd(pattern="p(?: |$)(.*)")
+@cilik_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Assalamualaikum Dulu Biar Sopan**")
 
 
-@poci_cmd(pattern="P(?: |$)(.*)")
+@cilik_cmd(pattern="P(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**Hy kaa 🥺**")
     sleep(2)
     await xx.edit("**Assalamualaikum...**")
 
 
-@poci_cmd(pattern="l(?: |$)(.*)")
+@cilik_cmd(pattern="l(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event,f"**Astaghfirullah, Jawab salam dong**")
     sleep(2)
     await xx.edit("**Wa'alaikumsalam**")
 
 
-@poci_cmd(pattern="L(?: |$)(.*)")
+@cilik_cmd(pattern="L(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**Astaghfirullah, Jawab salam dong**")
     sleep(2)
