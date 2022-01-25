@@ -1,9 +1,11 @@
 # Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Copyright (C) 2022 Man-Userbot
-# Recode by @Pocongonlen
+# Ported by @mrismanaziz
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# ReCode by @greyyvbss
 
 import asyncio
 from datetime import datetime
+from io import BytesIO
 
 from telethon import events
 from telethon.errors import BadRequestError
@@ -15,7 +17,7 @@ from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS, bot
 from userbot.events import register
-from userbot.utils import edit_or_reply, get_user_from_event, poci_cmd
+from userbot.utils import edit_or_reply, get_user_from_event, cilik_cmd
 
 from .admin import BANNED_RIGHTS, UNBAN_RIGHTS
 
@@ -37,7 +39,7 @@ def mentionuser(name, userid):
     return f"[{name}](tg://user?id={userid})"
 
 
-@poci_cmd(pattern="gban(?: |$)(.*)")
+@cilik_cmd(pattern="gban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gban(event):
     if event.fwd_from:
@@ -48,14 +50,14 @@ async def gban(event):
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await gbun.edit("**Ngapain NgeGban diri sendiri Goblok 🐽**")
+        await gbun.edit("**Ngapain NgeGban diri sendiri Goblok 🤬**")
         return
     if user.id in DEVS:
-        await gbun.edit("**Gagal GBAN karena dia adalah Pembuat saya 🗿**")
+        await gbun.edit("**Gagal GBAN karena dia adalah Pembuat saya 😝**")
         return
     if gban_sql.is_gbanned(user.id):
         await gbun.edit(
-            f"**Si** [Caper](tg://user?id={user.id}) **Goblok ini sudah ada di daftar gbanned**"
+            f"**Si** [Kontol](tg://user?id={user.id}) **ini sudah ada di daftar gbanned**"
         )
     else:
         gban_sql.freakgban(user.id, reason)
@@ -67,7 +69,7 @@ async def gban(event):
         await gbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await gbun.edit(
-        f"**Prosess gban anak** [yteam](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
+        f"**Mampus kao** [Kontol](tg://user?id={user.id}) **Ter gban** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -91,7 +93,7 @@ async def gban(event):
         )
 
 
-@poci_cmd(pattern="ungban(?: |$)(.*)")
+@cilik_cmd(pattern="ungban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
 async def ungban(event):
     if event.fwd_from:
@@ -105,7 +107,7 @@ async def ungban(event):
         gban_sql.freakungban(user.id)
     else:
         await ungbun.edit(
-            f"**Si** [CAPER](tg://user?id={user.id}) **ini tidak ada dalam daftar gban Anda**"
+            f"**Si** [Kontol](tg://user?id={user.id}) **ini tidak ada dalam daftar gban Anda**"
         )
         return
     san = []
@@ -116,7 +118,7 @@ async def ungban(event):
         await ungbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await ungbun.edit(
-        f"**Prosess ungban anak** [yteam](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
+        f"**Prosess ungban** [Y TEAM](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -140,7 +142,7 @@ async def ungban(event):
         )
 
 
-@poci_cmd(pattern="listgban$")
+@cilik_cmd(pattern="listgban$")
 async def gablist(event):
     if event.fwd_from:
         return
@@ -154,6 +156,17 @@ async def gablist(event):
                 GBANNED_LIST += (
                     f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) `No Reason`\n"
                 )
+    if len(gbanned_users) >= 4096:
+        with BytesIO(str.encode(GBANNED_LIST)) as fileuser:
+            fileuser.name = "list-gban.txt"
+            await event.client.send_file(
+                event.chat_id,
+                fileuser,
+                force_document=True,
+                thumb="userbot/resources/logo.jpg",
+                caption="**List Global Banned**",
+                allow_cache=False,
+            )
     else:
         GBANNED_LIST = "Belum ada Pengguna yang Di-Gban"
     await edit_or_reply(event, GBANNED_LIST)
@@ -176,6 +189,10 @@ async def _(event):
                 )
             except BaseException:
                 pass
+
+
+# Ported by @mrismanaziz
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 
 
 CMD_HELP.update(
