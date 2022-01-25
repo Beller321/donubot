@@ -1,6 +1,6 @@
 # Credits: @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# ReCode by @Pocongonlen
+# ReCode by @grey423
 
 import asyncio
 import importlib
@@ -105,7 +105,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"Owner ~ {who.first_name} \nPowered By ~ @PoconProject"
+                bf, f"Owner ~ {who.first_name} \nPowered By ~ @CilikProject"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -147,7 +147,7 @@ async def autobot():
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"Owner ~ {who.first_name} \n Powered By ~ @PocongProject"
+            bf, f"Owner ~ {who.first_name} \n Powered By ~ @CilikProject"
         )
         await bot.send_message(
             BOTLOG_CHATID,
