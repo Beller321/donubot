@@ -11,7 +11,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, UPSTREAM_REPO_URL, bot
-from userbot.events import cilik_cmd
+from userbot.events import cilik_cmd, register
 
 
 async def gen_chlog(repo, diff):
@@ -58,7 +58,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if heroku_app is None:
             await event.edit(
                 f"{txt}\n"
-                "**Kredensial Heroku tidak valid untuk deploy PocongUserbot dyno.**"
+                "**Kredensial Heroku tidak valid untuk deploy Cilik-Userbot dyno.**"
             )
             return repo.__del__()
         try:
@@ -120,6 +120,7 @@ async def update(event, repo, ups_rem, ac_br):
 
 
 @bot.on(cilik_cmd(outgoing=True, pattern=r"update( now| deploy|$)"))
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cupdate( now| deploy|$)")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Mengecek Pembaruan, Tunggu Sebentar...`")
@@ -161,12 +162,12 @@ async def upstream(event):
 
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     if conf == "deploy":
-        await event.edit("`[HEROKU]: Update Deploy PocongUserbot Sedang Dalam Proses...`")
+        await event.edit("`[HEROKU]: Update Deploy Cilik-Userbot Sedang Dalam Proses...`")
         await deploy(event, repo, ups_rem, ac_br, txt)
         return
 
     if changelog == "" and not force_update:
-        await event.edit("**⚡ PocongUserbot Sudah Versi Terbaru**")
+        await event.edit("**⚡ Cilik-Userbot Sudah Versi Terbaru**")
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
@@ -204,9 +205,9 @@ CMD_HELP.update(
     {
         "update": f"**Plugin : **`update`\
         \n\n  •  **Syntax :** `{cmd}update`\
-        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru PocongUserbot.\
+        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru Cilik-Userbot.\
         \n\n  •  **Syntax :** `{cmd}update deploy`\
-        \n  •  **Function : **Untuk MengUpdate Fitur Terbaru Dari PocongUserbot.\
+        \n  •  **Function : **Untuk MengUpdate Fitur Terbaru Dari Cilik-Userbot.\
     "
     }
 )
