@@ -127,7 +127,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "salam": f"**Plugin : **`toxic`\
+        "toxic": f"**Plugin : **`toxic`\
         \n\nㅤㅤ•**Syntax** : {cmd}A-Z\
         \n•**Function : **Kata-Kata Toxic\
     "
