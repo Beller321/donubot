@@ -5,7 +5,7 @@
 #
 # inline credit @keselekpermen69
 # From Man-Userbot @mrismanaziz
-# Recode by @Pocongonlen
+# Recode by @greyyvbss
 """ Userbot initialization. """
 
 import logging
@@ -91,13 +91,13 @@ if CONFIG_CHECK:
 
 while 0 < 6:
     _DEVS = get(
-        "https://raw.githubusercontent.com/Poocoong/ListBl/main/DEVS.json"
+        "https://raw.githubusercontent.com/grey423/ListBl/main/DEVS.json"
     )
     if _DEVS.status_code != 200:
         if 0 != 5:
             continue
         else:
-            DEVS = [844432220, 1675900974, 1783401893, 1593802955, 1979717764]
+            DEVS = [1784606556, 844432220, 1675900974, 1783401893, 1593802955, 1979717764]
             break
     DEVS = _DEVS.json()
     break
@@ -143,8 +143,8 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 
 # Support
-GROUP = os.environ.get("GROUP", "PocongUserbot")
-CHANNEL = os.environ.get("CHANNEL", "PocongProject")
+GROUP = os.environ.get("GROUP", "CilikSupport")
+CHANNEL = os.environ.get("CHANNEL", "CilikProject")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -227,7 +227,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "PocongUserbot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "CilikUserbot")
 
 # Bot version
 BOT_VER = os.environ.get("BOT_VER", "2.3.4")
@@ -237,11 +237,11 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/4dad946885113195be82a.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/ac134f6d295ad0c03af9b.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/4dad946885113195be82a.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/ac134f6d295ad0c03af9b.jpg"
 )
 
 # Picture For VCPLUGIN
@@ -346,7 +346,7 @@ async def check_botlog_chatid() -> None:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**PocongUserBot v{BOT_VER} is back up and running!**\n\n"
+        f"**CilikUserBot v{BOT_VER} is back up and running!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {DEFAULTUSER}"
@@ -527,7 +527,7 @@ with bot:
                 result = builder.photo(
                     file=logoman,
                     link_preview=False,
-                    text=f"**✗ PocongUserbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"** CilikUserbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
