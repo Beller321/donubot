@@ -17,17 +17,15 @@ from userbot.events import cilik_cmd, register
 from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
-    "❏ PERINGATAN!\n"
-    "┌ Saya belum menyetujui kmu\n"
-    "├ Tunggu sampai saya menyetujui\n" 
-    "├ Cht kmu, jangan spam cht\n"
-    "├ atau kmu akan otomatis\n"
-    "├ terblokir.\n"
-    "└ Bot by **★ Cilik-Userbot ★**\n"
-    "┌━━━━━━━━━━━━\n"
-    "├❏ **𝗦𝘂𝗽𝗽𝗼𝗿𝘁: @CilikSupport**\n"
-    "├❏ **𝗖𝗵𝗮𝗻𝗻𝗲𝗹: @CilikProject**\n"
-    "└━━━━━━━━━━━━\n"
+    "╔════════════════════╗\n"
+    "      ★ **PERINGATAN! ★**\n"  
+    "╚════════════════════╝\n"
+    "• Saya belum menyetujui anda untuk PM.\n"
+    "• Tunggu sampai saya menyetujui PM anda.\n"
+    "• Jangan Spam Chat atau anda akan otomatis diblokir.\n"
+    "╔════════════════════╗\n"
+    "    Pᴇꜱᴀɴ Oᴛᴏᴍᴀᴛɪꜱ Bʏ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ\n"
+    "╚════════════════════╝\n"
 )
 
 
