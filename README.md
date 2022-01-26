@@ -1,4 +1,4 @@
-<h1 align="center"><img src="./resources/extras/GeezFire.gif" width="35px">Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ<img src="./resources/extras/GeezFire.gif" width="35px"></h1>
+<h1 align="center"><img src="./resources/GeezFire.gif" width="35px">Cɪʟɪᴋ-Uꜱᴇʀʙᴏᴛ<img src="./resources/GeezFire.gif" width="35px"></h1>
 <p align="center">
     <img alt="CILIK VERSION" src="https://img.shields.io/badge/CILIK%20VERSION-4.+-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
@@ -30,21 +30,23 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<p align="center"><a href="https://t.me/Stringpocongbot"><img src="https://img.shields.io/badge/Generate%20String%20Session-blue?style=for-the-flat&logo=telegram" width="210" height"34.45" /</a></p>
+<p align="center"><a href="https://t.me/CilikStringBot"><img src="https://img.shields.io/badge/Generate%20String%20Session-blue?style=for-the-flat&logo=telegram" width="210" height"34.45" /</a></p>
 
 
 <p align="center"><a href="http://deploy.xyren.xyz"> <img 
 src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+
+
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=Z3JleTQyMy9DaWxpa1VzZXJib3QgbWFpbg"> <img 
+src="https://img.shields.io/badge/Deploy%20To%20Bot%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <details>
     <summary> <b>Update and support</b></summary><br/>
 
-Channel Support [[Poocongonlen]](https://t.me/PocongProject)
-
-Grup Support [[PocongUserbot]](https://t.me/PocongUserbot)
-
+<a href="https://t.me/CilikProject"><img src="https://img.shields.io/badge/Join-Channel%20Updates-purple.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/CilikSupport"><img src="https://img.shields.io/badge/Join-Group%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </details>
 
 <details>
@@ -62,4 +64,4 @@ Grup Support [[PocongUserbot]](https://t.me/PocongUserbot)
 *   [Alvin](https://github.com/Zora24/Lord-Userbot) : Lord-Userbot
 
 ## License
-Licensed under [Raphielscape Public License](https://github.com/poocong/PocongUserbot/blob/PocongUserbot/LICENSE) - Version 1.d, February 2020
+Licensed under [Raphielscape Public License](https://github.com/grey423/CilikUserbot/blob/CilikUserbot/LICENSE) - Version 1.d, February 2020
