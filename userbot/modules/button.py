@@ -17,7 +17,7 @@ from userbot.utils import edit_delete, cilik_cmd, reply_id
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
-@poci_cmd(pattern="cbutton(?:\\s|$)([\\s\\S]*)")
+@cilik_cmd(pattern="cbutton(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     reply_message = await event.get_reply_message()
     if reply_message:
