@@ -208,10 +208,10 @@ ALIVE_NAME = os.environ.get("ALIVE_NAME", "Hooman")
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✘")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "★")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "❈")
+ICON_HELP = os.environ.get("ICON_HELP", "❂")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -527,21 +527,21 @@ with bot:
                 result = builder.photo(
                     file=logoman,
                     link_preview=False,
-                    text=f"** CilikUserbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**★ CilikUserbot Inline Menu ★**\n\n★ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository PocongUserbot",
-                    url="https://t.me/PocongUserbot",
+                    description="Repository CilikUserbot",
+                    url="https://t.me/CilikSupport",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**PocongUserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Pocong](https://t.me/Pocongonlen)\n✣ **Support :** @PocongProject\n✣ **Repository :** [PocongUserbot](https://github.com/poocong/PocongUserbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**CilikUserBot**\n➖➖➖➖➖➖➖➖➖➖\n★ **Owner Repo :** [Grey](https://t.me/greyyvbss)\n★ **Support :** @CilikSupport\n★ **Repository :** [CilikUserbot](https://github.com/grey423/CilikUserbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/PocongUserbot"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/CilikSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/poocong/PocongUserbot"
+                                "ʀᴇᴘᴏ", "https://github.com/grey423/CilikUserbot"
                             ),
                         ],
                     ],
@@ -581,16 +581,16 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✗ PocongUserbot ✗",
-                    description="PocongUserBot | Telethon",
-                    url="https://t.me/PocongUserbot",
+                    title="★ CilikUserbot ★",
+                    description="CilikUserBot | Telethon",
+                    url="https://t.me/CilikSupport",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**PocongUserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Poocongonlen\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**CilikUserBot**\n➖➖➖➖➖➖➖➖➖➖\n★ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n★ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @CilikSupport\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/PocongUserbot"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/CilikSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/poocong/PocongUserbot"
+                                "ʀᴇᴘᴏ", "https://github.com/grey423/CilikUserbot"
                             ),
                         ],
                     ],
@@ -605,7 +605,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✗ PocongUserbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**★ CilikUserbot Inline Menu ★**\n\n★ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
                     file=logoman,
