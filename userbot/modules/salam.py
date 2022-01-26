@@ -7,9 +7,18 @@ from userbot.utils import edit_or_reply, cilik_cmd
 
 @cilik_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, "**Assalamualaikum Dulu Biar Sopan**")
+    await edit_or_reply(event, "**Assalamualaikum Warohmatulohi Wabarokatu*")
 
 
+@cilik_cmd(pattern="^P(?: |$)(.*)")
+async def _(event):
+    await edit_or_reply(event, "**Assalamu'alaikum**")
+    
+@cilik_cmd(pattern="^L(?: |$)(.*)")
+async def _(event):
+    await edit_or_reply(event, "**Wa'alaikumsalam**")
+
+    
 @cilik_cmd(pattern="P(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**Hy kaa 🥺**")
@@ -36,7 +45,7 @@ CMD_HELP.update(
     {
         "salam": f"**Plugin : **`salam`\
         \n\nㅤㅤ•**Syntax** : {cmd}p\
-        \n•**Function : **Assalamualaikum Dulu Biar Sopan..\
+        \n•**Function : **Assalamualaikum Wr Wb..\
         \n\nㅤㅤ•**Syntax** : {cmd}P\
         \n•**Function : **salam Kenal dan salam\
         \n\nㅤㅤ•**Syntax** : {cmd}l\
