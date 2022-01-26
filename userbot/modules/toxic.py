@@ -131,3 +131,5 @@ CMD_HELP.update(
         \n\nㅤㅤ•**Syntax** : {cmd}A-Z\
         \n•**Function : **Kata-Kata Toxic\
     "
+    })
+
