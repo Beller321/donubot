@@ -90,7 +90,12 @@ async def _(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await edit_or_reply(ping, "**PONG!**")
+    xx = await edit_or_reply(ping, "**⭐️**")
+    await xx.edit("**P**")
+    await xx.edit("**Po**")
+    await xx.edit("**Pon**")
+    await xx.edit("**Pong**")
+    await xx.edit("**Pong!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     user = await bot.get_me()
@@ -186,7 +191,7 @@ async def grey(ganteng):
     await ganteng.reply(random.choice(salam))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^grey$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.grey$")
 async def grey(ganteng):
     await ganteng.reply(random.choice(grey))
 
