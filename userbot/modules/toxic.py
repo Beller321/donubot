@@ -1,4 +1,3 @@
-from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
