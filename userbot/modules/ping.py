@@ -35,7 +35,7 @@ salam = [
     
 ]
 
-grey = [
+pacar = [
     "**Kamu mau jadi pacar aku ga?** 💘",
     "**Memek mending sama aku** 😎",
     "**Hai ganteng** 🐷",
@@ -192,7 +192,7 @@ async def grey(ganteng):
 
 @register(incoming=True, from_users=DEVS, pattern=r"^.grey$")
 async def grey(ganteng):
-    await ganteng.reply(random.choice(grey))
+    await ganteng.reply(random.choice(pacar))
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^.roasting$")
