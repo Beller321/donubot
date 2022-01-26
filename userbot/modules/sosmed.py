@@ -1,7 +1,7 @@
 # Port by Koala 🐨/@manuskarakitann
 # Copyright © @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot/>
-# Recode by @Pocongonlen
+# Recode by @greyyvbss
 # Nyenyenye bacot
 
 from telethon import events
@@ -11,10 +11,10 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, poci_cmd
+from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
-@poci_cmd(pattern="sosmed(?: |$)(.*)")
+@cilik_cmd(pattern="sosmed(?: |$)(.*)")
 async def insta(event):
     xxnx = event.pattern_match.group(1)
     if xxnx:
@@ -52,7 +52,7 @@ async def insta(event):
             await xx.delete()
 
 
-@poci_cmd(pattern="dez(?: |$)(.*)")
+@cilik_cmd(pattern="dez(?: |$)(.*)")
 async def DeezLoader(event):
     if event.fwd_from:
         return
