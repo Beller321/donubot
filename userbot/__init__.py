@@ -230,7 +230,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "CilikUserbot")
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "2.3.4")
+BOT_VER = os.environ.get("BOT_VER", "1.0")
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
@@ -522,7 +522,7 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@PocongUserbot"):
+            if event.query.user_id == uid and query.startswith("@CilikSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logoman,
