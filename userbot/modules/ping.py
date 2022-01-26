@@ -102,7 +102,7 @@ async def _(ping):
     await xx.edit(
         f"**Ping** - `%sms`\n"
         f"**Uptime -** `{uptime}` \n"
-        f"**Bot Of :** [{user.first_name}](tg://user?id={user.id})" % (duration)
+        f"**Owner :** [{user.first_name}](tg://user?id={user.id})" % (duration)
     )
 
 
