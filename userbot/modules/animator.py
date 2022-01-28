@@ -215,12 +215,11 @@ async def _(event):
         await event.edit(animation_chars[i % 192])
         
         
- CMD_HELP.update(
-     {
-      "animator": f"Perintah: **animator**\
-      \n**Total Command: 1**\
-      \nJangan Di Pake ini Cuman Gabut\
-      \n\nㅤㅤ•**Syntax**: {cmd}animator\
-      \n•**Function**: __Ngeberudul__"
-      
-})
+CMD_HELP.update(
+    {
+        "animator": f"**Plugin : **`animator`\
+        \n\n  •  **Syntax :** `{cmd}animator`\
+        \n  •  **Function : **Ngeberudul.\
+    "
+    }
+)        
