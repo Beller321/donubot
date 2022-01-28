@@ -86,12 +86,23 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
+
 @cilik_cmd(pattern="ping$")
 async def _(ping):
+    """ For .ping command, ping the userbot from any chat  """
+    start = datetime.now()
+    await pong.edit("`Pong!`")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await pong.edit("`Pong!\n%sms`" % (duration))
+
+    
+@cilik_cmd(pattern="peng$")
+async def _(peng):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    xx = await edit_or_reply(ping, "**★**")
+    xx = await edit_or_reply(peng, "**★**")
     await xx.edit("**P**")
     await xx.edit("**Po**")
     await xx.edit("**Pon**")
@@ -263,6 +274,8 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}pong`\
         \n  •  **Function : **Sama seperti perintah ping\
         \n\n  •  **Syntax :** `{cmd}pung`\
+        \n  •  **Function : **Sama seperti perintah ping\
+        \n\n  •  **Syntax :** `{cmd}peng`\
         \n  •  **Function : **Sama seperti perintah ping\
     "
     }
