@@ -4,7 +4,7 @@
 import asyncio
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, ALIVE_NAME
+from userbot import CMD_HELP, ALIVE_NAME, bot
 from userbot.utils import edit_or_reply, cilik_cmd
 
 
