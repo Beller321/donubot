@@ -91,10 +91,10 @@ async def get_readable_time(seconds: int) -> str:
 async def _(ping):
     """ For .ping command, ping the userbot from any chat  """
     start = datetime.now()
-    await pong.edit("`Pong!`")
+    await ping.edit("`Pong!`")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit("`Pong!\n%sms`" % (duration))
+    await ping.edit("`Pong!\n%sms`" % (duration))
 
     
 @cilik_cmd(pattern="peng$")
