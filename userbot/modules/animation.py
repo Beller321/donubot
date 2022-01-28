@@ -1210,13 +1210,13 @@ async def _(event):
             
 
 
-@bot.on(cilik_cmd(pattern=f"animate$", outgoing=True))
+@bot.on(cilik_cmd(pattern=f"cilik$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
     animation_ttl = range(11)
-    await edit_or_reply(event, "animate")
+    await edit_or_reply(event, "cilik")
     animation_chars = [
         f"⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**{ALIVE_NAME}**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n",
         f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{ALIVE_NAME}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
@@ -1233,8 +1233,24 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval) 
         await event.edit(animation_chars[i%192])
-        
-        
+     
+
+@bot.on(cilik_cmd(pattern=r"city", outgoing=True))
+async def test(event):
+    if event.fwd_from:
+        return
+    await edit_or_reply(event, 
+        """☁☁🌞      ☁           ☁
+       ☁  ✈         ☁    🚁    ☁    ☁        ☁          ☁     ☁   ☁
+🏬🏨🏫🏢🏤🏥🏦🏪🏫
+              🌲/     l🚍\🌳👭
+           🌳/  🚘 l  🏃 \🌴 👬                       👬  🌴/            l  🚔    \🌲
+      🌲/   🚖     l               \
+   🌳/🚶           |   🚍         \ 🌴🚴🚴
+🌴/                    |                     \🌲"""
+    )        
+
+
 CMD_HELP.update(
     {
         "animasi": f"`{cmd}gabut` ; `{cmd}dino`\
@@ -1269,7 +1285,9 @@ CMD_HELP.update(
     \nUsage: liat sendiri\
     \n\n`{cmd}santet`\
     \nUsage: Santet Online Buat Bercanda.\
-    \n\n`{cmd}animate`\
-    \nUsage: Bala kek otak lu."
+    \n\n`{cmd}cilik`\
+    \nUsage: Cilik Userbot.\
+    \n\n`{cmd}city`\
+    \nUsage: Pemandangan Kota."
     }
 )
