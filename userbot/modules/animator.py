@@ -2,13 +2,14 @@
 # @greyyvbss
 
 import asyncio
+import requests
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, ALIVE_NAME, bot
 from userbot.utils import edit_or_reply, cilik_cmd
 
 
-@bot.on(cilik_cmd(outgoing=True, pattern="animator( (.*)|$)"))
+@bot.on(cilik_cmd(outgoing=True, pattern="animator$"))
 async def _(event):
     if event.fwd_from:
         return
