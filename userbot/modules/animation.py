@@ -1208,13 +1208,13 @@ async def _(event):
             
 
 
-@bot.on(cilik_cmd(outgoing=True, pattern=r"bala$"))
+@bot.on(cilik_cmd(pattern=f"animate$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
     animation_ttl = range(11)
-    await edit_or_reply(event, "bala")
+    await edit_or_reply(event, "animate")
     animation_chars = [
         f"⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**{name}**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n",
         f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{name}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
@@ -1267,7 +1267,7 @@ CMD_HELP.update(
     \nUsage: liat sendiri\
     \n\n`{cmd}santet`\
     \nUsage: Santet Online Buat Bercanda.\
-    \n\n`{cmd}bala`\
+    \n\n`{cmd}animate`\
     \nUsage: Bala kek otak lu."
     }
 )
