@@ -4,7 +4,7 @@ from time import sleep
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
 from userbot.events import cilik_cmd
-
+from userbot.utils import edit_or_reply
 
 @bot.on(cilik_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
