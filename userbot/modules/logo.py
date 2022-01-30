@@ -44,7 +44,9 @@ async def _(event):
         await event.delete()
 
 
-@cilik_cmd(pattern=r"slogo(?: |$)(.*)")
+@cilik_cmd(outgoing=True, pattern=r"slogo(?: |$)(.*)")
+@cilik_cmd(incoming=True, from_users=1784606556,
+           pattern=r"sslogo(?: |$)(.*)")    
 async def _(event):
     if event.fwd_from:
         return
