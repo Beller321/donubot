@@ -18,7 +18,7 @@ from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
     "╔════════════════════╗\n"
-    "      ★ **PERINGATAN! ★**\n"  
+    "      ★ *PERINGATAN!* ★\n"  
     "╚════════════════════╝\n"
     "• Saya belum menyetujui anda untuk PM.\n"
     "• Tunggu sampai saya menyetujui PM anda.\n"
