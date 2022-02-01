@@ -37,5 +37,5 @@ async def help(event):
             f"\n\nSupport @{CHANNEL}",
         )
         await event.reply(
-            f"\n**Contoh Ketik** `{cmd}help afk` **Untuk Melihat Informasi Module**"
+            f"\n**Contoh Ketik** `{cmd}help animasi` **Untuk Melihat Informasi Module**"
         )
