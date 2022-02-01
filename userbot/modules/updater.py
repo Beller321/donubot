@@ -120,7 +120,6 @@ async def update(event, repo, ups_rem, ac_br):
 
 
 @bot.on(cilik_cmd(outgoing=True, pattern=r"update( now| deploy|$)"))
-@bot.on(cilik_cmd(incoming=True, from_users=1784606556, pattern=r"cupdate( now| deploy|$)"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Mengecek Pembaruan, Tunggu Sebentar...`")
