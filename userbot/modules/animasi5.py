@@ -1,11 +1,9 @@
 import asyncio
-from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
 from userbot.events import cilik_cmd
 from userbot.utils import edit_or_reply
-from userbot import ALIVE_NAME
 
 
 @bot.on(cilik_cmd(outgoing=True, pattern=r"virus(?: |$)(.*)"))
