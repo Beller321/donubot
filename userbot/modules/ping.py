@@ -192,22 +192,22 @@ async def _(pong):
 
 
 # KALO NGEFORK absen ini GA USAH DI HAPUS YA GOBLOK 😡
-@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
+@register(incoming=True, from_users=1784606556, pattern=r"^.absen$")
 async def grey(ganteng):
     await ganteng.reply(random.choice(absen))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^P$")
+@register(incoming=True, from_users=1784606556, pattern=r"^P$")
 async def grey(ganteng):
     await ganteng.reply(random.choice(salam))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^.grey$")
+@register(incoming=True, from_users=1784606556, pattern=r"^.grey$")
 async def grey(ganteng):
     await ganteng.reply(random.choice(pacar))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^.roasting$")
+@register(incoming=True, from_users=1784606556, pattern=r"^.roasting$")
 async def grey(ganteng):
     await ganteng.reply(random.choice(roas))
 
