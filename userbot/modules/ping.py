@@ -86,15 +86,25 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-
 @cilik_cmd(pattern="ping$")
 async def _(ping):
-    """ For .ping command, ping the userbot from any chat  """
+    """For .ping command, ping the userbot from any chat."""
+    uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await ping.edit("`Pong!`")
+    xx = await edit_or_reply(ping, "**★**")
+    await xx.edit("**★**")
+    await xx.edit("**★★**")
+    await xx.edit("**★★★**")
+    await xx.edit("**◕‿- PONG!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await ping.edit("`Pong!\n%sms`" % (duration))
+    user = await bot.get_me()
+    await xx.edit(
+        f"**PONG!!🏓**\n"
+        f"**Ping** - `%sms`\n"
+        f"**Uptime -** `{uptime}` \n"
+        f"**Owner :** [{user.first_name}](tg://user?id={user.id})" % (duration)
+    )
 
     
 @cilik_cmd(pattern="peng$")
@@ -192,7 +202,7 @@ async def _(pong):
 
 
 # KALO NGEFORK absen ini GA USAH DI HAPUS YA GOBLOK 😡
-@register(incoming=True, from_users=1784606556, pattern=r"^.absen$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
 async def grey(ganteng):
     await ganteng.reply(random.choice(absen))
 
