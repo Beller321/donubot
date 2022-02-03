@@ -11,7 +11,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@cilik_cmd(pattern="igsaver(?: |$)(.*)"))
+@cilik_cmd(pattern="igsaver(?: |$)(.*)")
 async def igsaver(event):
     if event.fwd_from:
         return
