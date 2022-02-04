@@ -157,7 +157,7 @@ async def bot_ver(event):
 
         await edit_or_reply(
             event,
-            "❏ **Userbot Versi :** " f"`{verout}`" "\n❏ **Revisi :** " f"`{revout}`",
+            "✪ **Userbot Versi :** " f"`{verout}`" "\n✪ **Revisi :** " f"`{revout}`",
         )
     else:
         await edit_or_reply(
@@ -171,14 +171,14 @@ async def amireallyalive(alive):
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
         f"**[Cilik-Userbot](https://github.com/grey423/CilikUserbot) is Up and Running.**\n\n"
-        
-        f"┌ **Master     :** [{user.first_name}](tg://user?id={user.id}) \n"
-        f"├ **Modules    :** `{len(modules)} Modules` \n"
-        f"├ **BotVersion :** `{BOT_VER}` \n"
-        f"├ **Python     :** `{python_version()}` \n"
-        f"├ **Pytgcalls  :** `{pytgcalls.__version__}` \n"
-        f"├ **Telethon   :** `{version.__version__}` \n"
-        f"└ **BotUptime  :** `{uptime}` \n\n"
+        f"**{alive_text}**\n\n"
+        f"{emoji} **Master :** [{user.first_name}](tg://user?id={user.id}) \n"
+        f"{emoji} **Module :** `{len(modules)} Modules` \n"
+        f"{emoji} **BotVersion :** `{BOT_VER}` \n"
+        f"{emoji} **Python :** `{python_version()}` \n"
+        f"{emoji} **Pytgcalls :** `{pytgcalls.__version__}` \n"
+        f"{emoji} **Telethon :** `{version.__version__}` \n"
+        f"{emoji} **BotUptime :** `{uptime}` \n\n"
         f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={user.id})**"
     )
     if ALIVE_LOGO:
