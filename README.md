@@ -26,14 +26,13 @@ Bot ini dimaksudkan untuk bersenang-senang sekaligus membantu Anda
 mengelola grup secara efisien dan mengotomatiskan beberapa hal yang membosankan.
 Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 ```
-
+## DEPLOY TO HEROKU
+ 
 <p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=Z3JleTQyMy9DaWxpa1VzZXJib3QgbWFpbg"> <img 
 src="https://img.shields.io/badge/Deploy%20To%20Bot%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 
 <p align="center"><a href="https://t.me/CilikStringBot"><img src="https://img.shields.io/badge/Generate%20String%20Session-blue?style=for-the-flat&logo=telegram" width="210" height"34.45" /</a></p>
-
-<img src="./resources/70f81163393359.5ab4c75066483.gif">
 
 <details>
     <summary> <b>Update and support</b></summary><br/>
