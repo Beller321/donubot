@@ -10,7 +10,7 @@ import random
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterVideo
 from telethon.tl.types import InputMessagesFilterVoice
-
+from telethon.tl.types import InputMessagesFilterPhoto
 
 @cilik_cmd(pattern="asupan$")
 async def _(event):
@@ -56,7 +56,7 @@ async def _(event):
         ayangnya = [
             ayang
             async for ayang in event.client.iter_messages(
-                "@CeweLogoPack", filter=InputMessagesFilterVoice
+                "@CeweLogoPack", filter=InputMessagesFilterPhoto
             )
         ]
         aing = await event.client.get_me()
