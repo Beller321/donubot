@@ -4,7 +4,6 @@ from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, ALIVE_NAME
-from userbot import DEFAULT as me
 from userbot.utils import edit_or_reply, cilik_cmd
 
 
