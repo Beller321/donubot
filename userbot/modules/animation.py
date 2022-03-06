@@ -1,12 +1,10 @@
 import asyncio
 import os
-from random import choice
 from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, ALIVE_NAME
 from userbot import DEFAULT as me
-from userbot.events import register as own
 from userbot.utils import edit_or_reply, cilik_cmd
 
 
