@@ -1122,7 +1122,7 @@ async def _(event):
     await typew.edit("**Target Berhasil Tersantet Online 🥴**")
 
 
-@man_cmd(pattern="nah(?: |$)(.*)")
+@cilik_cmd(pattern="nah(?: |$)(.*)")
 async def _(event):
     typew = await edit_or_reply(
         event, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *Ini Buat Kamu`"
