@@ -356,7 +356,7 @@ async def ungmoot(un_gmute):
         await edit_delete(un_gmute, "**Berhasil! Pengguna Sudah Tidak Dibisukan**")
 
 
-@cilik_cilik(pattern="gmute(?: |$)(.*)")
+@cilik_cmd(pattern="gmute(?: |$)(.*)")
 @register(pattern=r"^\.cgmute(?: |$)(.*)", sudo=True)
 async def gspider(gspdr):
     chat = await gspdr.get_chat()
