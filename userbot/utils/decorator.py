@@ -48,7 +48,7 @@ def cilik_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global man_reg
+        global cilik_reg
         global sudo_reg
         global titit_reg
         if (
@@ -56,20 +56,20 @@ def cilik_cmd(
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            man_reg = sudo_reg = titit_req = re.compile(pattern)
+            cilik_reg = sudo_reg = titit_req = re.compile(pattern)
         else:
-            man_ = "\\" + CMD_HANDLER
+            cilik_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
             titit = "\\" + TITIT_HANDLER
-            man_reg = re.compile(man_ + pattern)
+            cilik_reg = re.compile(cilik_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             titit_reg = re.compile(titit + pattern)
             if command is not None:
-                cmd1 = man_ + command
+                cmd1 = cilik_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (man_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
+                    (cilik_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
                 )
                 cmd2 = (
                     (sudo_ + pattern)
@@ -85,10 +85,10 @@ def cilik_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=man_reg)
+                func, events.MessageEdited(**args, outgoing=True, pattern=cilik_reg)
             )
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=cilik_reg)
         )
         if sempakabri:
             if not disable_edited:
@@ -127,7 +127,7 @@ def cilik_cmd(
     return decorator
 
 
-def man_handler(
+def cilik_handler(
     **args,
 ):
     def decorator(func):
@@ -151,6 +151,15 @@ def asst_cmd(**args):
 
     return decorator
 
+
+def chataction(**args):
+    def decorator(func):
+        if bot:
+            bot.add_event_handler(func, events.ChatAction(**args))
+        return func
+
+    return decorator
+            
 
 def callback(**args):
     """Assistant's callback decorator"""
