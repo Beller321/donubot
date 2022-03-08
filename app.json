@@ -2,8 +2,8 @@
   "name": "Cilik-Userbot",
   "description": "[Cilik-Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
   "logo": "https://telegra.ph/file/ac134f6d295ad0c03af9b.jpg",
-  "keywords": ["telegram", "userbot", "cilikuserbot", "modular", "python"],
-  "repository": "https://github.com/grey423/CilikUserbot",
+  "keywords": ["telegram", "userbot", "cilik-userbot", "modular", "python"],
+  "repository": "https://github.com/grey423/Cilik-Userbot",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -36,13 +36,8 @@
     },
     "BOTLOG_CHATID": {
       "description": "Buatlah grup telegram publik lalu masukan @MissRose_bot ketik /id, masukan id grup nya disini. contoh: -1001473548xxx",
-      "value": "-100",
+      "value": "Isi id grup mu wajib dengan awalan -100",
       "required": true
-    },
-    "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang ngePC kamu, jika Mau di matikan ubah ke False",
-      "value": "True",
-      "required": false
     }
   },
   "addons": [
