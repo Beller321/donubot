@@ -1,313 +1,336 @@
-"""
-Anilist Search Plugin for Userbot
-Usage : .anilist animeName
-By :- @Zero_cool7870
-ported char, airing and manga by @sandy1709 and @mrconfused
-"""
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# you may not use this file except in compliance with the License.
+#
+""" Userbot module containing commands related to android"""
 
-import json
+import asyncio
+import math
+import os
 import re
+import time
 
-import requests
+from aiohttp import ClientSession
+from bs4 import BeautifulSoup
+from requests import get
 
-from userbot import bot
-from userbot.events import cilik_cmd
-from userbot.utils import time_formatter
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot.utils import (
+    chrome,
+    human_to_bytes,
+    humanbytes,
+    cilik_cmd,
+    md5,
+    time_formatter,
+)
+
+GITHUB = "https://github.com"
+DEVICES_DATA = (
+    "https://raw.githubusercontent.com/androidtrackers/"
+    "certified-android-devices/master/by_device.json"
+)
 
 
-def shorten(description, info="anilist.co"):
-    msg = ""
-    if len(description) > 700:
-        description = description[0:200] + "....."
-        msg += f"\n**Description**:\n{description} [Read More]({info})"
-    else:
-        msg += f"\n**Description**: \n   {description}"
-    return (
-        msg.replace("<br>", "")
-        .replace("</br>", "")
-        .replace("<i>", "")
-        .replace("</i>", "")
-        .replace("__", "**")
-    )
-
-
-character_query = """
-    query ($query: String) {
-        Character (search: $query) {
-               id
-               name {
-                     first
-                     last
-                     full
-               }
-               siteUrl
-               image {
-                        large
-               }
-               description
-        }
+@cilik_cmd(pattern="magisk$")
+async def magisk(request):
+    """magisk latest releases"""
+    magisk_dict = {
+        "Stable": "https://raw.githubusercontent.com/topjohnwu/magisk-files/master/stable.json",
+        "Beta": "https://raw.githubusercontent.com/topjohnwu/magisk-files/master/beta.json",
+        "Canary": "https://raw.githubusercontent.com/topjohnwu/magisk-files/master/canary.json",
     }
-"""
-
-airing_query = """
-    query ($id: Int,$search: String) {
-      Media (id: $id, type: ANIME,search: $search) {
-        id
-        episodes
-        title {
-          romaji
-          english
-          native
-        }
-        nextAiringEpisode {
-           airingAt
-           timeUntilAiring
-           episode
-        }
-      }
-    }
-    """
-
-anime_query = """
-   query ($id: Int,$search: String) {
-      Media (id: $id, type: ANIME,search: $search) {
-        id
-        title {
-          romaji
-          english
-          native
-        }
-        description (asHtml: false)
-        startDate{
-            year
-          }
-          episodes
-          season
-          type
-          format
-          status
-          duration
-          siteUrl
-          studios{
-              nodes{
-                   name
-              }
-          }
-          trailer{
-               id
-               site
-               thumbnail
-          }
-          averageScore
-          genres
-          bannerImage
-      }
-    }
-"""
-
-manga_query = """
-query ($id: Int,$search: String) {
-      Media (id: $id, type: MANGA,search: $search) {
-        id
-        title {
-          romaji
-          english
-          native
-        }
-        description (asHtml: false)
-        startDate{
-            year
-          }
-          type
-          format
-          status
-          siteUrl
-          averageScore
-          genres
-          bannerImage
-      }
-    }
-"""
-
-
-async def callAPI(search_str):
-    query = """
-    query ($id: Int,$search: String) {
-      Media (id: $id, type: ANIME,search: $search) {
-        id
-        title {
-          romaji
-          english
-        }
-        description (asHtml: false)
-        startDate{
-            year
-          }
-          episodes
-          chapters
-          volumes
-          season
-          type
-          format
-          status
-          duration
-          averageScore
-          genres
-          bannerImage
-      }
-    }
-    """
-    variables = {"search": search_str}
-    url = "https://graphql.anilist.co"
-    response = requests.post(url, json={"query": query, "variables": variables})
-    return response.text
-
-
-async def formatJSON(outData):
-    msg = ""
-    jsonData = json.loads(outData)
-    res = list(jsonData.keys())
-    if "errors" in res:
-        msg += f"**Error** : `{jsonData['errors'][0]['message']}`"
-        return msg
-    jsonData = jsonData["data"]["Media"]
-    if "bannerImage" in jsonData.keys():
-        msg += f"[〽️]({jsonData['bannerImage']})"
-    else:
-        msg += "〽️"
-    title = jsonData["title"]["romaji"]
-    link = f"https://anilist.co/anime/{jsonData['id']}"
-    msg += f"[{title}]({link})"
-    msg += f"\n\n**Type** : {jsonData['format']}"
-    msg += "\n**Genres** : "
-    for g in jsonData["genres"]:
-        msg += g + " "
-    msg += f"\n**Status** : {jsonData['status']}"
-    msg += f"\n**Episode** : {jsonData['episodes']}"
-    msg += f"\n**Year** : {jsonData['startDate']['year']}"
-    msg += f"\n**Score** : {jsonData['averageScore']}"
-    msg += f"\n**Duration** : {jsonData['duration']} min\n\n"
-    # https://t.me/catuserbot_support/19496
-    cat = f"{jsonData['description']}"
-    msg += " __" + re.sub("<br>", "\n", cat) + "__"
-    return msg
-
-
-url = "https://graphql.anilist.co"
-
-
-@bot.on(cilik_cmd(outgoing=True, pattern=r"anichar ?(.*)"))
-async def anilist(event):
-    search = event.pattern_match.group(1)
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
-    variables = {"query": search}
-    json = (
-        requests.post(url, json={"query": character_query, "variables": variables})
-        .json()["data"]
-        .get("Character", None)
-    )
-    if json:
-        msg = f"**{json.get('name').get('full')}**\n"
-        description = f"{json['description']}"
-        site_url = json.get("siteUrl")
-        msg += shorten(description, site_url)
-        image = json.get("image", None)
-        if image:
-            image = image.get("large")
-            await event.delete()
-            await bot.send_file(
-                event.chat_id, image, caption=msg, parse_mode="md", reply_to=reply_to_id
-            )
-        else:
-            await event.edit(msg)
-    else:
-        await event.edit("Sorry, No such results")
-
-
-@bot.on(cilik_cmd(outgoing=True, pattern=r"airing ?(.*)"))
-async def anilist(event):
-    search = event.pattern_match.group(1)
-    variables = {"search": search}
-    response = requests.post(
-        url, json={"query": airing_query, "variables": variables}
-    ).json()["data"]["Media"]
-    ms_g = f"**Name**: **{response['title']['romaji']}**(`{response['title']['native']}`)\n**ID**: `{response['id']}`"
-    if response["nextAiringEpisode"]:
-        airing_time = response["nextAiringEpisode"]["timeUntilAiring"] * 1000
-        airing_time_final = time_formatter(airing_time)
-        ms_g += f"\n**Episode**: `{response['nextAiringEpisode']['episode']}`\n**Airing In**: `{airing_time_final}`"
-    else:
-        ms_g += f"\n**Episode**:{response['episodes']}\n**Status**: `N/A`"
-    await event.edit(ms_g)
-
-
-@bot.on(cilik_cmd(outgoing=True, pattern=r"animanga ?(.*)"))
-async def anilist(event):
-    search = event.pattern_match.group(1)
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
-    variables = {"search": search}
-    json = (
-        requests.post(url, json={"query": manga_query, "variables": variables})
-        .json()["data"]
-        .get("Media", None)
-    )
-    ms_g = ""
-    if json:
-        title, title_native = json["title"].get("romaji", False), json["title"].get(
-            "native", False
-        )
-        start_date, status, score = (
-            json["startDate"].get("year", False),
-            json.get("status", False),
-            json.get("averageScore", False),
-        )
-        if title:
-            ms_g += f"**{title}**"
-            if title_native:
-                ms_g += f"(`{title_native}`)"
-        if start_date:
-            ms_g += f"\n**Start Date** - `{start_date}`"
-        if status:
-            ms_g += f"\n**Status** - `{status}`"
-        if score:
-            ms_g += f"\n**Score** - `{score}`"
-        ms_g += "\n**Genres** - "
-        for x in json.get("genres", []):
-            ms_g += f"{x}, "
-        ms_g = ms_g[:-2]
-        image = json.get("bannerImage", False)
-        ms_g += f"_{json.get('description', None)}_"
-        ms_g = (
-            ms_g.replace("<br>", "")
-            .replace("</br>", "")
-            .replace("<i>", "")
-            .replace("</i>", "")
-        )
-        if image:
-            try:
-                await bot.send_file(
-                    event.chat_id,
-                    image,
-                    caption=ms_g,
-                    parse_mode="md",
-                    reply_to=reply_to_id,
+    releases = "**Latest Magisk Releases :**\n"
+    async with ClientSession() as ses:
+        for name, release_url in magisk_dict.items():
+            async with ses.get(release_url) as resp:
+                data = await resp.json(content_type="text/plain")
+                version = data["magisk"]["version"]
+                version_code = data["magisk"]["versionCode"]
+                note = data["magisk"]["note"]
+                url = data["magisk"]["link"]
+                releases += (
+                    f"**{name}** - __v{version} ({version_code})__ : "
+                    f"[APK]({url}) | [Note]({note})\n"
                 )
-                await event.delete()
-            except BaseException:
-                ms_g += f" [〽️]({image})"
-                await event.edit(ms_g)
+    await request.edit(releases)
+
+
+@cilik_cmd(pattern=r"device(?: |$)(\S*)")
+async def device_info(request):
+    """get android device basic info from its codename"""
+    textx = await request.get_reply_message()
+    device = request.pattern_match.group(1)
+    if device:
+        pass
+    elif textx:
+        device = textx.text
+    else:
+        return await request.edit("`Usage: .device <codename> / <model>`")
+    try:
+        found = get(DEVICES_DATA).json()[device]
+    except KeyError:
+        reply = f"`Couldn't find info about {device}!`\n"
+    else:
+        reply = f"Search results for {device}:\n\n"
+        for item in found:
+            brand = item["brand"]
+            name = item["name"]
+            codename = device
+            model = item["model"]
+            reply += (
+                f"{brand} {name}\n"
+                f"**Codename**: `{codename}`\n"
+                f"**Model**: {model}\n\n"
+            )
+    await request.edit(reply)
+
+
+@cilik_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)")
+async def codename_info(request):
+    """search for android codename"""
+    textx = await request.get_reply_message()
+    brand = request.pattern_match.group(1).lower()
+    device = request.pattern_match.group(2).lower()
+    if brand and device:
+        pass
+    elif textx:
+        brand = textx.text.split(" ")[0]
+        device = " ".join(textx.text.split(" ")[1:])
+    else:
+        return await request.edit("`Usage: .codename <brand> <device>`")
+    found = [
+        i
+        for i in get(DEVICES_DATA).json()
+        if i["brand"].lower() == brand and device in i["name"].lower()
+    ]
+    if len(found) > 8:
+        found = found[:8]
+    if found:
+        reply = f"Search results for {brand.capitalize()} {device.capitalize()}:\n\n"
+        for item in found:
+            brand = item["brand"]
+            name = item["name"]
+            codename = item["device"]
+            model = item["model"]
+            reply += (
+                f"{brand} {name}\n"
+                f"**Codename**: `{codename}`\n"
+                f"**Model**: {model}\n\n"
+            )
+    else:
+        reply = f"`Couldn't find {device} codename!`\n"
+    await request.edit(reply)
+
+
+@cilik_cmd(pattern="pixeldl(?: |$)(.*)")
+async def download_api(dl):
+    await dl.edit("`Collecting information...`")
+    URL = dl.pattern_match.group(1)
+    URL_MSG = await dl.get_reply_message()
+    if URL:
+        pass
+    elif URL_MSG:
+        URL = URL_MSG.text
+    else:
+        await dl.edit("`Empty information...`")
+        return
+    if not re.findall(r"\bhttps?://download.*pixelexperience.*\.org\S+", URL):
+        await dl.edit("`Invalid information...`")
+        return
+    driver = await chrome()
+    await dl.edit("`Getting information...`")
+    driver.get(URL)
+    error = driver.find_elements_by_class_name("swal2-content")
+    if len(error) > 0 and error[0].text == "File Not Found.":
+        await dl.edit(f"`FileNotFoundError`: {URL} is not found.")
+        return
+    datas = driver.find_elements_by_class_name("download__meta")
+    """ - enumerate data to make sure we download the matched version - """
+    md5_origin = None
+    i = None
+    for index, value in enumerate(datas):
+        for data in value.text.split("\n"):
+            if data.startswith("MD5"):
+                md5_origin = data.split(":")[1].strip()
+                i = index
+                break
+        if md5_origin is not None and i is not None:
+            break
+    if md5_origin is None and i is None:
+        await dl.edit("`There is no match version available...`")
+    file_name = URL.split("/")[-2] if URL.endswith("/") else URL.split("/")[-1]
+    file_path = TEMP_DOWNLOAD_DIRECTORY + file_name
+    download = driver.find_elements_by_class_name("download__btn")[i]
+    download.click()
+    await dl.edit("`Starting download...`")
+    file_size = human_to_bytes(download.text.split(None, 2)[-1].strip("()"))
+    display_message = None
+    complete = False
+    start = time.time()
+    while not complete:
+        if os.path.isfile(file_path + ".crdownload"):
+            try:
+                downloaded = os.stat(file_path + ".crdownload").st_size
+                status = "Downloading"
+            except OSError:  # Rare case
+                await asyncio.sleep(1)
+                continue
+        elif os.path.isfile(file_path):
+            downloaded = os.stat(file_path).st_size
+            file_size = downloaded
+            status = "Checking"
         else:
-            await event.edit(ms_g)
+            await asyncio.sleep(0.3)
+            continue
+        diff = time.time() - start
+        percentage = downloaded / file_size * 100
+        speed = round(downloaded / diff, 2)
+        eta = round((file_size - downloaded) / speed)
+        prog_str = "`{0}` | [{1}{2}] `{3}%`".format(
+            status,
+            "".join("●" for i in range(math.floor(percentage / 10))),
+            "".join("○" for i in range(10 - math.floor(percentage / 10))),
+            round(percentage, 2),
+        )
+
+        current_message = (
+            "`[DOWNLOAD]`\n\n"
+            f"`{file_name}`\n"
+            f"`Status`\n{prog_str}\n"
+            f"`{humanbytes(downloaded)} of {humanbytes(file_size)}"
+            f" @ {humanbytes(speed)}`\n"
+            f"`ETA` -> {time_formatter(eta)}"
+        )
+        if (
+            round(diff % 15.00) == 0
+            and display_message != current_message
+            or (downloaded == file_size)
+        ):
+            await dl.edit(current_message)
+            display_message = current_message
+        if downloaded == file_size:
+            if not os.path.isfile(file_path):  # Rare case
+                await asyncio.sleep(1)
+                continue
+            MD5 = await md5(file_path)
+            if md5_origin == MD5:
+                complete = True
+            else:
+                await dl.edit("`Download corrupt...`")
+                os.remove(file_path)
+                driver.quit()
+                return
+    await dl.respond(f"`{file_name}`\n\n" f"Successfully downloaded to `{file_path}`.")
+    await dl.delete()
+    driver.quit()
+    return
 
 
-@bot.on(cilik_cmd(outgoing=True, pattern=r"anilist ?(.*)"))
-async def anilist(event):
-    input_str = event.pattern_match.group(1)
-    event = await event.edit("Searching...")
-    result = await callAPI(input_str)
-    msg = await formatJSON(result)
-    await event.edit(msg, link_preview=True)
+@cilik_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")
+async def devices_specifications(request):
+    """Mobile devices specifications"""
+    textx = await request.get_reply_message()
+    brand = request.pattern_match.group(1).lower()
+    device = request.pattern_match.group(2).lower()
+    if brand and device:
+        pass
+    elif textx:
+        brand = textx.text.split(" ")[0]
+        device = " ".join(textx.text.split(" ")[1:])
+    else:
+        return await request.edit("`Usage: .specs <brand> <device>`")
+    all_brands = (
+        BeautifulSoup(
+            get("https://www.devicespecifications.com/en/brand-more").content, "lxml"
+        )
+        .find("div", {"class": "brand-listing-container-news"})
+        .findAll("a")
+    )
+    brand_page_url = None
+    try:
+        brand_page_url = [
+            i["href"] for i in all_brands if brand == i.text.strip().lower()
+        ][0]
+    except IndexError:
+        await request.edit(f"`{brand} is unknown brand!`")
+    devices = BeautifulSoup(get(brand_page_url).content, "lxml").findAll(
+        "div", {"class": "model-listing-container-80"}
+    )
+    device_page_url = None
+    try:
+        device_page_url = [
+            i.a["href"]
+            for i in BeautifulSoup(str(devices), "lxml").findAll("h3")
+            if device in i.text.strip().lower()
+        ]
+    except IndexError:
+        await request.edit(f"`can't find {device}!`")
+    if len(device_page_url) > 2:
+        device_page_url = device_page_url[:2]
+    reply = ""
+    for url in device_page_url:
+        info = BeautifulSoup(get(url).content, "lxml")
+        reply = "\n**" + info.title.text.split("-")[0].strip() + "**\n\n"
+        info = info.find("div", {"id": "model-brief-specifications"})
+        specifications = re.findall(r"<b>.*?<br/>", str(info))
+        for item in specifications:
+            title = re.findall(r"<b>(.*?)</b>", item)[0].strip()
+            data = (
+                re.findall(r"</b>: (.*?)<br/>", item)[0]
+                .replace("<b>", "")
+                .replace("</b>", "")
+                .strip()
+            )
+            reply += f"**{title}**: {data}\n"
+    await request.edit(reply)
+
+
+@cilik_cmd(pattern=r"twrp(?: |$)(\S*)")
+async def twrp(request):
+    """get android device twrp"""
+    textx = await request.get_reply_message()
+    device = request.pattern_match.group(1)
+    if device:
+        pass
+    elif textx:
+        device = textx.text.split(" ")[0]
+    else:
+        return await request.edit("`Usage: .twrp <codename>`")
+    url = get(f"https://dl.twrp.me/{device}/")
+    if url.status_code == 404:
+        reply = f"`Couldn't find twrp downloads for {device}!`\n"
+        return await request.edit(reply)
+    page = BeautifulSoup(url.content, "lxml")
+    download = page.find("table").find("tr").find("a")
+    dl_link = f"https://dl.twrp.me{download['href']}"
+    dl_file = download.text
+    size = page.find("span", {"class": "filesize"}).text
+    date = page.find("em").text.strip()
+    reply = (
+        f"**Latest TWRP for {device}:**\n"
+        f"[{dl_file}]({dl_link}) - __{size}__\n"
+        f"**Updated:** __{date}__\n"
+    )
+    await request.edit(reply)
+
+
+CMD_HELP.update(
+    {
+        "android": f"**Plugin : **`android`\
+        \n\n  •  **Syntax :** `{cmd}magisk`\
+        \n  •  **Function : **Dapatkan rilis Magisk terbaru \
+        \n\n  •  **Syntax :** `{cmd}device <codename>`\
+        \n  •  **Function : **Dapatkan info tentang nama kode atau model perangkat android. \
+        \n\n  •  **Syntax :** `{cmd}codename <brand> <device>`\
+        \n  •  **Function : **Cari nama kode perangkat android. \
+        \n\n  •  **Syntax :** `{cmd}pixeldl` **<download.pixelexperience.org>**\
+        \n  •  **Function : **Unduh ROM pengalaman piksel ke server bot pengguna Anda. \
+        \n\n  •  **Syntax :** `{cmd}specs <brand> <device>`\
+        \n  •  **Function : **Dapatkan info spesifikasi perangkat. \
+        \n\n  •  **Syntax :** `{cmd}twrp <codename>`\
+        \n  •  **Function : **Dapatkan unduhan twrp terbaru untuk perangkat android. \
+    "
+    }
+)
