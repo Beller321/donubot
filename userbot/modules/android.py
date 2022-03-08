@@ -5,7 +5,6 @@
 #
 """ Userbot module containing commands related to android"""
 
-
 import asyncio
 import math
 import os
@@ -229,7 +228,7 @@ async def download_api(dl):
     return
 
 
-@cilik_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")\s\S]*)"))
+@cilik_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")
 async def devices_specifications(request):
     """Mobile devices specifications"""
     textx = await request.get_reply_message()
