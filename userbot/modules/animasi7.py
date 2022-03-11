@@ -12,7 +12,7 @@ async def _(event):
     animation_interval = 0.5
     animation_ttl = range(11)
     event = await edit_or_reply(event, "Cilik-Userbot....")
-    animations_chars = [
+    animation_chars = [
         "⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n",
         "⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
         "⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n",
@@ -53,7 +53,7 @@ async def _(event):
     animation_interval = 0.5
     animation_ttl = range(14)
     event = await edit_or_reply(event, "Wait for plane...")
-    animations_chars = [
+    animation_chars = [
         "✈-------------",
         "-✈------------",
         "--✈-----------",
