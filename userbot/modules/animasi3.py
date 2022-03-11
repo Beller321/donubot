@@ -109,11 +109,11 @@ CMD_HELP.update(
         \n └✪ **Function : **Mengirim Gambar Monyet.\
         \n\n ┌✪ **Command :** `{cmd}hem`\
         \n └✪ **Function : **Mengirim Gambar Anjing Mencurigakan.\
-        \n\n ┌✪ **Syntax :** `{cmd}wle`\
+        \n\n ┌✪ **Command :** `{cmd}wle`\
         \n └✪ **Function : **Mengirim Gambar Anjing Melet.\
-        \n\n ┌✪ **Syntax :** `{cmd}peler`\
+        \n\n ┌✪ **Command :** `{cmd}peler`\
         \n └✪ **Function : **Mengirim Gambar Peler.\
-        \n\n ┌✪ **Syntax :** `{cmd}ahh`\
+        \n\n ┌✪ **Command :** `{cmd}ahh`\
         \n └✪ **Function : **Mengirim Gambar Uhh Ahh Uhh Ahh.\
     "
     }
