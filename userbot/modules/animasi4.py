@@ -89,7 +89,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "animasi3": f"➢ **Plugin : **`animasi3`\
+        "animasi4": f"➢ **Plugin : **`animasi4`\
         \n\n ┌✪ **Command :** `{cmd}sadboy`\
         \n └✪ **Function : **Kata-kata bocah sadboy.\
         \n\n ┌✪ **Command :** `{cmd}punten`\
