@@ -97,6 +97,7 @@ CMD_HELP.update(
         \n\n ┌✪ **Command :** `{cmd}pantau`\
         \n └✪ **Function : **Mengirim Gambar Pantau.\
         \n\n ┌✪ **Command :** `{cmd}idiot`\
-        \n └✪ **Function : **Mengirim Gambar Idiot.\"
+        \n └✪ **Function : **Mengirim Gambar Idiot.\
+    "
     }
 )
