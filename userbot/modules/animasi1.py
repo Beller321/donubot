@@ -39,7 +39,7 @@ async def _(event):
     await xx.edit("kalian **Kontol**")
 
 
-@cilik_cmd(pattern="Phe(?: |$)(.*)")
+@cilik_cmd(pattern="pe(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**ga usah sok keras deh bg**")
     sleep(2)
@@ -149,95 +149,9 @@ async def _(event):
     await xx.edit("`Aku Sayang Kamu`")
     sleep(1)
     await xx.edit("`I LOVE YOU 💞`")
-    
-    
-@cilik_cmd(pattern="hujan(?: |$)(.*)")
-async def _(event):
-    xx = await edit_or_reply(event, f"`H`")
-    await xx.edit("`Hm`")
-    await xx.edit("`Hmm`")
-    await xx.edit("`Hmmm`")
-    await xx.edit("`Hmmmm`")
-    await xx.edit("`Hmmmmm`")
-    sleep(2)
-    await xx.edit("`Hujan Hujan Gini Ange😔`")
-    sleep(2)
-    await xx.edit("`Enaknya Coli🤤`")
-    sleep(1)
-    await xx.edit("`8✊===D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8===✊D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8✊===D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8===✊D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8✊===D`")
-    sleep(2)
-    await xx.edit("`Ahhh🤤`")
-    sleep(1)
-    await xx.edit("`8✊===D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8===✊D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8✊===D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8===✊D`")
-    await xx.edit("`8==✊=D`")
-    await xx.edit("`8=✊==D`")
-    await xx.edit("`8✊===D`")
-    await xx.edit("`crotss💦`")
-    await xx.edit("`crotss💦💦`")
-    await xx.edit("`crotss💦💦💦🤤`")
-    sleep(2)
-    await xx.edit("`H`")
-    await xx.edit("`Hm`")
-    await xx.edit("`Hmm`")
-    await xx.edit("`Hmmm😔`")
-    sleep(2)
-    await xx.edit("`Ini Untuk Yang Terkahir`")
-    sleep(2)
-    await xx.edit("`Kenapa Ya Gw Coli Tadi😔`")
-    sleep(2)
-    await xx.edit("`Dah la besok besok ga mau lagi`")
-
-    
-@cilik_cmd(pattern="ange(?: |$)(.*)")
-async def _(event):
-    xx = await edit_or_reply(event, f"`Ayanggggg😖`")
-    sleep(1)
-    await xx.edit("`Ange😫`")
-    sleep(1)
-    await xx.edit("`Ayukkk Ewean Ayanggg🤤`")
 
 
-@cilik_cmd(pattern="engas(?: |$)(.*)")
-async def _(event):
-    xx = await edit_or_reply(event, f"Udah nggak kuat nahan")
-    sleep(1)
-    await xx.edit("Pengen gitu-gituan")
-    sleep(1)
-    await xx.edit("Ayo cepat masukkan")
-    sleep(1)
-    await xx.edit("Jangan lama - lama")
-    sleep(1)
-    await xx.edit("Pliss cobain")
-    sleep(1)
-    await xx.edit("Jangan di nanti - nanti")
-    sleep(1)
-    await xx.edit("Ayo kita happy")
-    sleep(1)
-    await xx.edit("Tapi pake pengaman")
-  
-
-@cilik_cmd(pattern="dahla(?: |$)(.*)")
+@cilik_cmd(pattern="dahlah(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**`Ayo Menyerah`**")
     sleep(2)
@@ -255,23 +169,6 @@ async def _(event):
     await xx.edit("Gamau nyoba?")
 
 
-# Nih buat lo yang sangean anjg.
-
-@cilik_cmd(pattern="vc(?: |$)(.*)")
-async def _(event):
-    xx = await edit_or_reply(event, f"Kaa 🥺")
-    sleep(2)
-    await xx.edit("Temenin vc col*🥺 ")
-    sleep(2)
-    await xx.edit("Yuu kak temenin :( ")
-    sleep(2)
-    await xx.edit("Lagi tegang nihh")
-    sleep(2)
-    await xx.edit("Bentar doang ko 🥺")
-    sleep(2)
-    await xx.edit("Nanti aku tf deh janjii")
-
-    
 #P o c o n g U s e r b o t
 #Ini Tercipta Hasil kegabutan ku Doang
 #Jadi Ga Usah Bacot Ngentod
@@ -279,42 +176,26 @@ async def _(event):
     
 CMD_HELP.update(
     {
-    "animasi1": f"**Perintah**: **animasi1**\
-    \n**Total Command: 8**\
-    \n\nㅤㅤ•**Syntax**: {cmd}hai\
-    \n•**Function**: __Cosplay Nissa Sablon__\
-    \n\nㅤㅤ•**Syntax**: {cmd}kntl\
-    \n•**Function**: __Kalian kntl__\
-    \n\nㅤㅤ•**Syntax**: {cmd}alay\
-    \n•**Function**: __Lumayanlah Buat Nyindir__\
-    \n\nㅤㅤ•**Syntax**: {cmd}phe / {cmd}Phe\
-    \n•**Function**: __Jagoan tele__\
-    \n\nㅤㅤ•**Syntax**: {cmd}ehm\
-    \n•**Function**: __Eum Biasalah cewe mau nya call mulu__\
-    \n\nㅤㅤ•**Syntax**: {cmd}lopu\
-    \n•**Function**: __Nyatakan Cinta Ke Cewe Orng__\
-    \n\nㅤㅤ•**Syntax**: {cmd}dahlah\
-    \n•**Function**: __Cek Aja dh sndri__\
-    \n\nㅤㅤ•**Syntax**: {cmd}jawa\
-    \n•**Function**: __Jawa Pride Ni Bos.__"
+    "animasi1": f"➢ **Plugin : **`animasi1`\
+    \n\n ┌✪ **Command :** `{cmd}hai`\
+    \n └✪ **Function : ** Cosplay Nissa Sablon\
+    \n\n ┌✪ **Command :** `{cmd}kntl`\
+    \n └✪ **Function : **Kalian kntl\
+    \n\n ┌✪ **Command :** `{cmd}alay`\
+    \n └✪ **Function : ** Lumayanlah Buat Nyindir\
+    \n\n ┌✪ **Command :** `{cmd}phe / {cmd}pe`\
+    \n └✪ **Function : ** Jagoan tele\
+    \n\n ┌✪ **Command :** `{cmd}ehm`\
+    \n └✪ **Function : ** Eum Biasalah cewe mau nya call mulu\
+    \n\n ┌✪ **Command :** `{cmd}lopyu`\
+    \n └✪ **Function : ** Nyatakan Cinta Ke Cewe Orng\
+    \n\n ┌✪ **Command :** `{cmd}dahlah`\
+    \n └✪ **Function : ** Cek Aja dh sndri\
+    \n\n ┌✪ **Command :** `{cmd}jawa`\
+    \n └✪ **Function : ** Jawa Pride Ni Bos.\
+    \n\n ┌✪ **Command :** `{cmd}erpe`\
+    \n └✪ **Function : ** Ngatain Bocah Erpe."
 
-   
+ 
 })
-
-CMD_HELP.update(
-    {
-    "animasi2": f"Perintah: **animasi2**\
-    \n**Total Command: 4**\
-    \nNih buat lo yg sangean anjg\
-    \n\nㅤㅤ•**Syntax**: {cmd}hujan\
-    \n•**Function**: __Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus__\
-    \n\nㅤㅤ•**Syntax**: {cmd}engas\
-    \n•**Function**: __Sange berat__\
-    \n\nㅤㅤ•**Syntax**: {cmd}ange\
-    \n•**Function**: __Ketik Ini Kalo Lu Lagi Sange__\
-    \n\nㅤㅤ•**Syntax**: {cmd}vc\
-    \n•**Function**: __Buat ngajakin kakak cantik vcs🥺__"
-    
-})
-   
 
