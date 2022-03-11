@@ -318,19 +318,19 @@ async def twrp(request):
 
 CMD_HELP.update(
     {
-        "android": f"**Plugin : **`android`\
-        \n\n  •  **Syntax :** `{cmd}magisk`\
-        \n  •  **Function : **Dapatkan rilis Magisk terbaru \
-        \n\n  •  **Syntax :** `{cmd}device <codename>`\
-        \n  •  **Function : **Dapatkan info tentang nama kode atau model perangkat android. \
-        \n\n  •  **Syntax :** `{cmd}codename <brand> <device>`\
-        \n  •  **Function : **Cari nama kode perangkat android. \
-        \n\n  •  **Syntax :** `{cmd}pixeldl` **<download.pixelexperience.org>**\
-        \n  •  **Function : **Unduh ROM pengalaman piksel ke server bot pengguna Anda. \
-        \n\n  •  **Syntax :** `{cmd}specs <brand> <device>`\
-        \n  •  **Function : **Dapatkan info spesifikasi perangkat. \
-        \n\n  •  **Syntax :** `{cmd}twrp <codename>`\
-        \n  •  **Function : **Dapatkan unduhan twrp terbaru untuk perangkat android. \
+        "android": f"**➢ Plugin : **`android`\
+        \n\n ┌✪ **Command :** `{cmd}magisk`\
+        \n └✪ **Function : **Dapatkan rilis Magisk terbaru \
+        \n\n ┌✪ **Command :** `{cmd}device <codename>`\
+        \n └✪ **Function : **Dapatkan info tentang nama kode atau model perangkat android. \
+        \n\n ┌✪ **Command :** `{cmd}codename <brand> <device>`\
+        \n └✪ **Function : **Cari nama kode perangkat android. \
+        \n\n ┌✪ **Command :** `{cmd}pixeldl` **<download.pixelexperience.org>**\
+        \n └✪ **Function : **Unduh ROM pengalaman piksel ke server bot pengguna Anda. \
+        \n\n ┌✪ **Command :** `{cmd}specs <brand> <device>`\
+        \n └✪ **Function : **Dapatkan info spesifikasi perangkat. \
+        \n\n ┌✪ **Command :** `{cmd}twrp <codename>`\
+        \n └✪ **Function : **Dapatkan unduhan twrp terbaru untuk perangkat android. \
     "
     }
 )
