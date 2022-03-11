@@ -89,6 +89,6 @@ CMD_HELP.update(
         \n └✪ **Function : **Mengirim Gambar Gajah.\
         \n\n ┌✪ **Command :** `{cmd}liat`\
         \n └✪ **Function : **Mengirim Gambar Liatin Aja.\    
-      "
+        "
     }
 )
