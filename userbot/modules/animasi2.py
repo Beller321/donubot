@@ -89,15 +89,15 @@ async def _(event):
 
 CMD_HELP.update(
     {
-    "animasi3": f"➢ **Plugin : **`animasi3`\
-    \n\n ┌✪ **Command :** `{cmd}sadboy`\
-    \n └✪ **Function : **Kata-kata bocah sadboy.\
-    \n\n ┌✪ **Command :** `{cmd}punten`\
-    \n └✪ **Function : **Mengirim Gambar Punten.\
-    \n\n ┌✪ **Command :** `{cmd}pantau`\
-    \n └✪ **Function : **Mengirim Gambar Pantau.\
-    \n\n ┌✪ **Command :** `{cmd}idiot`\
-    \n └✪ **Function : **Mengirim Gambar Idiot.\
+        "animasi3": f"➢ **Plugin : **`animasi3`\
+        \n\n ┌✪ **Command :** `{cmd}sadboy`\
+        \n └✪ **Function : **Kata-kata bocah sadboy.\
+        \n\n ┌✪ **Command :** `{cmd}punten`\
+        \n └✪ **Function : **Mengirim Gambar Punten.\
+        \n\n ┌✪ **Command :** `{cmd}pantau`\
+        \n └✪ **Function : **Mengirim Gambar Pantau.\
+        \n\n ┌✪ **Command :** `{cmd}idiot`\
+        \n └✪ **Function : **Mengirim Gambar Idiot.\
     "
     }
 )
