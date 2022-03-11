@@ -104,7 +104,7 @@ async def _(event):
    
 CMD_HELP.update(
     {
-        "animasi4": f"➢ **Plugin : **`animasi4`\
+        "animasi3": f"➢ **Plugin : **`animasi3`\
         \n\n ┌✪ **Command :** `{cmd}heu`\
         \n └✪ **Function : **Mengirim Gambar Monyet.\
         \n\n ┌✪ **Command :** `{cmd}hem`\
