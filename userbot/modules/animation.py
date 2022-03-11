@@ -1188,5 +1188,6 @@ CMD_HELP.update(
     \nUsage: liat sendiri\
     \n\n`{cmd}santet`\
     \nUsage: Santet Online Buat Bercanda.\
+    "
     }
 )
