@@ -100,10 +100,10 @@ async def _(typew):
 CMD_HELP.update(
     {
         "animasi4": f"**Plugin : **`animasi4`\
-        \n\n  •  **Syntax :** `{cmd}heu`\
-        \n  •  **Function : **Mengirim Gambar Monyet.\
-        \n\n  •  **Syntax :** `{cmd}hem`\
-        \n  •  **Function : **Mengirim Gambar Anjing Mencurigakan.\
+        \n\n  ┌✪ **Command :** `{cmd}heu`\
+        \n  └✪ **Function : **Mengirim Gambar Monyet.\
+        \n\n  ✪  **Command :** `{cmd}hem`\
+        \n  ⤹  **Function : **Mengirim Gambar Anjing Mencurigakan.\
         \n\n  •  **Syntax :** `{cmd}wle`\
         \n  •  **Function : **Mengirim Gambar Anjing Melet.\
         \n\n  •  **Syntax :** `{cmd}peler`\
