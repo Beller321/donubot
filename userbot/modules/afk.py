@@ -160,35 +160,35 @@ async def _(event):
                     await event.client.send_message(event.chat_id, file=pic)
                     await event.client.send_message(
                         event.chat_id,
-                        f"\n**★ {owner} Telah AFK ★**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n**➣ {owner} Telah AFK **\n**✦҈͜͡➳ Karena :** `{reason}`",
                     )
                 else:
                     await event.client.send_message(
                         event.chat_id,
-                        f"\n**★ {owner} Telah AFK ★**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n**➣ {owner} Telah AFK **\n**✦҈͜͡➳ Karena :** `{reason}`",
                         file=pic,
                     )
             except BaseException:
                 await event.client.send_message(
                     event.chat_id,
-                    f"\n**★ {owner} Telah AFK ★**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                    f"\n**➣ {owner} Telah AFK **\n**✦҈͜͡➳ Karena :** `{reason}`",
                 )
         else:
             try:
                 if pic.endswith((".tgs", ".webp")):
                     await event.client.send_message(event.chat_id, file=pic)
                     await event.client.send_message(
-                        event.chat_id, f"**★ {owner} Telah AFK ★**"
+                        event.chat_id, f"**➣ {owner} Telah AFK **"
                     )
                 else:
                     await event.client.send_message(
                         event.chat_id,
-                        f"**★ {owner} Telah AFK ★**",
+                        f"**➣ {owner} Telah AFK **",
                         file=pic,
                     )
             except BaseException:
                 await event.client.send_message(
-                    event.chat_id, f"**★ {owner} Telah AFK ★**"
+                    event.chat_id, f"**➣ {owner} Telah AFK **"
                 )
         await event.delete()
         try:
@@ -197,34 +197,34 @@ async def _(event):
                     await event.client.send_message(BOTLOG_CHATID, file=pic)
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"\n**★ {owner} Sedang AFK ★**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n**➣ {owner} Sedang AFK **\n**✦҈͜͡➳ Karena :** `{reason}`",
                     )
                 else:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"\n**★ {owner} Sedang AFK ★**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n**➣ {owner} Sedang AFK **\n**✦҈͜͡➳ Karena :** `{reason}`",
                         file=pic,
                     )
             elif reason:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"\n**★ {owner} Sedang AFK ★**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                    f"\n**➣ {owner} Sedang AFK **\n**✦҈͜͡➳ Karena :** `{reason}`",
                 )
             elif pic:
                 if pic.endswith((".tgs", ".webp")):
                     await event.client.send_message(BOTLOG_CHATID, file=pic)
                     await event.client.send_message(
-                        BOTLOG_CHATID, f"\n**★ {owner} Sedang AFK ★**"
+                        BOTLOG_CHATID, f"\n**➣ {owner} Sedang AFK **"
                     )
                 else:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"\n**★ {owner} Sedang AFK ★**",
+                        f"\n**➣ {owner} Sedang AFK **",
                         file=pic,
                     )
             else:
                 await event.client.send_message(
-                    BOTLOG_CHATID, f"\n**★ {owner} Sedang AFK ★**"
+                    BOTLOG_CHATID, f"\n**➣ {owner} Sedang AFK **"
                 )
         except Exception as e:
             BOTLOG_CHATIDger.warn(str(e))
@@ -232,11 +232,11 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "afk": f"**Plugin : **`afk`\
-        \n\n  •  **Syntax :** `{cmd}afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
-        \n  •  **Function : **Memberi tahu kalau Master sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
-        \n\n  •  **Syntax :** `{cmd}off`\
-        \n  •  **Function : **Memberi tahu kalau Master sedang OFFLINE, dan menguubah nama belakang menjadi 【 OFF 】 \
+        "afk": f"**➢ Plugin : **`afk`\
+        \n\n ┌✪ **Command  :** `{cmd}afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
+        \n └✪ **Function : **Memberi tahu kalau Master sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
+        \n\n ┌✪ **Command  :** `{cmd}off`\
+        \n └✪ **Function : **Memberi tahu kalau Master sedang OFFLINE, dan menguubah nama belakang menjadi 【 OFF 】 \
     "
     }
 )
