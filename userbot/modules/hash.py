@@ -75,7 +75,7 @@ async def endecrypt(query):
 
 CMD_HELP.update(
     {
-        "hash": f"**Plugin : **`hash`\
+        "hash": f"**Plugiin : **`hash`\
         \n\n  •  **Syntax :** `{cmd}hash`\
         \n  •  **Function : **Untuk menemukan md5, sha1, sha256, sha512 dari string tersebut saat ditulis ke dalam file txt.\
     "
