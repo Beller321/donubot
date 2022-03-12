@@ -91,22 +91,23 @@ if CONFIG_CHECK:
     )
     sys.exit(1)
 
+#DEVS
 
-while 0 < 6:
-    _DEVS = get(
-        "https://raw.githubusercontent.com/grey423/Reforestation/master/DEVS.json"
-    )
-    if _DEVS.status_code != 200:
-        if 0 != 5:
-            continue
-        else:
-            DEVS = [1784606556, 844432220, 1675900974, 1783401893, 1593802955, 1979717764]
-            break
-    DEVS = _DEVS.json()
-    break
+DEVS = (
+    1784606556, 
+    844432220,
+    1820233416, 
+    1883126074, 
+    1977874449, 
+    2077108390,
+    5016617030,
+    2028793128, 
+    2077828117,
+    2127265501,
+    1416529201,
+)
 
-del _DEVS
-
+  
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "1784606556").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
