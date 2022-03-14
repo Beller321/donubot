@@ -18,9 +18,8 @@
 #    From Flicks-Userbot
 #    <t.me/TheFlicksUserbot>
 
-import os
 
-from userbot import ALIVE_NAME, BOT_USERNAME, CMD_HELP, CMD_HANDLER, CMD_LIST, bot, tgbot
+from userbot import BOT_USERNAME, CMD_HELP, bot
 from userbot.utils import cilik_cmd
 
 user = bot.get_me()
