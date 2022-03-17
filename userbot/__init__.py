@@ -212,7 +212,7 @@ ALIVE_NAME = os.environ.get("ALIVE_NAME", "Cilik-Userbot")
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "✪")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "🚀")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "🍭")
 
 # Custom icon HELP
 ICON_HELP = os.environ.get("ICON_HELP", "✪")
@@ -387,7 +387,7 @@ else:
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 6
+    number_of_rows = 4
     number_of_cols = 2
     global looters
     looters = page_number
@@ -673,7 +673,7 @@ with bot:
                         .replace("`", "")
                         .replace("**", "")[:150]
                         + "..."
-                        + "\n\nBaca Teks Berikutnya Ketik .help "
+                        + "\n\n**Baca Teks Berikutnya Ketik .help** "
                         + modul_name
                         + " "
                     )
