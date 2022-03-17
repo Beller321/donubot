@@ -29,7 +29,7 @@ CUSTOM_HELP_EMOJI = "⚡"
 
 
 
-@cilik_cmd(pattern="help ?(.*)")
+@cilik_cmd(pattern="help(?: |$)(.*)")
 async def cmd_list(event):
     args = event.pattern_match.group(1).lower()
     if args:
