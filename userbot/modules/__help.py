@@ -48,5 +48,5 @@ async def cmd_list(event):
             await event.delete()
         except BaseException:
             await event.edit(
-                f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode.**"
+                f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode. Untuk Mengaktifkanya silahkan ketik .helpme**"
             )
