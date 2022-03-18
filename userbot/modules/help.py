@@ -20,11 +20,10 @@ from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
-from userbot import CHANNEL
 from userbot import BOT_USERNAME
 from userbot import CMD_HANDLER as cmd
-from userbot import bot, ICON_HELP
-from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
+from userbot import bot
+from userbot.utils import edit_or_reply, cilik_cmd
 
 
 @cilik_cmd(pattern="helpme")
@@ -76,31 +75,3 @@ async def _(event):
         )
 
 
-modules = CMD_HELP
-
-@cilik_cmd(pattern="shelp(?: |$)(.*)")
-async def help(event):
-    """For help command"""
-    args = event.pattern_match.group(1).lower()
-    if args:
-        if args in CMD_HELP:
-            await edit_or_reply(event, str(CMD_HELP[args]))
-        else:
-            await edit_delete(event, f"`{args}` **Module yang lu cari gada.**")
-    else:
-        user = await bot.get_me()
-        string = ""
-        for i in CMD_HELP:
-            string += "`" + str(i)
-            string += f"`\t\t\t{ICON_HELP}\t\t\t"
-        await edit_or_reply(
-            event,
-            f"**✦ Daftar Perintah [Cilik-Userbot](https://github.com/grey423/CilikUserbot):**\n"
-            f"**✦ Jumlah** `{len(modules)}` **Modules**\n"
-            f"**✦ Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
-            f"{ICON_HELP}   {string}"
-            f"\n\nSupport @{CHANNEL}",
-        )
-        await event.reply(
-            f"\n**Contoh Ketik** `{cmd}help animasi` **Untuk Melihat Informasi Module**"
-        )
