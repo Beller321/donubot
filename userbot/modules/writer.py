@@ -5,7 +5,7 @@ from userbot.utils import cilik_cmd, edit_or_reply, edit_delete, text_set
 
 
 
-@cilik_cmd(pattern="writer(?: |$)(.*)")
+@cilik_cmd(pattern="write(?: |$)(.*)")
 async def writer(event):
     if event.reply_to:
         reply = await event.get_reply_message()
