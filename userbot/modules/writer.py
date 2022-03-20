@@ -1,3 +1,7 @@
+# from ultroid
+# © @greyyvbss
+# ⚠️ Don't Remove Credits
+
 import os
 
 from PIL import Image, ImageDraw, ImageFont
@@ -29,3 +33,13 @@ async def writer(event):
     await event.reply(file=file)
     os.remove(file)
     await k.delete()
+
+
+cmd_help.update(
+    {
+        "writer": f"**plugin : **`writer`\
+        \n\n  •  **syntax :** `{cmd}write` <text>\
+        \n  •  **function : **menulis Teks Di buku ,buat Lu Yang mager nulis\
+    "
+    }
+)
