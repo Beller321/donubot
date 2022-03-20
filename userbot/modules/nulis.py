@@ -37,7 +37,7 @@ async def writer(event):
 
 CMD_HELP.update(
     {
-        "writer": f"**plugin : **`nulis`\
+        "nulis": f"**plugin : **`nulis`\
         \n\n  •  **syntax :** `{cmd}nulis` <text>\
         \n  •  **function : **menulis Teks Di buku ,buat Lu Yang mager nulis\
     "
