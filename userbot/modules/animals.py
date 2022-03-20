@@ -27,6 +27,18 @@ async def cats(event):
     await xx.delete()
 
 
+@cilik_cmd(pattern="meme$")
+async def memes(event):
+    xx = await edit_or_reply(event, "`Processing...`")
+    response = requests.get("https://api.wibusoft.com/api/subreddit/memes").json()
+    if not response:
+        await event.edit("**Tidak bisa menemukan Gambar Meme.**")
+        return
+    await event.client.send_message(entity=event.chat_id, file=response[0])
+    await xx.delete()
+
+
+
 CMD_HELP.update(
     {
         "animals": f"**➢ Plugin : **`animals`\
