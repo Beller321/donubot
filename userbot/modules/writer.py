@@ -1,7 +1,7 @@
 import os
 
 from PIL import Image, ImageDraw, ImageFont
-from userbot.utils import cilik_cmd, edit_delete, text_set
+from userbot.utils import cilik_cmd, edit_or_reply, edit_delete, text_set
 
 
 
@@ -13,8 +13,8 @@ async def writer(event):
     elif event.pattern_match.group(1).strip():
         text = event.text.split(maxsplit=1)[1]
     else:
-        return await edit_delete(event, "Berikan Beberapa Teks Juga")
-    k = await event.edit_or_reply("Sedang Memproses..")
+        return await edit_delete(event, "Berikan Beberapa Teks")
+    k = await edit_or_reply(event, "Sedang Memproses..")
     img = Image.open("resources/kertas.jpg")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("resources/assfont.ttf", 30)
