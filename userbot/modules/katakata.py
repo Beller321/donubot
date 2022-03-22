@@ -82,6 +82,16 @@ async def _(event):
     )
     await event.delete()
 
+    
+@cilik_cmd(pattern="active(?: |$)(.*)")
+async def _(event):
+    await event.client.send_message(
+        event.chat_id,
+        "✅ Cilik Userbot Activated ✅",
+        reply_to=event.reply_to_msg_id,
+    )
+    await event.delete()
+
 
 @cilik_cmd(pattern="so(?: |$)(.*)")
 async def _(event):
