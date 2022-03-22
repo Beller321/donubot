@@ -8,7 +8,7 @@ from userbot.utils import edit_or_reply, cilik_cmd
 
 @cilik_cmd(pattern="a(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, "**ANJAY ADA GIPEAWAY NIH**")
+    await edit_or_reply(event, "**Assalamualaikum kak ,apakah ada Giveaway???**")
 
 
 @cilik_cmd(pattern="b(?: |$)(.*)")
