@@ -1,9 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-# You can find misc modules, which dont fit in anything xD
-# Copyright (C) 2022 @mrismanaziz
-# ReCode by @greyyvbss
 
 import io
 import os
@@ -88,7 +82,7 @@ async def reedme(event):
     await edit_or_reply(
         event,
         "**Berikut sesuatu untuk kamu baca:**\n"
-        "\n┌❏ [Userbot Repo](https://github.com/grey423/CilikUserbot/blob/PocongUserbot/README.md)"
+        "\n┌❏ [Userbot Repo](https://github.com/grey423/CilikUserbot/blob/CilikUserbot/README.md)"
         "\n└❏ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)",
     )
 
@@ -113,8 +107,8 @@ async def repo_is_here(event):
     await xx.edit(
         f"**Hey**, Saya Menggunakan  **Cilik Userbot** \n\n"
         f"┌❏ **UserbotVersion :** `{BOT_VER}@{branch}`\n"
-        f"├❏ **GroupSupport :** [Cilik Userbot](t.me/CilikSupport)\n"
-        f"├❏ **Channel  :** [Cilik Userbot](t.me/greyyvbss)\n"
+        f"├❏ **GroupSupport :** [Cilik Support](t.me/CilikSupport)\n"
+        f"├❏ **Channel  :** [Cilik Project](t.me/greyyvbss)\n"
         f"├❏ **OwnerRepo :** [Grey](t.me/greyyvbss)\n"
         f"└❏ **Repo :** [Cilik Userbot](https://github.com/grey423/CilikUserbot)\n"
     )
@@ -126,9 +120,7 @@ async def string_is_here(event):
         event,
         "**List Bot**\n"
         "\n┌❏ **GET STRING BOT:**"
-        "\n├❏ [[ KLIK DISINI ]](https://t.me/CilikStringbot)"
-        "\n├❏ **GET API ID & API HASH :**"
-        "\n└❏ [[ KLIK DISINI ]](https://t.me/pocongscrapbot)",
+        "\n└❏ [[ KLIK DISINI ]](https://t.me/CilikStringbot)",
     )
 
 
