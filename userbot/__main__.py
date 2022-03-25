@@ -14,8 +14,17 @@ import sys
 from importlib import import_module
 
 import requests
+from telethon.tl.functions.channels import InviteToChannelRequest as memek
 from pytgcalls import idle
-from userbot import BOTLOG_CHATID, BOT_TOKEN, BOT_VER
+from userbot import (
+    BOTLOG_CHATID,
+    BOT_USERNAME,
+    BOT_TOKEN,
+    BOT_VER,
+    LOGS,
+    bot,
+    call_py,
+)
 from userbot import CMD_HANDLER as cmd
 from userbot import LOGS, bot, call_py
 from userbot.modules import ALL_MODULES
@@ -57,11 +66,14 @@ async def cilik_userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"🔥 **Cilik-Userbot Berhasil Di Aktifkan** 🔥\n━━━━━━━━━━\n➠ **Userbot Version -** `{BOT_VER}`\n➠ **Ketik** `{cmd}ping` **untuk Mengecheck Bot**\n━━━━━━━━━━",
+                f"✨ **Cilik Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 1.1 @Cilik-Userbot\n➠ **Ketik** `.ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @CilikProject ",
             )
     except Exception as e:
         LOGS.info(str(e))
-    
+    try:
+        await bot(memek(int(BOTLOG_CHATID), [BOT_USERNAME]))
+    except BaseException:
+        pass          
 
 bot.loop.run_until_complete(checking())
 bot.loop.run_until_complete(cilik_userbot_on())
