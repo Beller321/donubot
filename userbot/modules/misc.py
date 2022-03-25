@@ -82,8 +82,8 @@ async def reedme(event):
     await edit_or_reply(
         event,
         "**Berikut sesuatu untuk kamu baca:**\n"
-        "\n┌❏ [Userbot Repo](https://github.com/grey423/CilikUserbot/blob/CilikUserbot/README.md)"
-        "\n└❏ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)",
+        "\n┌✪ [Userbot Repo](https://github.com/grey423/CilikUserbot/blob/CilikUserbot/README.md)"
+        "\n└✪ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)",
     )
 
 
@@ -105,22 +105,21 @@ async def repeat(event):
 async def repo_is_here(event):
     xx = await edit_or_reply(event, "`Processing...`")
     await xx.edit(
-        f"**Hey**, Saya Menggunakan  **Cilik Userbot** \n\n"
-        f"┌❏ **UserbotVersion :** `{BOT_VER}@{branch}`\n"
-        f"├❏ **GroupSupport :** [Cilik Support](t.me/CilikSupport)\n"
-        f"├❏ **Channel  :** [Cilik Project](t.me/greyyvbss)\n"
-        f"├❏ **OwnerRepo :** [Grey](t.me/greyyvbss)\n"
-        f"└❏ **Repo :** [Cilik Userbot](https://github.com/grey423/CilikUserbot)\n"
+        "**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n"
+        "𝗥𝗲𝗽𝗼 🇮🇩\n"
+        "╰⎆ [𝐂𝐈𝐋𝐈𝐊-𝐔𝐒𝐄𝐑𝐁𝐎𝐓​](https://github.com/grey423/CilikUserbot)\n"
+        "✪ **Oᴡɴᴇʀ​** ⎆ [Grey](t.me/greyyvbss)\n"
+        "✪ **Sᴜᴘᴘᴏʀᴛ**​ ⎆ [groups](t.me/CilikSupport)\n"
     )
-
+               
 
 @cilik_cmd(pattern="string$")
 async def string_is_here(event):
     await edit_or_reply(
         event,
         "**List Bot**\n"
-        "\n┌❏ **GET STRING BOT:**"
-        "\n└❏ [[ KLIK DISINI ]](https://t.me/CilikStringbot)",
+        "\n┌✪ **GET STRING BOT:**"
+        "\n└✪ [[ KLIK DISINI ]](https://t.me/CilikStringbot)",
     )
 
 
@@ -286,11 +285,11 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "repo": f"**Plugin : **`Repository PocongUserbot`\
+        "repo": f"**Plugin : **`Repository CilikUserbot`\
         \n\n  •  **Syntax :** `{cmd}repo`\
-        \n  •  **Function : **Menampilan link Repository PocongUserbot\
+        \n  •  **Function : **Menampilan link Repository CilikUserbot\
         \n\n  •  **Syntax :** `{cmd}string`\
-        \n  •  **Function : **Menampilan link String PocongUserbot\
+        \n  •  **Function : **Menampilan link String CilikUserbot\
     "
     }
 )
@@ -314,7 +313,7 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}shutdown`\
         \n  •  **Function : **Mematikan Userbot.\
         \n\n  •  **Syntax :** `{cmd} sleep`\
-        \n  •  **Function : **Biarkan PocongUserbot tidur selama waktu yg ditetapkan.\
+        \n  •  **Function : **Biarkan CilikUsebot tidur selama waktu yg ditetapkan.\
     "
     }
 )
