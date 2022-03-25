@@ -189,11 +189,11 @@ async def dyno_usage(dyno):
 
         await xx.edit(
             "**Informasi Dyno Heroku**:\n\n"
-            f"❏ `Penggunaan Dyno`  **{app.name}**:\n"
+            f"🍭 `Penggunaan Dyno`  **{app.name}**:\n"
             f"     •  **{AppHours} hour(s), "
             f"{AppMinutes} minute(s) - {AppPercentage}%**"
             "\n\n"
-            "❏ `Dyno yang tersisa bulan ini` :\n"
+            "🍭 `Dyno yang tersisa bulan ini` :\n"
             f"     • **{hours} hour(s), {minutes} minute(s) "
             f"-  {percentage}%**\n\n"
             f" **Sisa Dyno Heroku** `{day}` **Hari Lagi**"
@@ -206,10 +206,10 @@ async def fake_dyno(event):
     xx = await edit_or_reply(event, "`Processing...`")
     await xx.edit(
         "**Informasi Dyno Heroku**:\n\n"
-        f"❏ **Penggunaan Dyno** **{app.name}**:\n"
+        f"🍭 **Penggunaan Dyno** **{app.name}**:\n"
         f"    •**0 hour(s) - "
         f"0%**\n\n"
-        "❏ **Sisa Dyno bulan ini**:\n"
+        "🍭 **Sisa Dyno bulan ini**:\n"
         f"    •**1000 hour(s) - 100%**"
     )
 
