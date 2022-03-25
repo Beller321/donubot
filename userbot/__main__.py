@@ -14,6 +14,7 @@ import sys
 from importlib import import_module
 
 import requests
+from telethon.tl.functions.channels import JoinChannelRequest as kontol
 from telethon.tl.functions.channels import InviteToChannelRequest as memek
 from pytgcalls import idle
 from userbot import (
@@ -73,6 +74,11 @@ async def cilik_userbot_on():
         await bot(memek(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass          
+    try:
+        await bot(kontol("@CilikSupport"))
+    except BaseException:
+        pass
+
 
 bot.loop.run_until_complete(checking())
 bot.loop.run_until_complete(cilik_userbot_on())
