@@ -90,7 +90,6 @@ async def _(event):
         "✅ Cilik Userbot Activated ✅",
         reply_to=event.reply_to_msg_id,
     )
-    await event.delete()
 
 
 @cilik_cmd(pattern="so(?: |$)(.*)")
