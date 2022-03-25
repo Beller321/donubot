@@ -11,27 +11,18 @@ from random import randint
 
 import heroku3
 from telethon.errors import (
-    BotMethodInvalidError,
-    ChannelPrivateError,
     ChannelsTooMuchError,
-    ChatAdminRequiredError,
-    UserNotParticipantError,
 )
 from telethon.tl.functions.channels import (
     CreateChannelRequest,
-    EditAdminRequest,
     EditPhotoRequest,
-    InviteToChannelRequest,
-    JoinChannelRequest,
 )
 from telethon.tl.functions.contacts import UnblockRequest
 from telethon.tl.types import (
     ChatAdminRights,
     ChatPhotoEmpty,
     InputChatUploadedPhoto,
-    InputMessagesFilterDocument,
 )
-from telethon.utils import get_peer_id
 
 from userbot import (
     BOT_TOKEN,
