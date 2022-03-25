@@ -54,8 +54,8 @@ LOGS.info(f"Cilik-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]"
 
           
 async def cilik_userbot_on():
-    try:
-        if BOTLOG_CHATID != 0:
+     try:
+         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
                 f"🔥 **Cilik-Userbot Berhasil Di Aktifkan** 🔥\n━━━━━━━━━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}ping` **untuk Mengecheck Bot**\n━━━━━━━━━━",
