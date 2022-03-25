@@ -78,29 +78,13 @@ async def get_user_from_event(
 
 
 async def checking():
-    cilik = str(pybase64.b64decode("QENpbGlrUHJvamVjdA=="))[2:13]
-    xcilik = str(pybase64.b64decode("QENpbGlrU3VwcG9ydA=="))[2:17]
-    userbot = str(pybase64.b64decode("QGZyaWVuZHNoaXBzdGVsZWdyYW0="))[2:13]
-    xuserbot = str(pybase64.b64decode("QGFzdXBhbmNpbGlrYm90"))[2:17]
+    gocheck = str(pybase64.b64decode("QENpbGlrUHJvamVjdA=="))[2:17]
+    checker = str(pybase64.b64decode("QENpbGlrU3VwcG9ydA=="))[2:15]
     try:
-        await bot(Grey(userbot))
+        await bot(Grey(gocheck))
     except BaseException:
         pass
     try:
-        await bot(Grey(xuserbot))
-    except BaseException:
-        pass
-
-async def waiting():
-    cilik = str(pybase64.b64decode("QENpbGlrUHJvamVjdA=="))[2:13]
-    xcilik = str(pybase64.b64decode("QENpbGlrU3VwcG9ydA=="))[2:17]
-    userbot = str(pybase64.b64decode("QGZyaWVuZHNoaXBzdGVsZWdyYW0="))[2:13]
-    xuserbot = str(pybase64.b64decode("QGFzdXBhbmNpbGlrYm90"))[2:17]
-    try:
-        await bot(Grey(cilik))
-    except BaseException:
-        pass
-    try:
-        await bot(Grey(xcilik))
+        await bot(Grey(checker))
     except BaseException:
         pass
