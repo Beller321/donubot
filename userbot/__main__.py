@@ -14,7 +14,8 @@ import sys
 from importlib import import_module
 
 import requests
-from telethon.tl.functions.channels import InviteToChannelRequest as Addbot
+from pytgcalls import idle
+from telethon.tl.functions.channels import InviteToChannelRequest
 from userbot import BOTLOG_CHATID, BOT_TOKEN, BOT_VER
 from userbot import LOGS, bot, call_py
 from userbot.modules import ALL_MODULES
@@ -58,18 +59,18 @@ async def check_alive():
     except Exception as e:
         LOGS.info(str(e))
     try:
-        await bot(Addbot(int(BOTLOG_CHATID), [BOT_USERNAME]))
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
 
-bot.loop.run_until_complete(checking())
 bot.loop.run_until_complete(check_alive())
 if not BOT_TOKEN:
     LOGS.info(
         "BOT_TOKEN Vars tidak terisi, Memulai Membuat BOT Otomatis di @Botfather..."
     )
     bot.loop.run_until_complete(autobot())
-
+    bot.loop.run_until_complete(checking())
+idle()
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
