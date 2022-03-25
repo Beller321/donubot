@@ -47,15 +47,19 @@ if not BOTLOG_CHATID:
     bot.loop.run_until_complete(autopilot())
 
 LOGS.info(
-    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/CilikSupport")
-LOGS.info(
-    f"✨Cilik-Userbot✨ ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
+    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/CilikSupport"
+)
 
+LOGS.info(f"Cilik-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]"    
 
-async def check_alive():
+          
+async def cilik_userbot_on():
     try:
         if BOTLOG_CHATID != 0:
-            await bot.send_message(BOTLOG_CHATID, "✨ **Cilik Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 1.1@Cilik-Userbot\n➠ **Ketik** `.ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @CilikProject ")
+            await bot.send_message(
+                BOTLOG_CHATID,
+                f"🔥 **Cilik-Userbot Berhasil Di Aktifkan** 🔥\n━━━━━━━━━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}ping` **untuk Mengecheck Bot**\n━━━━━━━━━━",
+            )
     except Exception as e:
         LOGS.info(str(e))
     try:
@@ -63,13 +67,15 @@ async def check_alive():
     except BaseException:
         pass
 
-bot.loop.run_until_complete(check_alive())
+    
+    
+bot.loop.run_until_complete(checking())
+bot.loop.run_until_complete(cilik_userbot_on())
 if not BOT_TOKEN:
     LOGS.info(
         "BOT_TOKEN Vars tidak terisi, Memulai Membuat BOT Otomatis di @Botfather..."
     )
     bot.loop.run_until_complete(autobot())
-    bot.loop.run_until_complete(checking())
 idle()
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
