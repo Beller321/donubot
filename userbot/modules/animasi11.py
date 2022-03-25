@@ -183,6 +183,25 @@ async def _(event):
         "❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️\n")    
     
     
+@cilik_cmd(pattern="em(?: |$)(.*)")
+async def _(event):
+    await event.client.send_message(
+        event.chat_id,
+        "╔╦╦╦╦╦╦╦╦╦╦╦╦╗\n"
+        "╠╬╬╬╬╬╬╬╬╬╬╬╬╣\n"
+        "╠╬╬╬╬╬╬╬╬╬╬╬╬╣\n"
+        "╠╬╬█╬╬╬╬╬╬█╬╬╣\n"
+        "╠╬╬╬╬╬╬╬╬╬╬╬╬╣\n"
+        "╠╬╬╬╬╬╬╬╬╬╬╬╬╣\n"
+        "╠╬█╬╬╬╬╬╬╬╬█╬╣\n"
+        "╠╬██████████╬╣\n"
+        "╠╬╬╬╬╬╬╬╬╬╬╬╬╣\n"
+        "╚╩╩╩╩╩╩╩╩╩╩╩╩╝\n",
+        reply_to=event.reply_to_msg_id,
+    )
+    await event.delete()
+
+       
 CMD_HELP.update(
     {
         "animasi11": f"➢ **Plugin : **`animasi11`\
@@ -190,6 +209,8 @@ CMD_HELP.update(
         \n └✪ **Function : **Mengirim Gambar Lonte.\
         \n\n ┌✪ **Command :** `{cmd}uler`\
         \n └✪ **Function : **Mengirim Gambar Uler.\
+        \n\n ┌✪ **Command :** `{cmd}em`\
+        \n └✪ **Function : **Mengirim Gambar Emote senyum.\
         \n\n ┌✪ **Command :** `{cmd}loveyou`\
         \n └✪ **Function : **Mengirim Gambar I Love You.\
     "
