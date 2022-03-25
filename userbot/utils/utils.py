@@ -88,7 +88,7 @@ async def autopilot():
     try:
         r = await bot(
             CreateChannelRequest(
-                title="Cilik Logs",
+                title="𝐂𝐢𝐥𝐢𝐤-𝐋𝐨𝐠𝐬",
                 about="Cilik Logs Userbot\n\n Join @CilikProject",
                 megagroup=True,
             ),
@@ -118,19 +118,8 @@ async def autopilot():
         anonymous=False,
         manage_call=True,
     )
-    if isinstance(chat.photo, ChatPhotoEmpty):
-        photo = await download_file(
-            "https://telegra.ph/file/27c6812becf6f376cbb10.jpg", "channelphoto.jpg"
-        )
-        ll = await bot.upload_file(photo)
-        try:
-            await bot(
-                EditPhotoRequest(int(channel), InputChatUploadedPhoto(ll))
-            )
-        except BaseException as er:
-            LOGS.exception(er)
-        os.remove(photo)
 
+    
 async def autobot():
     if BOT_TOKEN:
         return
