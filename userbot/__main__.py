@@ -57,7 +57,7 @@ async def cilik_userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"🔥 **Cilik-Userbot Berhasil Di Aktifkan** 🔥\n━━\n➠ **Userbot Version -** `{BOT_VER}`\n➠ **Ketik** `{cmd}alive` **Untuk Mengecek Bot**\n━━",
+                f"🔥 **Cilik-Userbot Berhasil Di Aktifkan** 🔥\n━━━━━━━━━━\n➠ **Userbot Version -** `{BOT_VER}`\n➠ **Ketik** `{cmd}ping` **untuk Mengecheck Bot**\n━━━━━━━━━━",
             )
     except Exception as e:
         LOGS.info(str(e))
