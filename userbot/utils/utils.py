@@ -22,7 +22,6 @@ from telethon.tl.types import (
     ChatAdminRights,
     ChatPhotoEmpty,
     InputChatUploadedPhoto,
-    InputMessagesFilterDocument,
 )
 
 from userbot import (
