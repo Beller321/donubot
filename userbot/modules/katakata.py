@@ -92,7 +92,7 @@ async def _(event):
     )
 
     
-@cilik_cmd(pattern="🖕(?: |$)(.*)")
+@cilik_cmd(pattern="fucek(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
