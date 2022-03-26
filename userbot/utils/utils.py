@@ -20,7 +20,6 @@ from telethon.tl.functions.channels import (
 from telethon.tl.functions.contacts import UnblockRequest
 from telethon.tl.types import (
     ChatAdminRights,
-    ChatPhotoEmpty,
     InputChatUploadedPhoto,
 )
 
