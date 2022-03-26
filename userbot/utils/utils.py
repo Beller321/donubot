@@ -118,12 +118,12 @@ async def autopilot():
         anonymous=False,
         manage_call=True,
     )
-    if isinstance(chat.photo, ChatPhotoEmpty):
+    if foto:
         photo = "userbot/resources/logo.jpg"
         ll = await bot.upload_file(photo)
         try:
             await bot(
-                EditPhotoRequest(int(channel), InputChatUploadedPhoto(ll))
+                EditPhotoRequest(int("BOTLOG_CHATID"), InputChatUploadedPhoto(ll))
             )
         except BaseException as er:
             LOGS.exception(er)
