@@ -1,4 +1,4 @@
-FROM mrismanaziz/man-userbot:buster
+FROM greycilik/cilikuserbot:buster
 
 RUN git clone -b CilikUserbot https://github.com/grey423/CilikUserbot /home/cilikuserbot/ \
     && chmod 777 /home/cilikuserbot \
