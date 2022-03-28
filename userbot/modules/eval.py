@@ -19,7 +19,7 @@ from userbot.utils import cilik_cmd
 p, pp = print, pprint
 
 
-@cilik_cmd(pattern="eval|+(?:\s|$)([\s\S]*)")
+@cilik_cmd(pattern="eval(?:\s|$)([\s\S]*)")
 async def _(event):
     expression = event.pattern_match.group(1)
     if not expression:
