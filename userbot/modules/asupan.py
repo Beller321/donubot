@@ -37,7 +37,7 @@ async def _(event):
         desahnya = [
             desah
             async for desah in event.client.iter_messages(
-                "@DESAHANFCE", filter=InputMessagesFilterVoice
+                "@punyakenkan", filter=InputMessagesFilterVoice
             )
         ]
         aing = await event.client.get_me()
@@ -71,13 +71,13 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "asupan": f"**Plugin : **asupan\
-        \n\n  •  **Syntax :** {cmd}asupan\
-        \n  •  **Function : **Untuk Mengirim video asupan secara random.\
-        \n\n  •  **Syntax :** {cmd}ayang\
-        \n  •  **Function : **Untuk Mencari Ayang.\
-        \n\n  •  **Syntax :** {cmd}desah\
-        \n  •  **Function : **Untuk Mengirim voice desah secara random.\
+        "asupan": f"**➢ Plugin : **asupan\
+        \n\n ┌✪ **Syntax :** {cmd}asupan\
+        \n └✪ **Function : **Untuk Mengirim video asupan secara random.\
+        \n\n ┌✪ **Syntax :** {cmd}ayang\
+        \n └✪ **Function : **Untuk Mencari Ayang.\
+        \n\n ┌✪ **Syntax :** {cmd}desah\
+        \n └✪ **Function : **Untuk Mengirim voice desah secara random.\
     "
     }
 )
