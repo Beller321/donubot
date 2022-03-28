@@ -112,13 +112,13 @@ CMD_HELP.update(
     {
     "animasi2": f"➢ **Plugin : **`animasi2`\
     \nNih buat lo yg sangean anjg\
-    \n\n ┌✪ **Command :**{cmd}hujan\
+    \n\n ┌✪ **Syntax :**{cmd}hujan\
     \n └✪ **Function :** Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus\
-    \n\n ┌✪ **Command :** {cmd}engas\
+    \n\n ┌✪ **Syntax :** {cmd}engas\
     \n └✪ **Function :** Sange berat\
-    \n\n ┌✪ **Command :** {cmd}ange\
+    \n\n ┌✪ **Syntax :** {cmd}ange\
     \n └✪ **Function :** Ketik Ini Kalo Lu Lagi Sange\
-    \n\n ┌✪ **Command :** {cmd}vc\
+    \n\n ┌✪ **Syntax :** {cmd}vc\
     \n └✪ **Function :** Buat ngajakin kakak cantik vcs🥺"
     
 })
