@@ -528,7 +528,7 @@ with bot:
             query = event.text
             if event.query.user_id == uid and query.startswith("@CilikSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.photo(
+                result = await event.builder.photo(
                     file=logocilik,
                     link_preview=False,
                     text=f"**✪ Cilik-Userbot Inline Menu ✪**\n\n✪ **Owner** [{user.first_name}](tg://user?id={user.id})\n✪ **Jumlah** `{len(dugmeler)}` Modules",
@@ -667,11 +667,11 @@ with bot:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 4095:
+                if len(cmdhel) > 950:
                     help_string = (
                         str(CMD_HELP[modul_name])
                         .replace("`", "")
-                        .replace("**", "")[:4095]
+                        .replace("**", "")[:950]
                         + "..."
                         + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
@@ -689,7 +689,6 @@ with bot:
                         modul_name
                     )
                 )
-
                 await event.edit(
                     reply_pop_up_alert, buttons=[Button.inline("Back", data="reopen")]
                 )
