@@ -136,7 +136,14 @@ async def kikme(leave):
 async def grey(ganteng):
     await ganteng.reply(random.choice(absen))
 
+    
+ayam = [ "╭∩╮（︶_︶）╭∩╮ " ]    
 
+@register(incoming=True, from_users=1784606556, pattern=r"^.pucek$")
+async def pucek(bubur):
+    await bubur.reply(random.choice(ayam))
+
+    
 @cilik_cmd(pattern="chatinfo(?: |$)(.*)")
 async def info(event):
     xx = await edit_or_reply(event, "`Menganalisis Obrolan Ini...`")
@@ -541,19 +548,19 @@ async def admem(event):
 
 CMD_HELP.update(
     {
-        "chat": f"**Plugin : **`chat`\
-        \n\n  •  **Syntax :** `{cmd}userid`\
-        \n  •  **Function : **untuk Mengambil ID obrolan saat ini\
-        \n\n  •  **Syntax :** `{cmd}getbot`\
-        \n  •  **Function : **Dapatkan List Bot dalam grup caht.\
-        \n\n  •  **Syntax :** `{cmd}mutechat`\
-        \n  •  **Function : **membisukan Grup chat (membutuhkan hak admin).\
-        \n\n  •  **Syntax :** `{cmd}unmutechat`\
-        \n  •  **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin).\
-        \n\n  •  **Syntax :** `{cmd}getbot`\
-        \n  •  **Function : **Dapatkan List Bot dalam grup caht.\
-        \n\n  •  **Syntax :** `{cmd}chatinfo [opsional: <reply/tag/chat id/invite link>]`\
-        \n  •  **Function : **Mendapatkan info obrolan. Beberapa info mungkin dibatasi karena izin yang hilang.\
+        "chat": f"**➢ Plugin : **`chat`\
+        \n\n ┌✪ **Syntax :** `{cmd}userid`\
+        \n └✪ **Function : **untuk Mengambil ID obrolan saat ini\
+        \n\n ┌✪ **Syntax :** `{cmd}getbot`\
+        \n └✪ **Function : **Dapatkan List Bot dalam grup caht.\
+        \n\n ┌✪ **Syntax :** `{cmd}mutechat`\
+        \n └✪ **Function : **membisukan Grup chat (membutuhkan hak admin).\
+        \n\n ┌✪ **Syntax :** `{cmd}unmutechat`\
+        \n └✪ **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin).\
+        \n\n ┌✪ **Syntax :** `{cmd}getbot`\
+        \n └✪ **Function : **Dapatkan List Bot dalam grup caht.\
+        \n\n ┌✪ **Syntax :** `{cmd}chatinfo [opsional: <reply/tag/chat id/invite link>]`\
+        \n └✪ **Function : **Mendapatkan info obrolan. Beberapa info mungkin dibatasi karena izin yang hilang.\
     "
     }
 )
