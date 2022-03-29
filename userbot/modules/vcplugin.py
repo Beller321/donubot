@@ -518,7 +518,7 @@ async def join_(event):
         stream_type=StreamType().pulse_stream,
     )
     try:
-        await xnxx.edit("`Joined To Voice Chat {}`".format(str(event.chat_id))
+        await xnxx.edit("`Joined To Voice Chat`")
     except Exception as ex:
         await edit_delete(event, f"**ERROR:** `{ex}`")
 
