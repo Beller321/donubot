@@ -468,7 +468,7 @@ async def vc_volume(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
-@cilik_cmdcilik_cmd(pattern="playlist$")
+@cilik_cmd(pattern="playlist$")
 async def vc_playlist(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
