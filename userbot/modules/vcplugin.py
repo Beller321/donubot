@@ -597,3 +597,4 @@ CMD_HELP.update(
         \n └✪ **Function : **Turun Os Menggunakan Bot\
         "
     }
+)
