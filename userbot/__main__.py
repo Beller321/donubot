@@ -2,14 +2,15 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-#
+
 """ Userbot start point """
 
 import sys
 from importlib import import_module
 
 import requests
-from telethon.tl.functions.channels import InviteToChannelRequest as Cilik
+from telethon.tl.functions.channels import InviteToChannelRequest as cilik
+from pytgcalls import idle
 from userbot import (
     BOTLOG_CHATID,
     BOT_USERNAME,
@@ -17,12 +18,12 @@ from userbot import (
     BOT_VER,
     ALIVE_LOGO,
     LOGS,
-    cilikblacklist,
     bot,
     call_py,
 )
+from userbot import LOGS, bot, call_py
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot, autopilot
+from userbot.utils import autopilot, autobot, checking
 
 try:
     bot.start()
@@ -33,7 +34,7 @@ try:
     ).json()
     if user.id in cilikblacklist:
         LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE ORANG KEK LU.\nCredits: @greyyvbss"
+            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @greyyvbss"
         )
         sys.exit(1)
 except Exception as e:
@@ -53,26 +54,31 @@ LOGS.info(
     f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/CilikSupport")
 LOGS.info(
     f"🔥 Cilik-Userbot 🔥 ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
-
-
-async def cilik_bot_run():
+    
+async def cilik_userbot_on():
     try:
         if BOTLOG_CHATID != 0:
-            await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"🔥 **Cilik Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 1.1 @Cilik-Userbot\n➠ **Ketik** `.ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @CilikProject ")
+            await bot.send_message(
+                BOTLOG_CHATID,
+                ALIVE_LOGO,
+                caption=f"🔥 **Cilik Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 1.1 @Cilik-Userbot\n➠ **Ketik** `.ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @CilikProject ",
+            )
     except Exception as e:
         LOGS.info(str(e))
     try:
-        await bot(Cilik(int(BOTLOG_CHATID), [BOT_USERNAME]))
+        await bot(cilik(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
-        pass
+        pass          
 
-bot.loop.run_until_complete(cilik_bot_run())
+bot.loop.run_until_complete(checking())
+bot.loop.run_until_complete(cilik_userbot_on())
 if not BOT_TOKEN:
     LOGS.info(
         "BOT_TOKEN Vars tidak terisi, Memulai Membuat BOT Otomatis di @Botfather..."
     )
     bot.loop.run_until_complete(autobot())
 
+idle()
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
