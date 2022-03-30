@@ -463,7 +463,7 @@ with bot:
             ],
             [
                 Button.inline("ᴠᴄ-ᴘʟᴜɢɪɴ", data="cilik_inline"),
-                Button.url("ꜱᴜᴘᴘᴏʀᴛ", f"t.me/t.me/CilikSupport"),
+                Button.url("ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/CilikSupport"),
             ],
             [Button.inline("ᴄʟᴏꜱᴇ", data="close")],
         ]
