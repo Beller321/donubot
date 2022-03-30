@@ -58,7 +58,7 @@ LOGS.info(
 async def cilik_userbot_on():
     try:
         if BOTLOG_CHATID != 0:
-            await bot.send_message(
+            await bot.send_file(
                 BOTLOG_CHATID,
                 ALIVE_LOGO,
                 caption=f"🔥 **Cilik Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 1.1 @Cilik-Userbot\n➠ **Ketik** `.ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @CilikProject ",
