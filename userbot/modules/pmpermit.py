@@ -10,23 +10,23 @@ from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG, BOTLOG_CHATID, owner
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from userbot.events import cilik_cmd, register
 from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
+    "╔═════════════════════════╗\n"
+    "  ⚡ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⚡ \n"
+    "╚═════════════════════════╝\n"
+    "**Tolong Jangan Melakukan Spam!** \n"
+    f"**Tunggu Sampai {owner} Membalas chat Kamu** \n"
+    f"**Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis!**\n"
     "╔═════════════════════╗\n"
-    ".    ⚡ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⚡ ”\n"
-    "╚═════════════════════╝\n"
-    "**ᴛᴏʟᴏɴɢ ᴊᴀɴɢᴀɴ ᴍᴇʟᴀᴋᴜᴋᴀɴ sᴘᴀᴍ ᴄʜᴀᴛ ᴋᴇᴘᴀᴅᴀ ʙᴏs sᴀʏᴀ* \n"
-    "**ᴋᴀʀᴇɴᴀ sᴀʏᴀ ᴀᴋᴀɴ ᴏᴛᴏᴍᴀᴛɪs ᴍᴇᴍʙʟᴏᴋɪʀ ᴋᴀᴍᴜ** \n"
-    "╔═════════════════════╗\n"
-    "│○›ᴘᴇsᴀɴ ᴏᴛᴏᴍᴀᴛɪs           \n"
-    "│○›ʙʏ ᴄɪʟɪᴋ ᴜsᴇʀʙᴏᴛ           \n"
-    "╚═════════════════════╝"
-)
+    f"➠ 𝗢𝘄𝗻𝗲𝗿 : {owner} \n"
+    f"➠ 𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗯𝘆 [𝗖𝗶𝗹𝗶𝗸-𝗨𝘀𝗲𝗿𝗯𝗼𝘁](https://t.me/CilikSupport)\n"
+    "╚═════════════════════╝")
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
