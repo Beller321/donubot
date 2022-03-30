@@ -112,20 +112,6 @@ DEVS = (
     2130526178,
 )
 
-#Blacklist Use Cilik-Userbot
-while 0 < 6:
-    _BLACKLIST = get(
-        "https://raw.githubusercontent.com/grey423/Reforestation/master/cilikblacklist.json"
-    )
-    if _BLACKLIST.status_code != 200:
-        if 0 != 5:
-            continue
-        cilikblacklist = []
-        break
-    cilikblacklist = _BLACKLIST.json()
-    break
-
-del _BLACKLIST
   
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "1784606556").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
