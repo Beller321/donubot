@@ -357,34 +357,7 @@ except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
 
-
-async def checking():
-    gocheck = str(pybase64.b64decode("QENpbGlrUHJvamVjdA=="))[2:15]
-    checker = str(pybase64.b64decode("QENpbGlrU3VwcG9ydA=="))[2:16]
-    checker2 = str(pybase64.b64decode("QGdyZXl5cm9vbXM="))[2:16]
-    try:
-        await bot(GetSec(gocheck))
-    except BaseException:
-        pass
-    try:
-        await bot(GetSec(checker))
-    except BaseException:
-        pass
-    try:
-        await bot(GetSec(checker2))
-    except BaseException:
-        pass
-
-with bot:
-    try:
-        bot.loop.run_until_complete(checking())
-    except BaseException:
-        LOGS.info(
-            "Join Support Group @CilikSupport and Channel @CilikProject to see the updates of userbot"
-            "Don't Leave")
-        quit(1)
-
-
+    
 async def update_restart_msg(chat_id, msg_id):
     message = (
         f"**Cilik-Userbot v{BOT_VER} is back up and running!**\n\n"
