@@ -40,36 +40,6 @@ else:
     app = None
 
 
-# bye Ice-Userbot
-
-async def create_supergroup(group_name, client, botusername, descript):
-    try:
-        result = await client(
-            functions.channels.CreateChannelRequest(
-                title=group_name,
-                about=descript,
-                megagroup=True,
-            )
-        )
-        created_chat_id = result.chats[0].id
-        result = await client(
-            functions.messages.ExportChatInviteRequest(
-                peer=created_chat_id,
-            )
-        )
-        await client(
-            functions.channels.InviteToChannelRequest(
-                channel=created_chat_id,
-                users=[botusername],
-            )
-        )
-    except Exception as e:
-        return "error", str(e)
-    if not str(created_chat_id).startswith("-100"):
-        created_chat_id = int("-100" + str(created_chat_id))
-    return result, created_chat_id
-
-
 async def autopilot():
     if BOTLOG_CHATID and str(BOTLOG_CHATID).startswith("-100"):
         return
@@ -162,7 +132,7 @@ async def autobot():
     await bot.send_read_acknowledge("botfather")
     if isdone.startswith("Sorry,"):
         ran = randint(1, 100)
-        username = "cilik" + (str(who.id))[6:] + str(ran) + "ubot"
+        username = "Cilik" + (str(who.id))[6:] + str(ran) + "ubot"
         await bot.send_message(bf, username)
         await asyncio.sleep(1)
         nowdone = (await bot.get_messages(bf, limit=1))[0].text
@@ -191,7 +161,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @CilikProject ✨"
+                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @CilikProject\n\n✨ Powered By ~ @CilikSupport"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -201,6 +171,19 @@ async def autobot():
                 BOTLOG_CHATID,
                 "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
             )
+            rights = ChatAdminRights(
+                             add_admins=False,
+                             invite_users=True,
+                             change_info=True,
+                             ban_users=True,
+                             delete_messages=True,
+                             pin_messages=True,
+                             anonymous=False,
+                             manage_call=True,
+                         )
+            await bot(EditAdminRequest(int(BOTLOG_CHATID), f"@{username}", rights, "ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴄɪʟɪᴋ"))
+            ppk = "userbot/resources/logo.jpg"
+            await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(ppk)))
             heroku_var["BOT_TOKEN"] = token
             heroku_var["BOT_USERNAME"] = f"@{username}"
         else:
@@ -233,7 +216,7 @@ async def autobot():
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @CilikProject ✨"
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @CilikProject\n\n✨ Powered By ~ @CilikSupport"
         )
         await bot.send_message(
             BOTLOG_CHATID,
@@ -243,6 +226,19 @@ async def autobot():
             BOTLOG_CHATID,
             "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
         )
+        rights = ChatAdminRights(
+                 add_admins=False,
+                 invite_users=True,
+                 change_info=True,
+                 ban_users=True,
+                 delete_messages=True,
+                 pin_messages=True,
+                 anonymous=False,
+                 manage_call=True,
+             )
+        await bot(EditAdminRequest(int(BOTLOG_CHATID), f"@{username}", rights, "ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴄɪʟɪᴋ"))
+        ppk = "userbot/resources/logo.jpg"
+        await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(ppk)))
         heroku_var["BOT_TOKEN"] = token
         heroku_var["BOT_USERNAME"] = f"@{username}"
     else:
@@ -251,7 +247,7 @@ async def autobot():
         )
         sys.exit(1)
 
-
+        
 def load_module(shortname):
     if shortname.startswith("__"):
         pass
