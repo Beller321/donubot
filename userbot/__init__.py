@@ -734,29 +734,31 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-  ┌✪ Syntax   : {cmd}play <Judul Lagu>
-  └✪ Function : Untuk Memutar Lagu
+➠ VC-PLUGIN MENU
+
+┌✪ Syntax   : {cmd}play <Judul Lagu>
+└✪ Function : Untuk Memutar Lagu
  
-  ┌✪ Syntax   : {cmd}vplay <Judul Video>
-  └✪ Function : Untuk Memutar Video 
+┌✪ Syntax   : {cmd}vplay <Judul Video>
+└✪ Function : Untuk Memutar Video 
   
-  ┌✪ Syntax   : {cmd}end
-  └✪ Function : Untuk Menghentikan Lagu/Video
+┌✪ Syntax   : {cmd}end
+└✪ Function : Untuk Menghentikan Lagu/Video
  
-  ┌✪ Syntax   : {cmd}skip
-  └✪ Function : Untuk Melewati Video/Lagu 
+┌✪ Syntax   : {cmd}skip
+└✪ Function : Untuk Melewati Video/Lagu 
   
-  ┌✪ Syntax   : {cmd}pause
-  └✪ Function : Untuk memberhentikan video/lagu
+┌✪ Syntax   : {cmd}pause
+└✪ Function : Untuk memberhentikan video/lagu
   
-  ┌✪ Syntax   : {cmd}resume
-  └✪ Function : Untuk melanjutkan pemutaran video/lagu
+┌✪ Syntax   : {cmd}resume
+└✪ Function : Untuk melanjutkan pemutaran video/lagu
   
-  ┌✪ Syntax   : {cmd}volume 1-200
-  └✪ Function : Untuk mengubah volume
+┌✪ Syntax   : {cmd}volume 1-200
+└✪ Function : Untuk mengubah volume
  
-  ┌✪ Syntax   : {cmd}playlist
-  └✪ Function : Untuk menampilkan daftar putar
+┌✪ Syntax   : {cmd}playlist
+└✪ Function : Untuk menampilkan daftar putar
 """)
                 await event.edit(
                     text,
