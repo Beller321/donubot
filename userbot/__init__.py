@@ -550,7 +550,7 @@ with bot:
                 current_page_number = int(looters)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
-                text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                 await event.edit(
                     text,
                     file=ciliklogo,
