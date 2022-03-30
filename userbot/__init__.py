@@ -417,7 +417,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⪻", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "ᴋᴇᴍʙᴀʟɪ", data="{}_close({})".format(prefix, modulo_page)
+                    "ᴄʟᴏꜱᴇ", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "⪼", data="{}_next({})".format(prefix, modulo_page)
@@ -455,8 +455,22 @@ with bot:
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
         S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
+       
+        main_help_button = [
+            [
+                Button.inline("ᴍᴏᴅᴜʟᴇs", data="reopen"),       
+                Button.url("sᴇᴛᴛɪɴɢs", f"t.me/{botusername}"),
+            ],
+            [
+                Button.inline("ᴠᴄ-ᴘʟᴜɢɪɴ", data="cilik_inline"),
+                Button.url("ꜱᴜᴘᴘᴏʀᴛ", f"t.me/t.me/CilikSupport"),
+            ],
+            [Button.inline("ᴄʟᴏꜱᴇ", data="close")],
+        ]
 
-        @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+        
+        @tgbot.on(events.NewMessage(incoming=True,
+                  func=lambda e: e.is_private))
         async def bot_pms(event):
             chat = await event.get_chat()
             if check_is_black_list(chat.id):
@@ -512,8 +526,12 @@ with bot:
                         return await event.reply(f"**ERROR:** `{e}`")
                     try:
                         add_user_to_db(
-                            reply_to, user_name, user_id, reply_msg, event.id, msg.id
-                        )
+                            reply_to,
+                            user_name,
+                            user_id,
+                            reply_msg,
+                            event.id,
+                            msg.id)
                     except Exception as e:
                         LOGS.error(str(e))
                         if BOTLOG:
@@ -522,32 +540,78 @@ with bot:
                                 f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
                             )
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"get_back")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                current_page_number = int(looters)
+                buttons = paginate_help(
+                    current_page_number, dugmeler, "helpme")
+                text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                await event.edit(
+                    text,
+                    file=ciliklogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"reopen")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                buttons = paginate_help(0, dugmeler, "helpme")
+                text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                await event.edit(
+                    text,
+                    file=ciliklogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@CilikSupport"):
+            if event.query.user_id == uid and query.startswith("@CilikUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = await event.builder.photo(
-                    file=logocilik,
+                    file=ciliklogo,
                     link_preview=False,
-                    text=f"**✪ Cilik-Userbot Inline Menu ✪**\n\n✪ **Owner** [{user.first_name}](tg://user?id={user.id})\n✪ **Jumlah** `{len(dugmeler)}` Modules",
-                    buttons=buttons,
+                    text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                    buttons=main_help_button,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository CilikUserbot",
+                    description="Repository Cilik - Userbot",
                     url="https://t.me/CilikSupport",
-                    thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Cilik-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **Owner Repo :** [Grey](https://t.me/greyyvbss)\n✪ **Support :** @CilikSupport\n✪ **Repository :** [CilikUserbot](https://github.com/grey423/CilikUserbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    thumb=InputWebDocument(
+                        ALIVE_LOGO,
+                        0,
+                        "image/jpeg",
+                        []),
+                    text="**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [Grey </>](https://t.me/greyyvbss)\n✪ **sᴜᴘᴘᴏʀᴛ :** @CilikSupport\n✪ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Cilik-Userbot](https://github.com/grey423/CilikUserbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/CilikSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/grey423/CilikUserbot"
-                            ),
+                                "ɢʀᴏᴜᴘ",
+                                "https://t.me/CilikSupport"),
+                            custom.Button.url(
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/grey423/CilikUserbot"),
                         ],
                     ],
                     link_preview=False,
@@ -565,9 +629,9 @@ with bot:
                         to_check -= 1
                     if n_escapes % 2 == 0:
                         buttons.append(
-                            (match.group(2), match.group(3), bool(match.group(4)))
-                        )
-                        note_data += markdown_note[prev : match.start(1)]
+                            (match.group(2), match.group(3), bool(
+                                match.group(4))))
+                        note_data += markdown_note[prev: match.start(1)]
                         prev = match.end(1)
                     elif n_escapes % 2 == 1:
                         note_data += markdown_note[prev:to_check]
@@ -586,17 +650,23 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✪ Cilik-Userbot ✪",
-                    description="CilikUserBot | Telethon",
+                    title="✨ Cɪʟɪᴋ-Uꜱᴇʀʙᴏᴛ ✨",
+                    description="Cilik - Userbot | Telethon",
                     url="https://t.me/CilikSupport",
-                    thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Cilik-UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✪ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n✪ **Support:** @CilikSupport\n➖➖➖➖➖➖➖➖➖➖",
+                    thumb=InputWebDocument(
+                        ALIVE_LOGO,
+                        0,
+                        "image/jpeg",
+                        []),
+                    text=f"**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✪ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @CilikProject\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/CilikSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/grey423/CilikUserbot"
-                            ),
+                                "ɢʀᴏᴜᴘ",
+                                "https://t.me/CilikSupport"),
+                            custom.Button.url(
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/grey423/CilikUserbot"),
                         ],
                     ],
                     link_preview=False,
@@ -605,22 +675,6 @@ with bot:
                 [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
             )
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(looters)
-                buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✪ Cilik-Userbot Inline Menu ✪**\n\n✪ **Owner** [{user.first_name}](tg://user?id={user.id})\n✪ **Jumlah** `{len(dugmeler)}` Modules"
-                await event.edit(
-                    text,
-                    file=logocilik,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
         @tgbot.on(
             events.callbackquery.CallbackQuery(
                 data=re.compile(rb"helpme_next\((.+?)\)")
@@ -628,25 +682,87 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(current_page_number + 1, dugmeler, "helpme")
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number + 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
             else:
                 reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                    f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_close\((.+?)\)")
+            )
+        )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
-                openlagi = custom.Button.inline("• Re-Open Menu •", data="reopen")
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Cilik-Userbot
+                # https://t.me/TelethonChat/115200
                 await event.edit(
-                    "⚜️ **Help Mode Button Ditutup!** ⚜️", buttons=openlagi
-                )
+                    file=ciliklogo,
+                    link_preview=True,
+                    buttons=main_help_button)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"gcback")
+            )
+        )
+        async def gback_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @cilik-Userbot
+                # https://t.me/TelethonChat/115200
+                text = (
+                    f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
+                await event.edit(
+                    text,
+                    file=ciliklogo,
+                    link_preview=True,
+                    buttons=main_help_button)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"cilik_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+  •  Syntax : {cmd}play <Judul Lagu/Link YT>
+  •  Function : Untuk Memutar Lagu di voice chat group dengan akun kamu
+  •  Syntax : {cmd}vplay <Judul Video/Link YT>
+  •  Function : Untuk Memutar Video di voice chat group dengan akun kamu
+  •  Syntax : {cmd}end
+  •  Function : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group
+  •  Syntax : {cmd}skip
+  •  Function : Untuk Melewati video/lagu yang sedang di putar
+  •  Syntax : {cmd}pause
+  •  Function : Untuk memberhentikan video/lagu yang sedang diputar
+  •  Syntax : {cmd}resume
+  •  Function : Untuk melanjutkan pemutaran video/lagu yang sedang diputar
+  •  Syntax : {cmd}volume 1-200
+  •  Function : Untuk mengubah volume (Membutuhkan Hak admin)
+  •  Syntax : {cmd}playlist
+  •  Function : Untuk menampilkan daftar putar Lagu/Video
+""")
+                await event.edit(
+                    text,
+                    file=ciliklogo,
+                    link_preview=True,
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="gcback")])
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.CallbackQuery(data=b"close"))
+        async def close(event):
+            buttons = [
+                (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="gcback"),),
+            ]
+            await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=ciliklogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -655,8 +771,10 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(current_page_number - 1, dugmeler, "helpme")
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number - 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
@@ -679,9 +797,8 @@ with bot:
                         + " "
                     )
                 else:
-                    help_string = (
-                        str(CMD_HELP[modul_name]).replace("`", "").replace("**", "")
-                    )
+                    help_string = (str(CMD_HELP[modul_name]).replace(
+                        "`", "").replace("**", ""))
 
                 reply_pop_up_alert = (
                     help_string
@@ -691,7 +808,7 @@ with bot:
                     )
                 )
                 await event.edit(
-                    reply_pop_up_alert, buttons=[Button.inline("Back", data="reopen")]
+                    reply_pop_up_alert, buttons=[Button.inline("ʙᴀᴄᴋ", data="get_back")]
                 )
 
             else:
@@ -702,5 +819,4 @@ with bot:
         LOGS.info(
             "Help Mode Inline Bot Mu Tidak aktif. Tidak di aktifkan juga tidak apa-apa. "
             "Untuk Mengaktifkannya Buat bot di @BotFather Lalu Tambahkan var BOT_TOKEN dan BOT_USERNAME. "
-            "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. "
-        )
+            "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. ")
