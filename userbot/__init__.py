@@ -590,7 +590,7 @@ with bot:
                 result = await event.builder.photo(
                     file=ciliklogo,
                     link_preview=False,
-                    text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                    text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                     buttons=main_help_button,
                 )
             elif query.startswith("repo"):
