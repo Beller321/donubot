@@ -734,7 +734,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-➠ VC-PLUGIN MENU
+➠ **VC-PLUGIN MENU**
 
 ┌✪ Syntax   : {cmd}play <Judul Lagu>
 └✪ Function : Untuk Memutar Lagu
