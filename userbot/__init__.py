@@ -462,10 +462,10 @@ with bot:
         main_help_button = [
             [
                 Button.inline("ᴍᴏᴅᴜʟᴇs", data="reopen"),       
-                Button.url("sᴇᴛᴛɪɴɢs", f"t.me/{botusername}"),
+                Button.inline("ᴠᴄ-ᴘʟᴜɢɪɴ", data="cilik_inline"),
             ],
             [
-                Button.inline("ᴠᴄ-ᴘʟᴜɢɪɴ", data="cilik_inline"),
+                Button.url("sᴇᴛᴛɪɴɢs", f"t.me/{botusername}"),
                 Button.url("ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/CilikSupport"),
             ],
             [Button.inline("ᴄʟᴏꜱᴇ", data="close")],
@@ -593,7 +593,7 @@ with bot:
                 result = await event.builder.photo(
                     file=ciliklogo,
                     link_preview=False,
-                    text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
+                    text = f"**➠ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                     buttons=main_help_button,
                 )
             elif query.startswith("repo"):
@@ -718,7 +718,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @cilik-Userbot
                 # https://t.me/TelethonChat/115200
                 text = (
-                    f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
+                    f"**➠ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
                 await event.edit(
                     text,
                     file=ciliklogo,
@@ -734,22 +734,29 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-  •  Syntax : {cmd}play <Judul Lagu/Link YT>
-  •  Function : Untuk Memutar Lagu di voice chat group dengan akun kamu
-  •  Syntax : {cmd}vplay <Judul Video/Link YT>
-  •  Function : Untuk Memutar Video di voice chat group dengan akun kamu
-  •  Syntax : {cmd}end
-  •  Function : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group
-  •  Syntax : {cmd}skip
-  •  Function : Untuk Melewati video/lagu yang sedang di putar
-  •  Syntax : {cmd}pause
-  •  Function : Untuk memberhentikan video/lagu yang sedang diputar
-  •  Syntax : {cmd}resume
-  •  Function : Untuk melanjutkan pemutaran video/lagu yang sedang diputar
-  •  Syntax : {cmd}volume 1-200
-  •  Function : Untuk mengubah volume (Membutuhkan Hak admin)
-  •  Syntax : {cmd}playlist
-  •  Function : Untuk menampilkan daftar putar Lagu/Video
+  ┌✪ Syntax   : {cmd}play <Judul Lagu>
+  └✪ Function : Untuk Memutar Lagu
+ 
+  ┌✪ Syntax   : {cmd}vplay <Judul Video>
+  └✪ Function : Untuk Memutar Video 
+  
+  ┌✪ Syntax   : {cmd}end
+  └✪ Function : Untuk Menghentikan Lagu/Video
+ 
+  ┌✪ Syntax   : {cmd}skip
+  └✪ Function : Untuk Melewati Video/Lagu 
+  
+  ┌✪ Syntax   : {cmd}pause
+  └✪ Function : Untuk memberhentikan video/lagu
+  
+  ┌✪ Syntax   : {cmd}resume
+  └✪ Function : Untuk melanjutkan pemutaran video/lagu
+  
+  ┌✪ Syntax   : {cmd}volume 1-200
+  └✪ Function : Untuk mengubah volume
+ 
+  ┌✪ Syntax   : {cmd}playlist
+  └✪ Function : Untuk menampilkan daftar putar
 """)
                 await event.edit(
                     text,
@@ -811,7 +818,7 @@ with bot:
                     )
                 )
                 await event.edit(
-                    reply_pop_up_alert, buttons=[Button.inline("ʙᴀᴄᴋ", data="get_back")]
+                    reply_pop_up_alert, buttons=[Button.inline("ʙᴀᴄᴋ", data="reopen")]
                 )
 
             else:
