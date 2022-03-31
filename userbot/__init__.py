@@ -292,6 +292,8 @@ GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
 # Quotes API Token
 QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
+S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
+
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
@@ -457,7 +459,6 @@ with bot:
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
        
         main_help_button = [
             [
