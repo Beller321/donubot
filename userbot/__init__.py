@@ -151,6 +151,11 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 
+#Sticker pack
+owner = user.first_name
+
+S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
+
 # Support
 GROUP = os.environ.get("GROUP", "CilikSupport")
 CHANNEL = os.environ.get("CHANNEL", "CilikProject")
