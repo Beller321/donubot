@@ -151,11 +151,6 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 
-#Sticker pack
-owner = user.first_name
-
-S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
-
 # Support
 GROUP = os.environ.get("GROUP", "CilikSupport")
 CHANNEL = os.environ.get("CHANNEL", "CilikProject")
@@ -463,7 +458,6 @@ with bot:
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
         
         main_help_button = [
             [
@@ -477,6 +471,8 @@ with bot:
             [Button.inline("ᴄʟᴏꜱᴇ", data="close")],
         ]
 
+    
+        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
         
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
