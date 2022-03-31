@@ -1,3 +1,4 @@
+
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
@@ -147,7 +148,7 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
-       
+
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 
@@ -292,7 +293,6 @@ GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
 # Quotes API Token
 QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
-
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
@@ -344,10 +344,7 @@ except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
 
-    user = bot.get_me()
-    owner = user.first_name
-    S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
-
+    
 async def update_restart_msg(chat_id, msg_id):
     message = (
         f"**Cilik-Userbot v{BOT_VER} is back up and running!**\n\n"
@@ -461,7 +458,8 @@ with bot:
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
-        
+        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
+       
         main_help_button = [
             [
                 Button.inline("ᴍᴏᴅᴜʟᴇs", data="reopen"),       
@@ -474,7 +472,7 @@ with bot:
             [Button.inline("ᴄʟᴏꜱᴇ", data="close")],
         ]
 
-  
+        
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
         async def bot_pms(event):
@@ -738,7 +736,6 @@ with bot:
                 text = (
                     f"""
 ➠ **VC-PLUGIN MENU**
-
 ┌✪ Syntax   : {cmd}play <Judul Lagu>
 └✪ Function : Untuk Memutar Lagu
  
