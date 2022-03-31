@@ -147,6 +147,11 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
+       
+# Sticker Pack
+user = bot.get_me()
+owner = user.first_name
+S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
 
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
@@ -471,9 +476,7 @@ with bot:
             [Button.inline("ᴄʟᴏꜱᴇ", data="close")],
         ]
 
-    
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
-        
+  
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
         async def bot_pms(event):
