@@ -148,11 +148,6 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
        
-# Sticker Pack
-user = bot.get_me()
-owner = user.first_name
-S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
-
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 
@@ -349,7 +344,10 @@ except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
 
-    
+    user = bot.get_me()
+    owner = user.first_name
+    S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
+
 async def update_restart_msg(chat_id, msg_id):
     message = (
         f"**Cilik-Userbot v{BOT_VER} is back up and running!**\n\n"
