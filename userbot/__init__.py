@@ -422,7 +422,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⪻", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "ᴄʟᴏꜱᴇ", data="{}_close({})".format(prefix, modulo_page)
+                    "🗑️ Close", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "⪼", data="{}_next({})".format(prefix, modulo_page)
@@ -466,14 +466,14 @@ with bot:
        
         main_help_button = [
             [
-                Button.inline("ᴍᴏᴅᴜʟᴇs", data="reopen"),       
-                Button.inline("ᴠᴄ-ᴘʟᴜɢɪɴ", data="cilik_inline"),
+                Button.inline("🗂️ Modules", data="reopen"),       
+                Button.inline("Vc-Plugin 📺", data="cilik_inline"),
             ],
             [
-                Button.url("sᴇᴛᴛɪɴɢs", f"t.me/{botusername}"),
-                Button.url("ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/CilikSupport"),
+                Button.url("📣 Updates", f"https://t.me/CilikSupport"),
+                Button.url("Settings 🛠️ ", f"t.me/{botusername}"),
             ],
-            [Button.inline("ᴄʟᴏꜱᴇ", data="close")],
+            [Button.inline("🗑️ Close", data="close")],
         ]
 
         
@@ -558,7 +558,7 @@ with bot:
                 current_page_number = int(looters)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
-                text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
+                text = f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
                 await event.edit(
                     text,
                     file=ciliklogo,
@@ -577,7 +577,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"**✨ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ ✨**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                text = f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**"
                 await event.edit(
                     text,
                     file=ciliklogo,
@@ -598,7 +598,7 @@ with bot:
                 result = await event.builder.photo(
                     file=ciliklogo,
                     link_preview=False,
-                    text = f"**➠ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
+                    text = f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
                     buttons=main_help_button,
                 )
             elif query.startswith("repo"):
@@ -611,7 +611,7 @@ with bot:
                         0,
                         "image/jpeg",
                         []),
-                    text="**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [Grey </>](https://t.me/greyyvbss)\n✪ **sᴜᴘᴘᴏʀᴛ :** @CilikSupport\n✪ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Cilik-Userbot](https://github.com/grey423/CilikUserbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **Owner Repo :** [Grey </>](https://t.me/greyyvbss)\n✪ **Support :** @CilikSupport\n✪ **Repository :** [Cilik-Userbot](https://github.com/grey423/CilikUserbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -658,7 +658,7 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✨ Cɪʟɪᴋ-Uꜱᴇʀʙᴏᴛ ✨",
+                    title="✨ Cilik-Userbot ✨",
                     description="Cilik - Userbot | Telethon",
                     url="https://t.me/CilikSupport",
                     thumb=InputWebDocument(
@@ -666,14 +666,14 @@ with bot:
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✪ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @CilikProject\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **Owner :** [{user.first_name}](tg://user?id={user.id})\n✪ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Updates:** @CilikProject\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
-                                "ɢʀᴏᴜᴘ",
+                                "Groups",
                                 "https://t.me/CilikSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ",
+                                "Repo",
                                 "https://github.com/grey423/CilikUserbot"),
                         ],
                     ],
@@ -723,7 +723,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @cilik-Userbot
                 # https://t.me/TelethonChat/115200
                 text = (
-                    f"**➠ Cɪʟɪᴋ Uꜱᴇʀʙᴏᴛ Iɴʟɪɴᴇ Mᴇɴᴜ**\n\n✪ **Oᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✪ **Jᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
+                    f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**")
                 await event.edit(
                     text,
                     file=ciliklogo,
@@ -739,36 +739,43 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-➠ **VC-PLUGIN MENU**
-┌✪ Syntax   : {cmd}play <Judul Lagu>
-└✪ Function : Untuk Memutar Lagu
+  **Vc-Plugin Menu** 🎧
+
+┌✪ **Syntax   :** {cmd}play <Judul Lagu>
+└✪ **Function :** Untuk Memutar Lagu
  
-┌✪ Syntax   : {cmd}vplay <Judul Video>
-└✪ Function : Untuk Memutar Video 
+┌✪ **Syntax   :** {cmd}vplay <Judul Video>
+└✪ **Function :** Untuk Memutar Video 
   
-┌✪ Syntax   : {cmd}end
-└✪ Function : Untuk Menghentikan Lagu/Video
+┌✪ **Syntax   :** {cmd}end
+└✪ **Function :** Untuk Menghentikan Lagu/Video
  
-┌✪ Syntax   : {cmd}skip
-└✪ Function : Untuk Melewati Video/Lagu 
+┌✪ **Syntax   :** {cmd}skip
+└✪ **Function :** Untuk Melewati Video/Lagu 
   
-┌✪ Syntax   : {cmd}pause
-└✪ Function : Untuk memberhentikan video/lagu
+┌✪ **Syntax   :** {cmd}pause
+└✪ **Function :** Untuk memberhentikan video/lagu
   
-┌✪ Syntax   : {cmd}resume
-└✪ Function : Untuk melanjutkan pemutaran video/lagu
+┌✪ **Syntax   :** {cmd}resume
+└✪ **Function :** Untuk melanjutkan pemutaran video/lagu
   
-┌✪ Syntax   : {cmd}volume 1-200
-└✪ Function : Untuk mengubah volume
+┌✪ **Syntax   :** {cmd}volume 1-200
+└✪ **Function :** Untuk mengubah volume
  
-┌✪ Syntax   : {cmd}playlist
-└✪ Function : Untuk menampilkan daftar putar
+┌✪ **Syntax   :** {cmd}playlist
+└✪ **Function :** Untuk menampilkan daftar putar
+
+┌✪ **Syntax   :** {cmd}joinvc
+└✪ **Function :** Untuk Join Vcg Menggunakan bot
+
+┌✪ **Syntax   :** {cmd}leavevc
+└✪ **Function :** Untuk Turun Vcg Menggunakan bot
 """)
                 await event.edit(
                     text,
                     file=ciliklogo,
                     link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="gcback")])
+                    buttons=[Button.inline("🔙 Back", data="gcback")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -776,9 +783,9 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="gcback"),),
+                (custom.Button.inline("• Re-Open Menu •", data="gcback"),),
             ]
-            await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=ciliklogo, buttons=buttons)
+            await event.edit("**• Menu diTutup •**", file=ciliklogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -824,7 +831,7 @@ with bot:
                     )
                 )
                 await event.edit(
-                    reply_pop_up_alert, buttons=[Button.inline("ʙᴀᴄᴋ", data="reopen")]
+                    reply_pop_up_alert, buttons=[Button.inline("🔙 Back", data="reopen")]
                 )
 
             else:
