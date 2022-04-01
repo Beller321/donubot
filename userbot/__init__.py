@@ -467,10 +467,10 @@ with bot:
         main_help_button = [
             [
                 Button.inline("🗂️ Modules", data="reopen"),       
-                Button.inline("Vc-Plugin 📺", data="cilik_inline"),
+                Button.inline("VC-Plugin 📺", data="cilik_inline"),
             ],
             [
-                Button.url("📣 Updates", f"https://t.me/CilikSupport"),
+                Button.url("📣 Updates", f"https://t.me/CilikProject"),
                 Button.url("Settings 🛠️ ", f"t.me/{botusername}"),
             ],
             [Button.inline("🗑️ Close", data="close")],
@@ -739,7 +739,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 text = (
                     f"""
-  **Vc-Plugin Menu** 🎧
+     🎧 **VC-Plugin Menu** 🎧
 
 ┌✪ **Syntax   :** {cmd}play <Judul Lagu>
 └✪ **Function :** Untuk Memutar Lagu
@@ -782,10 +782,7 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons = [
-                (custom.Button.inline("• Re-Open Menu •", data="gcback"),),
-            ]
-            await event.edit("**• Menu diTutup •**", file=ciliklogo, buttons=buttons)
+            await event.delete()
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
