@@ -10,6 +10,7 @@ from importlib import import_module
 
 import requests
 from telethon.tl.functions.channels import InviteToChannelRequest as cilik
+from telethon.tl.functions.channels import JoinChannelRequest as grey
 from pytgcalls import idle
 from userbot import (
     BOTLOG_CHATID,
@@ -66,11 +67,19 @@ async def cilik_userbot_on():
     except Exception as e:
         LOGS.info(str(e))
     try:
+        await bot(grey("@CilikProject"))
+    except BaseException:
+        pass
+    try:
         await bot(cilik(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
-        pass          
+        pass
+    try:
+        await bot(grey("@CilikSupport"))
+    except BaseException:
+        pass 
 
-bot.loop.run_until_complete(checking())
+bot.loop.run_until_complete(checking())    
 bot.loop.run_until_complete(cilik_userbot_on())
 if not BOT_TOKEN:
     LOGS.info(
