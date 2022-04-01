@@ -782,7 +782,10 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            await event.delete()
+            buttons = [
+                (custom.Button.inline("• Re-Open Menu •", data="gcback"),),
+            ]
+            await event.edit("**• Menu diTutup •**", file=ciliklogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
