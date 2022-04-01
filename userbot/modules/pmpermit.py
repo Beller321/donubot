@@ -18,11 +18,10 @@ from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
     "╔═════════════════════╗\n"
-    "  ⚡ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⚡ \n"
+    "   ⚡ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⚡ \n"
     "╚═════════════════════╝\n"
-    "**Tolong Jangan Melakukan Spam!** \n"
-    f"**Tunggu Sampai {owner} Membalas chat Kamu** \n"
-    f"**Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis!** \n"
+    "Tolong Jangan Melakukan Spam! \n"
+    "Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis! \n"
     "╔═════════════════════╗\n"
     f"➠ 𝗢𝘄𝗻𝗲𝗿 : {owner} \n"
     f"➠ 𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗯𝘆 𝗖𝗶𝗹𝗶𝗸-𝗨𝘀𝗲𝗿𝗯𝗼𝘁 \n"
