@@ -116,6 +116,7 @@ DEVS = (
   
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "1784606556").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
+BLACKLIST_GCAST = {int(x) for x in os.environ.get("BLACKLIST_GCAST", "").split()}
 
 # For Blacklist Group Support
 BLACKLIST_CHAT = os.environ.get("BLACKLIST_CHAT", None)
