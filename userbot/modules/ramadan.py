@@ -369,83 +369,77 @@ async def _(event):
 
 CMD_HELP.update(
     {
-    "ramadan": f"➢ **Plugin : **`ramadan`\
-    \n\n ┌✪ **Syntax :** `{cmd}puasa`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}puasa2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}puasa3`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}puasa4`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}puasa5`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}puasa6`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}takjil`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}takjil2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}takjil3`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}ngaji`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}ngaji2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}sabar`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}sabar2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}setan`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}setan2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}setan3`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}s1`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}s2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}s3`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}sdkh`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}sdkh2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}warteg`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}warteg2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}warteg3`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}sahur`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}sahur2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\   
-    \n\n ┌✪ **Syntax :** `{cmd}sahur3`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}buka`\
-    \n └✪ **Function : ** Liat Aja Sendiri\ 
-    \n\n ┌✪ **Syntax :** `{cmd}magrib`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}bukber`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}bukber2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}bukbersad`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}taraw1`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}taraw2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}nyemen`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}nyemen2`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}nyemen3`\
-    \n └✪ **Function : ** Liat Aja Sendiri\
-    \n\n ┌✪ **Syntax :** `{cmd}sholat`\
-    \n └✪ **Function : ** Liat Aja Sendiri"
-
- 
-})
+        "ramadhan": f"**Plugin : **`ramadhan`\
+        \n\n    **Perintah :** `{cmd}puasa1`\
+        \n⌬    **Fungsi : **Nanya Semangat ga puasanya ke orang, cobain aja jing.\
+        \n\n    **Perintah :** `{cmd}puasa2`\
+        \n⌬    **Fungsi : **Ngajak Ngabuburit.\
+        \n\n    **Perintah :** `{cmd}puasa3`\
+        \n⌬    **Fungsi : **Ga mau Gibah.\
+        \n\n    **Perintah :** `{cmd}puasa4`\
+        \n⌬    **Fungsi : **Ganteng doang, Puasa kaga!.\
+        \n\n    **Perintah :** `{cmd}puasa5`\
+        \n⌬    **Fungsi : **Cie Ga puasa.\
+        \n\n    **Perintah :** `{cmd}puasa6`\
+        \n⌬    **Fungsi : **Bangga lu ga puasa?.\
+        \n\n    **Perintah :** `{cmd}takjil1`\
+        \n⌬    **Fungsi : **Info Takjil Gratis.\
+        \n\n    **Perintah :** `{cmd}takjil2`\
+        \n⌬    **Fungsi : **ngajak nyari takjil.\
+        \n\n    **Perintah :** `{cmd}takjil3`\
+        \n⌬    **Fungsi : **gopudin cok.\
+        \n\n    **Perintah :** `{cmd}ngaji1`\
+        \n⌬    **Fungsi : **gausah war mending ngaji.\
+        \n\n    **Perintah :** `{cmd}ngaji2`\
+        \n⌬     **Fungsi: **gapengen gibah.\
+        \n\n    **Perintah :** `{cmd}sabar1`\
+        \n⌬    **Fungsi : **sabar lu kan lagi puasa.\
+        \n\n    **Perintah :** `{cmd}sabar2`\
+        \n⌬    **Fungsi : **cobain ajalah.\
+        \n\n    **Perintah:** `{cmd}setan1`\
+        \n⌬    **Fungsi: **ngatain orang setan.\
+        \n\n    **Perintah:** `{cmd}setan2`\
+        \n⌬    **Fungsi: **setan ngehasut setan.\
+        \n\n    **Perintah:** `{cmd}setan3`\
+        \n⌬    **Fungsi: **cie lagi ngehasut.\
+        \n\n    **Perintah:** `{cmd}sedekah1`\
+        \n⌬    **Fungsi: **cobain aja males ngetik.\
+        \n\n    **Perintah:** `{cmd}sedekah2`\
+        \n⌬    **Fungsi: **sedekah baju lebaran.\
+        \n\n    **Perintah:** `{cmd}s1`\
+        \n⌬    **Fungsi: **sholat.\
+        \n\n    **Perintah:** `{cmd}s2`\
+        \n⌬    **Fungsi: **sholat.\
+        \n\n    **Perintah:** `{cmd}s3`\
+        \n⌬    **Fungsi: **sholat !.\
+        \n\n    **Perintah:** `{cmd}warteg1`\
+        \n⌬    **Fungsi: **Info Warteg yang buka.\
+        \n\n    **Perintah:** `{cmd}warteg2`\
+        \n⌬    **Fungsi: **ngajak kewarteg.\
+        \n\n    **Perintah:** `{cmd}warteg3`\
+        \n⌬    **Fungsi: **Izin kewarteg.\
+        \n\n    **Perintah:** `{cmd}sahur1`\
+        \n⌬    **Fungsi: **Ga disemangatin ayang sahurnya.\
+        \n\n    **Perintah:** `{cmd}sahur2`\
+        \n⌬    **Fungsi: **Sahur woi!!.\
+        \n\n    **Perintah:** `{cmd}buka`\
+        \n⌬    **Fungsi: **selamat berbuka.\
+        \n\n    **Perintah:** `{cmd}magrib`\
+        \n⌬    **Fungsi: **ciee nunggu adzan akunya kapan?.\
+        \n\n    **Perintah:** `{cmd}bukber1`\
+        \n⌬    **Fungsi: **ngajak bukber gc.\
+        \n\n    **Perintah:** `{cmd}bukber2`\
+        \n⌬    **Fungsi: **Buat orang yg ngajak bukber tapi cuma wacana.\
+        \n\n    **Perintah:** `{cmd}bukber3`\
+        \n⌬    **Fungsi: **Bukber=Wacana.\
+        \n\n    **Perintah:** `{cmd}bukber4`\
+        \n⌬    **Fungsi: **Ngajar Bukber.\
+        \n\n    **Perintah:** `{cmd}puasasad`\
+        \n⌬    **Fungsi: **cobain aja ya.\
+        \n\n    **Perintah:** `{cmd}taraw1`\
+        \n⌬    **Fungsi: **ngebilangin orang taraweh.\
+        \n\n    **Perintah:** `{cmd}taraw2`\
+        \n⌬    **Fungsi: **cobain aja ya.\
+        \n\n    **Perintah:** `{cmd}sholat`\
+        \n⌬    **Fungsi: **cobain aja ya."
+    })
