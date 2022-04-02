@@ -411,7 +411,7 @@ CMD_HELP.update(
     \n\n ┌✪ **Syntax :** `{cmd}sdkh`\
     \n └✪ **Function : ** Liat Aja Sendiri\
     \n\n ┌✪ **Syntax :** `{cmd}sdkh2`\
-    \n └✪ **Function : ** Liat Aja Sendiri \
+    \n └✪ **Function : ** Liat Aja Sendiri\
     \n\n ┌✪ **Syntax :** `{cmd}warteg`\
     \n └✪ **Function : ** Liat Aja Sendiri\
     \n\n ┌✪ **Syntax :** `{cmd}warteg2`\
