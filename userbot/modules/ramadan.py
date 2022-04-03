@@ -370,7 +370,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "ramadhan": f"**Plugin : **`ramadhan`\
-        \n\n    **Perintah :** `{cmd}puasa1`\
+        \n\n    **Perintah :** `{cmd}puasa`\
         \n⌬    **Fungsi : **Nanya Semangat ga puasanya ke orang, cobain aja jing.\
         \n\n    **Perintah :** `{cmd}puasa2`\
         \n⌬    **Fungsi : **Ngajak Ngabuburit.\
@@ -382,17 +382,17 @@ CMD_HELP.update(
         \n⌬    **Fungsi : **Cie Ga puasa.\
         \n\n    **Perintah :** `{cmd}puasa6`\
         \n⌬    **Fungsi : **Bangga lu ga puasa?.\
-        \n\n    **Perintah :** `{cmd}takjil1`\
+        \n\n    **Perintah :** `{cmd}takjil`\
         \n⌬    **Fungsi : **Info Takjil Gratis.\
         \n\n    **Perintah :** `{cmd}takjil2`\
         \n⌬    **Fungsi : **ngajak nyari takjil.\
         \n\n    **Perintah :** `{cmd}takjil3`\
         \n⌬    **Fungsi : **gopudin cok.\
-        \n\n    **Perintah :** `{cmd}ngaji1`\
+        \n\n    **Perintah :** `{cmd}ngaji`\
         \n⌬    **Fungsi : **gausah war mending ngaji.\
         \n\n    **Perintah :** `{cmd}ngaji2`\
         \n⌬     **Fungsi: **gapengen gibah.\
-        \n\n    **Perintah :** `{cmd}sabar1`\
+        \n\n    **Perintah :** `{cmd}sabar`\
         \n⌬    **Fungsi : **sabar lu kan lagi puasa.\
         \n\n    **Perintah :** `{cmd}sabar2`\
         \n⌬    **Fungsi : **cobain ajalah.\
@@ -402,9 +402,9 @@ CMD_HELP.update(
         \n⌬    **Fungsi: **setan ngehasut setan.\
         \n\n    **Perintah:** `{cmd}setan3`\
         \n⌬    **Fungsi: **cie lagi ngehasut.\
-        \n\n    **Perintah:** `{cmd}sedekah1`\
+        \n\n    **Perintah:** `{cmd}sdkh`\
         \n⌬    **Fungsi: **cobain aja males ngetik.\
-        \n\n    **Perintah:** `{cmd}sedekah2`\
+        \n\n    **Perintah:** `{cmd}sdkh2`\
         \n⌬    **Fungsi: **sedekah baju lebaran.\
         \n\n    **Perintah:** `{cmd}s1`\
         \n⌬    **Fungsi: **sholat.\
@@ -412,13 +412,13 @@ CMD_HELP.update(
         \n⌬    **Fungsi: **sholat.\
         \n\n    **Perintah:** `{cmd}s3`\
         \n⌬    **Fungsi: **sholat !.\
-        \n\n    **Perintah:** `{cmd}warteg1`\
+        \n\n    **Perintah:** `{cmd}warteg`\
         \n⌬    **Fungsi: **Info Warteg yang buka.\
         \n\n    **Perintah:** `{cmd}warteg2`\
         \n⌬    **Fungsi: **ngajak kewarteg.\
         \n\n    **Perintah:** `{cmd}warteg3`\
         \n⌬    **Fungsi: **Izin kewarteg.\
-        \n\n    **Perintah:** `{cmd}sahur1`\
+        \n\n    **Perintah:** `{cmd}sahur`\
         \n⌬    **Fungsi: **Ga disemangatin ayang sahurnya.\
         \n\n    **Perintah:** `{cmd}sahur2`\
         \n⌬    **Fungsi: **Sahur woi!!.\
@@ -426,7 +426,7 @@ CMD_HELP.update(
         \n⌬    **Fungsi: **selamat berbuka.\
         \n\n    **Perintah:** `{cmd}magrib`\
         \n⌬    **Fungsi: **ciee nunggu adzan akunya kapan?.\
-        \n\n    **Perintah:** `{cmd}bukber1`\
+        \n\n    **Perintah:** `{cmd}bukber`\
         \n⌬    **Fungsi: **ngajak bukber gc.\
         \n\n    **Perintah:** `{cmd}bukber2`\
         \n⌬    **Fungsi: **Buat orang yg ngajak bukber tapi cuma wacana.\
@@ -434,11 +434,17 @@ CMD_HELP.update(
         \n⌬    **Fungsi: **Bukber=Wacana.\
         \n\n    **Perintah:** `{cmd}bukber4`\
         \n⌬    **Fungsi: **Ngajar Bukber.\
-        \n\n    **Perintah:** `{cmd}puasasad`\
+        \n\n    **Perintah:** `{cmd}bukbersad`\
         \n⌬    **Fungsi: **cobain aja ya.\
         \n\n    **Perintah:** `{cmd}taraw1`\
         \n⌬    **Fungsi: **ngebilangin orang taraweh.\
         \n\n    **Perintah:** `{cmd}taraw2`\
+        \n⌬    **Fungsi: **cobain aja ya.\
+        \n\n    **Perintah:** `{cmd}nyemen`\
+        \n⌬    **Fungsi: **cobain aja ya.\        
+        \n\n    **Perintah:** `{cmd}nyemen2`\
+        \n⌬    **Fungsi: **cobain aja ya.\
+        \n\n    **Perintah:** `{cmd}nyemen3`\
         \n⌬    **Fungsi: **cobain aja ya.\
         \n\n    **Perintah:** `{cmd}sholat`\
         \n⌬    **Fungsi: **cobain aja ya."
