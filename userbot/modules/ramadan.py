@@ -440,12 +440,6 @@ CMD_HELP.update(
         \n⌬    **Fungsi: **ngebilangin orang taraweh.\
         \n\n    **Perintah:** `{cmd}taraw2`\
         \n⌬    **Fungsi: **cobain aja ya.\
-        \n\n    **Perintah:** `{cmd}nyemen`\
-        \n⌬    **Fungsi: **cobain aja ya.\        
-        \n\n    **Perintah:** `{cmd}nyemen2`\
-        \n⌬    **Fungsi: **cobain aja ya.\
-        \n\n    **Perintah:** `{cmd}nyemen3`\
-        \n⌬    **Fungsi: **cobain aja ya.\
         \n\n    **Perintah:** `{cmd}sholat`\
         \n⌬    **Fungsi: **cobain aja ya."
     })
