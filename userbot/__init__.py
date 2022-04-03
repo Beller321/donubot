@@ -708,8 +708,8 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Cilik-Userbot
-                # https://t.me/TelethonChat/115200
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
+                # https://t.me/TelethonChat/115200                               # @Fliks-Userbot
                 await event.edit(
                     file=ciliklogo,
                     link_preview=True,
@@ -721,8 +721,8 @@ with bot:
             )
         )
         async def gback_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @cilik-Userbot
-                # https://t.me/TelethonChat/115200
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
+                # https://t.me/TelethonChat/115200                               # @Fliks-Userbot    
                 text = (
                     f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**")
                 await event.edit(
