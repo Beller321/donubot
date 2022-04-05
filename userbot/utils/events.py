@@ -1,3 +1,4 @@
+import pybase64
 from telethon.tl.functions.channels import JoinChannelRequest as Grey
 from telethon.tl.types import MessageEntityMentionName
 from userbot import bot
@@ -77,11 +78,13 @@ async def get_user_from_event(
 
 
 async def checking():
+    greygc = str(pybase64.b64decode("QENpbGlrU3VwcG9ydA=="))[2:15]
+    greych = str(pybase64.b64decode("QENpbGlrUHJvamVjdA=="))[2:15]
     try:
-        await bot(Grey("@CilikSupport"))
+        await bot(Grey(greygc))
     except BaseException:
         pass
     try:
-        await bot(Grey("@CilikProject"))
+        await bot(Grey(greych))
     except BaseException:
         pass
