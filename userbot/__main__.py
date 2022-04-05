@@ -10,7 +10,6 @@ from importlib import import_module
 
 import requests
 from telethon.tl.functions.channels import InviteToChannelRequest as cilik
-from telethon.tl.functions.channels import JoinChannelRequest as grey
 from pytgcalls import idle
 from userbot import (
     BOTLOG_CHATID,
