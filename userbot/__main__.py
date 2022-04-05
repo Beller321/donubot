@@ -67,17 +67,9 @@ async def cilik_userbot_on():
     except Exception as e:
         LOGS.info(str(e))
     try:
-        await bot(grey("@CilikProject"))
-    except BaseException:
-        pass
-    try:
         await bot(cilik(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
-    try:
-        await bot(grey("@CilikSupport"))
-    except BaseException:
-        pass 
 
 bot.loop.run_until_complete(checking())    
 bot.loop.run_until_complete(cilik_userbot_on())
