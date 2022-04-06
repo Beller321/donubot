@@ -118,9 +118,9 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "gipeaway": f"**Plugin : **`gipeaway`\
-        \n\nㅤㅤ•**Syntax** : {cmd}a-z\
-        \n•**Function : **Kata-Kata buat giveaway\
+        "gipeaway": f"**➢ Plugin : **`gipeaway`\
+        \n\n ┌✪ **Syntax :** {cmd}a-z\
+        \n └✪ **Function :** Kata-Kata buat giveaway\
     "
     })
 
