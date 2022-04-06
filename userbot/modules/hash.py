@@ -11,10 +11,10 @@ import pybase64
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import cilik_cmd
+from userbot.utils import cilik_cmd, edit_or_reply
 
 
-@bot.on(cilik_cmd(outgoing=True, pattern=r"hash (.*)"))
+@cilik_cmd(pattern="hash(?: |$)(.*)")
 async def gethash(hash_q):
     """For .hash command, find the md5, sha1, sha256, sha512 of the string."""
     hashtxt_ = hash_q.pattern_match.group(1)
@@ -56,28 +56,28 @@ async def gethash(hash_q):
         await hash_q.reply(ans)
 
 
-@bot.on(cilik_cmd(outgoing=True, pattern=r"base64 (en|de) (.*)"))
+@cilik_cmd(pattern="base64 (en|de) (?: |$)(.*)")
 async def endecrypt(query):
     """For .base64 command, find the base64 encoding of the given string."""
     if query.pattern_match.group(1) == "en":
         lething = str(pybase64.b64encode(bytes(query.pattern_match.group(2), "utf-8")))[
             2:
         ]
-        await query.reply("**Encoded:** `" + lething[:-1] + "`")
+        await edit_or_reply(query, "**Encoded:** `" + lething[:-1] + "`")
     else:
         lething = str(
             pybase64.b64decode(
                 bytes(query.pattern_match.group(2), "utf-8"), validate=True
             )
         )[2:]
-        await query.reply("**Decoded:** `" + lething[:-1] + "`")
+        await edit_or_reply(query, "**Decoded:** `" + lething[:-1] + "`")
 
 
 CMD_HELP.update(
     {
-        "hash": f"**Plugiin : **`hash`\
-        \n\n  •  **Syntax :** `{cmd}hash`\
-        \n  •  **Function : **Untuk menemukan md5, sha1, sha256, sha512 dari string tersebut saat ditulis ke dalam file txt.\
+        "hash": f"**➢ Plugin : **`hash`\
+        \n\n ┌✪ **Syntax :** `{cmd}hash`\
+        \n └✪ **Function : **Untuk menemukan md5, sha1, sha256, sha512 dari string tersebut saat ditulis ke dalam file txt.\
     "
     }
 )
@@ -85,10 +85,10 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "base64": f"**Plugin : **`base64`\
-        \n\n  •  **Syntax :** `{cmd}base64` [en atau de]\
-        \n  •  **Function : **Temukan pengkodean base64 dari string yang diberikan atau pecahkan kodenya.\
-        \n\n  •  **NOTE : en = encode , de = decode\
+        "base64": f"**➢ Plugin : **`base64`\
+        \n\n ┌✪ **Syntax :** `{cmd}base64` [en atau de]\
+        \n └✪ **Function : **Temukan pengkodean base64 dari string yang diberikan atau pecahkan kodenya.\
+        \n\n ➠ **NOTE : en = encode , de = decode\
     "
     }
 )
