@@ -492,53 +492,6 @@ async def vc_playlist(event):
         await edit_delete(event, "`Tidak Sedang Memutar Streaming`")
 
 
-# credits by @vckyaz < vicky \>
-# FROM GeezProjects < https://github.com/vckyou/GeezProjects \>
-# ambil boleh apus credits jangan ya ka:)
-
-@cilik_cmd(pattern="joinvc(?: |$)(.*)")
-async def join_(event):
-    xnxx = await edit_or_reply(event, f"`Processing`")
-    if len(event.text.split()) > 1:
-        chat = event.text.split()[1]
-        try:
-            chat = await event.client(GetFullUserRequest(chat))
-        except Exception as e:
-            await edit_delete(event, f"**ERROR:** `{e}`", 30)
-    else:
-        chat = event.chat_id
-        vcmention(event.sender)
-    if not call_py.is_connected:
-        await call_py.start()
-    await call_py.join_group_call(
-        chat,
-        AudioPiped(
-            'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
-        ),
-        stream_type=StreamType().pulse_stream,
-    )
-    try:
-        await xnxx.edit(f"✪ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat}`")
-    except Exception as ex:
-        await edit_delete(event, f"**ERROR:** `{ex}`")
-
-
-@cilik_cmd(pattern="leavevc(?: |$)(.*)")
-async def leavevc(event):
-    """ leave video chat """
-    xnxx = await edit_or_reply(event, "`Processing`")
-    chat_id = event.chat_id
-    from_user = vcmention(event.sender)
-    if from_user:
-        try:
-            await call_py.leave_group_call(chat_id)
-        except (NotInGroupCallError, NoActiveGroupCall):
-            pass
-        await xnxx.edit(f"✪ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`")
-    else:
-        await edit_delete(event, f"**Maaf {owner} Tidak Berada Di VCG**")
-        
-        
 @call_py.on_stream_end()
 async def stream_end_handler(_, u: Update):
     chat_id = u.chat_id
@@ -584,17 +537,5 @@ CMD_HELP.update(
         \n\n ┌✪ **Syntax :** `{cmd}playlist`\
         \n └✪ **Function : **Untuk menampilkan daftar putar Lagu/Video\
     "
-    }
-)
-
-
-CMD_HELP.update(
-    {
-        "vctools": f"**➢ Plugin : **`vctools`\
-        \n\n ┌✪ **Syntax :** `{cmd}joinvc`\
-        \n └✪ **Function : **Naik Os Menggunakan Bot\
-        \n\n ┌✪ **Syntax :** `{cmd}leavevc`\
-        \n └✪ **Function : **Turun Os Menggunakan Bot\
-        "
     }
 )
