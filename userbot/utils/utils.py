@@ -1,6 +1,6 @@
 # Credits: @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# credits @kyy-userbot @ice-userbit
+# credits @kyy-userbot @ice-userbot
 
 import asyncio
 import importlib
