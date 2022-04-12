@@ -2,8 +2,10 @@
 # I took these modules from ultroid and modified them
 # Jangan hapus yg ada tanda # kontol!
 
-from userbot.utils import cilik_cmd
 import asyncio
+
+from userbot.utils import edit_or_reply, cilik_cmd
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 
 
 #creted by @JustRex
@@ -14,7 +16,7 @@ async def _(event):
         return
     animation_interval = 3
     animation_ttl = range(0, 9)
-    await event.edit('𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑯𝒂𝒓𝒊 𝑹𝒂𝒚𝒂 𝑰𝒅𝒖𝒍 𝑭𝒊𝒕𝒓𝒊')
+    await edit_or_reply(event, '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑯𝒂𝒓𝒊 𝑹𝒂𝒚𝒂 𝑰𝒅𝒖𝒍 𝑭𝒊𝒕𝒓𝒊')
     animation_chars = [
         '[Happy Eid Mubarak ](https://telegra.ph/file/f950e09cc4aebcf2abe7f.jpg)',
         '[­🕌](https://telegra.ph/file/506f5aa4870472307f8fd.jpg)',
@@ -28,7 +30,7 @@ async def _(event):
     for i in animation_ttl:
 
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 8], link_preview=True)
+        await edit_or_reply(event, animation_chars[i % 8], link_preview=True)
 
 
 @cilik_cmd(pattern="hbd(?: |$)(.*)")
@@ -37,7 +39,7 @@ async def _(event):
         return
     animation_interval = 3
     animation_ttl = range(0, 9)
-    await event.edit('𝐻𝑎𝑝𝑝𝑦 𝐵𝑖𝑟𝑡𝒉𝑑𝑎𝑦')
+    await edit_or_reply(event, '𝐻𝑎𝑝𝑝𝑦 𝐵𝑖𝑟𝑡𝒉𝑑𝑎𝑦')
     animation_chars = [
         '[𝐻𝑎𝑝𝑝𝑦 ](https://telegra.ph/file/2fbc53ea22ec4471929fa.jpg)',
         '[­🎉🎉🎉](https://telegra.ph/file/e4e5729634f5c8c0c9e06.jpg)',
@@ -51,7 +53,7 @@ async def _(event):
     for i in animation_ttl:
 
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 8], link_preview=True)
+        await edit_or_reply(event, animation_chars[i % 8], link_preview=True)
 
 
 @cilik_cmd(pattern="happyaniv(?: |$)(.*)")
@@ -60,7 +62,7 @@ async def _(event):
         return
     animation_interval = 3
     animation_ttl = range(0, 9)
-    await event.edit('𝐻𝑎𝑝𝑝𝑦 𝐴𝑛𝑖𝑣𝑒𝑟𝑠𝑎𝑟𝑦')
+    await edit_or_reply(event, '𝐻𝑎𝑝𝑝𝑦 𝐴𝑛𝑖𝑣𝑒𝑟𝑠𝑎𝑟𝑦')
     animation_chars = [
         '[𝐻𝑎𝑝𝑝𝑦 ](https://telegra.ph/file/f0c6b06eb041dddd01119.jpg)',
         '[❤️❤️❤️](https://telegra.ph/file/ebc83df798ba99a94bfc3.jpg)',
@@ -74,7 +76,7 @@ async def _(event):
     for i in animation_ttl:
 
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 8], link_preview=True)
+        await edit_or_reply(event, animation_chars[i % 8], link_preview=True)
         
 #created by @greyysbss
 
@@ -84,9 +86,9 @@ async def _(event):
         return
     animation_interval = 3
     animation_ttl = range(0, 9)
-    await event.edit('𝙁𝙪𝙣 𝘾𝙖𝙩')
+    await edit_or_reply(event, '𝙁𝙪𝙣 𝘾𝙖𝙩 🙀 😿 😾')
     animation_chars = [
-        '[𝙁𝙪𝙣 𝘾𝙖𝙩 🙀 😿 😾](https://telegra.ph/file/b7de6dd33a9d8276ebaa1.jpg)',
+        '[🙀 😿 😾](https://telegra.ph/file/b7de6dd33a9d8276ebaa1.jpg)',
         '[😹 😹 😹](https://telegra.ph/file/1c3da2a4dae56b175d344.jpg)',
         '[😼 😼 😼](https://telegra.ph/file/0158811403a0027c3ba3c.jpg)',
         '[😺 😺 😺](https://telegra.ph/file/982f318a1f0dad9d1ba20.jpg)',
@@ -98,7 +100,21 @@ async def _(event):
     for i in animation_ttl:
 
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 8], link_preview=True)        
+        await edit_or_reply(event, animation_chars[i % 8], link_preview=True)   
+        
+        
+CMD_HELP.update(
+    {
+        "ucapan": f"**➢ Plugin : **`ucapan`\
+        \n\n ┌✪ **Syntax :** `{cmd}hbd`\
+        \n └✪ **Function : **ucapan selamat ulang tahun.\
+        \n\n ┌✪ **Syntax :** `{cmd}lebaran`\
+        \n └✪ **Function : **Ucapan Lebaran.\
+        \n\n ┌✪ **Syntax :** `{cmd}happyaniv`\
+        \n └✪ **Function : **Untuk Mengucapkan Happy Aniversary kepasanganmu (Kalo Punya).\
+        \n\n ┌✪ **Syntax :** `{cmd}funcat`\
+        \n └✪ **Function : **Foto Meme Kucing."
+    })        
         
         
         
