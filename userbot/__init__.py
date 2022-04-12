@@ -171,6 +171,8 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL", "https://github.com/grey423/CilikUserbot.git"
 )
+UPSTREAM_REPO_BRANCH = os.environ.get(
+    "UPSTREAM_REPO_BRANCH", "Cilik-Userbot")
 
 # SQL Database URI
 DB_URI = os.environ.get("DATABASE_URL", None)
