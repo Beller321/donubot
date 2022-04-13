@@ -263,7 +263,17 @@ async def _(event):
         )
     )
 
-    
+
+@cilik_cmd(pattern="pang$")
+async def _(pang):
+    """For .ping command, ping the userbot from any chat."""
+    uptime = await get_readable_time((time.time() - StartTime))
+    await pang.reply(
+        f"**Ping** - `%sms`\n"
+        f"**Uptime** - `{uptime}` \n"
+    )    
+
+
 # JANGAN DI HAPUS GOBLOK 😡 LU COPY AJA TINGGAL TAMBAHIN
 # DI HAPUS GUA GBAN YA 🥴 GUA TANDAIN LU AKUN TELENYA 😡
 
