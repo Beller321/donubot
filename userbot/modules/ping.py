@@ -268,9 +268,13 @@ async def _(event):
 async def _(pang):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
-    await pang.reply(
-        f"**Ping** - `%sms`\n"
-        f"**Uptime** - `{uptime}` \n"
+    start = datetime.now()
+    xx = await pang.reply("*...*")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await xx.edit(
+        f"**Pong** - `%sms`\n"
+        f"**Uptime -** `{uptime}`" % (duration)
     )    
 
 
