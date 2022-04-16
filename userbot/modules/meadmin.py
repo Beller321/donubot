@@ -2,10 +2,10 @@ import asyncio
 import os
 
 from userbot import bot
-from userbot.utils import cilik_cmd
+from userbot.utils import edit_or_reply, cilik_cmd
 
 
-@cilik_cmd(pattern="meadmin ?(.*)")
+@cilik_cmd(pattern="meadmin(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
