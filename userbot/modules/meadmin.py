@@ -1,3 +1,8 @@
+# Cilik - UserBot
+# Copyright (C) 2022 CilikProject
+#
+# @greyyvbss
+
 import asyncio
 import os
 
