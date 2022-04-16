@@ -1,8 +1,7 @@
 import asyncio
 import os
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.utils import cilik_cmd
 
 
