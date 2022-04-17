@@ -44,6 +44,7 @@ async def _(event):
         else:
             await bot.send_file(here, "me_admin.txt", caption=caption)
         os.remove("me_admin.txt")
+        await event.reply("`reply ketik .carbon`)
         await grey.delete()
     else:
         await grey.edit("`Sed, I'm not Admin anywhere 🤧`")
