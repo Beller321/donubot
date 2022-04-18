@@ -490,3 +490,6 @@ CMD_HELP.update(
         \n └✪ **Function : **Untuk mengubah volume (Membutuhkan Hak admin)\
         \n\n ┌✪ **Syntax :** `{cmd}playlist`\
         \n └✪ **Function : **Untuk menampilkan daftar putar Lagu/Video\
+    "
+    }
+)
