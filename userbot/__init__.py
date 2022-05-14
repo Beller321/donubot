@@ -148,7 +148,7 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 # Custom Handler command
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
-SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"?")
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
