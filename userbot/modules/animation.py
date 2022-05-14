@@ -469,7 +469,7 @@ async def _(event):
 # Create by myself @localheart
 
 
-@cilik_cmd(pattern="helikopter(?: |$)(.*)")
+@cilik_cmd(pattern="heli(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -485,7 +485,7 @@ async def _(event):
         "╬═╬ \n"
         "╬═╬ \n"
         "╬═╬ \n"
-        "╬═╬ Hallo Semuanya :) \n"
+        "╬═╬ Hallo ahli kubur :) \n"
         "╬═╬☻/ \n"
         "╬═╬/▌ \n"
         "╬═╬/ \\ \n",
@@ -496,7 +496,7 @@ async def _(event):
 async def _(event):
     await edit_or_reply(
         event,
-        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Mau Jadi Pacarku Gak?!**",
+        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Mau Jadi lonteku Gak?!**",
     )
 
 
@@ -504,7 +504,7 @@ async def _(event):
 async def _(event):
     await edit_or_reply(
         event,
-        "`Dadah Semuanya...`          \n　　　　　|"
+        "`aku lelah godbye...`          \n　　　　　|"
         "\n　　　　　| \n"
         "　　　　　| \n"
         "　　　　　| \n"
@@ -762,7 +762,7 @@ async def _(event):
     await e.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💔<\\  *Terimakasih`")
 
 
-@cilik_cmd(pattern="(.*)")
+@cilik_cmd(pattern="pacaran(?: |$)(.*)")
 async def _(event):
     input_str = event.pattern_match.group(1)
     if input_str == "ceritacinta":
