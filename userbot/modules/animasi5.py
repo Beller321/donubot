@@ -54,7 +54,7 @@ async def _(event):
         "(҂`_´)\n"
         "<,︻╦╤─ ҉\n"
         "_/﹋\_\n"
-        "\n**ᴊᴏɪɴ ʟɪɴᴋ ᴅɪ ʙɪᴏ😡**")
+        "\n**sini kebio gua teemoh njing😡**")
     
     
 @cilik_cmd(pattern="lari(?: |$)(.*)")
