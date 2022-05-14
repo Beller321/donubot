@@ -10,9 +10,9 @@ from userbot.utils import edit_or_reply, cilik_cmd
 async def _(event):
     xx = await edit_or_reply(event, "**Cuma Mau Bilang**")
     sleep(3)
-    await xx.edit("**Aku Sayang Kamu**")
-    sleep(1)
-    await xx.edit("**I LOVE YOU 💞**")
+    await xx.edit("**aku cuma mau bilang**")
+    sleep(2)
+    await xx.edit("**kamu bau terasi yank**")
 
 
 # Create by myself @localheart
