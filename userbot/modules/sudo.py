@@ -16,7 +16,7 @@ heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS") or ""
 
 
-@cilik_cmd(pattern="sudo#")
+@cilik_cmd(pattern="sudo$")
 async def sudo(event):
     sudo = "True" if SUDO_USERS else "False"
     users = sudousers
@@ -29,7 +29,7 @@ async def sudo(event):
         await edit_delete(event, "🔮 **Sudo:** `Disabled`")
 
 
-@cilik_cmd(pattern="addsudo(?:\s|#)([\s\S]*)")
+@cilik_cmd(pattern="addsudo(?:\s|$)([\s\S]*)")
 async def add(event):
     suu = event.text[9:]
     if f"{cmd}add " in event.text:
@@ -73,7 +73,7 @@ async def add(event):
     heroku_Config[var] = newsudo
 
 
-@cilik_cmd(pattern="delsudo(?:\s|#)([\s\S]*)")
+@cilik_cmd(pattern="delsudo(?:\s|$)([\s\S]*)")
 async def _(event):
     if event.sender_id in SUDO_USERS:
         return
