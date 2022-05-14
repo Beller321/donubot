@@ -81,7 +81,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@cilik_cmd(pattern="ping$")
+@cilik_cmd(pattern="pink$")
 async def _(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -122,7 +122,7 @@ async def _(peng):
     )
 
 
-@cilik_cmd(pattern="pink$")
+@cilik_cmd(pattern="ping$")
 async def _(pink):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
