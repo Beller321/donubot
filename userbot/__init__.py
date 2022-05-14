@@ -148,7 +148,7 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 # Custom Handler command
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
-SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"?")
 
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
@@ -170,10 +170,10 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/grey423/CilikUserbot.git"
+    "UPSTREAM_REPO_URL", "https://github.com/Beller321/donubot.git"
 )
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Cilik-Userbot")
+    "UPSTREAM_REPO_BRANCH", "donubot")
 
 # SQL Database URI
 DB_URI = os.environ.get("DATABASE_URL", None)
@@ -221,13 +221,13 @@ ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", None)
 ALIVE_NAME = os.environ.get("ALIVE_NAME", "I'Am Alive")
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "✪")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "👻")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "🍭")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "🙈")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "✪")
+ICON_HELP = os.environ.get("ICON_HELP", "👻")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
