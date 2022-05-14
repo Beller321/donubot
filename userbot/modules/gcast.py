@@ -41,7 +41,7 @@ heroku_api = "https://api.heroku.com"
 blchat = os.environ.get("BLACKLIST_GCAST") or ""
 
 
-@cilik_cmd(pattern="gcast(?: |$)(.*)")
+@cilik_cmd(pattern="gikes(?: |$)(.*)")
 async def gcast(event):
     if xx := event.pattern_match.group(1):
         msg = xx
@@ -49,7 +49,7 @@ async def gcast(event):
         msg = await event.get_reply_message()
     else:
         return await edit_delete(event, "**Berikan Sebuah Pesan atau Reply**")
-    kk = await edit_or_reply(event, "`Globally Broadcasting Msg...`")
+    kk = await edit_or_reply(event, "`Sabar ini lagi send, limit jangn salahin gua...`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
