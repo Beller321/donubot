@@ -72,7 +72,7 @@ async def _(event):
 
 @cilik_cmd(pattern="^O(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, "**ORANG ANJING LUH ,KAN UDAH GUA BILANG??MAKANYA JANGAN NGEYEL!!**")
+    await edit_or_reply(event, "**SO SINGKAT NAJES!!**")
 
 
 @cilik_cmd(pattern="^Q(?: |$)(.*)")
