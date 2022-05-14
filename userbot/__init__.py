@@ -155,7 +155,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 
 # Support
 GROUP = os.environ.get("GROUP", "CilikSupport")
-CHANNEL = os.environ.get("CHANNEL", "CilikProject")
+CHANNEL = os.environ.get("CHANNEL", "garlexs")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -253,20 +253,20 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/ac134f6d295ad0c03af9b.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/5384dc9f78c8df80f3d6c.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/ac134f6d295ad0c03af9b.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/5384dc9f78c8df80f3d6c.jpg"
 )
 
 # Picture For VCPLUGIN
 PLAY_PIC = (
-    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
+    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/5384dc9f78c8df80f3d6c.png"
 )
 
 QUEUE_PIC = (
-    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
+    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/5384dc9f78c8df80f3d6c.png"
 )
 
 # Last.fm Module
@@ -469,10 +469,10 @@ with bot:
         main_help_button = [
             [
                 Button.inline("🗂️ Modules", data="reopen"),       
-                Button.inline("VC-Plugin 📺", data="cilik_inline"),
+                Button.inline("VC-Plugin 📺", data="emon_inline"),
             ],
             [
-                Button.url("📣 Updates", f"https://t.me/CilikProject"),
+                Button.url("📣 Updates", f"https://t.me/garlexs"),
                 Button.url("Settings 🛠️ ", f"t.me/{botusername}"),
             ],
             [Button.inline("🗑️ Close", data="close")],
@@ -560,7 +560,7 @@ with bot:
                 current_page_number = int(looters)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
-                text = f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
+                text = f"**🕹️ Emon-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
                 await event.edit(
                     text,
                     file=ciliklogo,
@@ -579,7 +579,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**"
+                text = f"**🕹️ Emon-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**"
                 await event.edit(
                     text,
                     file=ciliklogo,
@@ -600,20 +600,20 @@ with bot:
                 result = await event.builder.photo(
                     file=ciliklogo,
                     link_preview=False,
-                    text = f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
+                    text = f"**🕹️ Emon-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
                     buttons=main_help_button,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Cilik - Userbot",
-                    url="https://t.me/CilikSupport",
+                    description="Repository Emon - Userbot",
+                    url="https://t.me/garlexs",
                     thumb=InputWebDocument(
                         ALIVE_LOGO,
                         0,
                         "image/jpeg",
                         []),
-                    text="**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **Owner Repo :** [Grey </>](https://t.me/greyyvbss)\n✪ **Support :** @CilikSupport\n✪ **Repository :** [Cilik-Userbot](https://github.com/grey423/CilikUserbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Emon-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **Owner Repo :** [Emon </>](https://t.me/berakVbss)\n✪ **Support :** @CilikSupport\n✪ **Repository :** [Emon-Userbot](https://github.com/Beller321/donubot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -621,7 +621,7 @@ with bot:
                                 "https://t.me/CilikSupport"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
-                                "https://github.com/grey423/CilikUserbot"),
+                                "https://github.com/Beller321/donubot"),
                         ],
                     ],
                     link_preview=False,
@@ -725,7 +725,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
                 # https://t.me/TelethonChat/115200                               # @Fliks-Userbot    
                 text = (
-                    f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**")
+                    f"**🕹️ Emon-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**")
                 await event.edit(
                     text,
                     file=ciliklogo,
