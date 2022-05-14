@@ -15,7 +15,7 @@ async def _(event):
     await zz.edit("Dahlahhh.....")
 
     
-@cilik_cmd(pattern="punten(?: |$)(.*)")
+@cilik_cmd(pattern="permisi(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -26,7 +26,7 @@ async def _(event):
         "`\n┻┳|￣  )`"
         "`\n┳ﾐ(￣ ／`"
         "`\n┻┳T￣|`"
-        "\n**Punten**")
+        "\n**Permisi nyari ayang**")
 
 # Create by myself @localheart
 
