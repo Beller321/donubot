@@ -28,7 +28,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 ```
 ## DEPLOY TO HEROKU
  
-<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=Z3JleTQyMy9DaWxpa1VzZXJib3QgbWFpbg"> <img 
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=QmVsbGVyMzIxL2RvbnVib3QgZG9udWJvdA"> <img 
 src="https://img.shields.io/badge/Deploy%20To%20Bot%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Beller321/donubot"> <img 
