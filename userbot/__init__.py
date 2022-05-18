@@ -116,7 +116,7 @@ DEVS = (
 )
 
   
-SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "1538149626").split()}
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2045596659").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 BLACKLIST_GCAST = {int(x) for x in os.environ.get("BLACKLIST_GCAST", "").split()}
 
@@ -150,7 +150,7 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 # Custom Handler command
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
-SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"?")
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"*")
 
 # Owner ID
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
